@@ -3,12 +3,15 @@
 Open OrderHeader
 Open Customer
 Open SalesPerson
+Open OrderDetail
 
 Class cOrderHeaderDataDictionary is a DataDictionary
     
     Procedure Construct_Object
         Forward Send Construct_Object
         Set Main_File to OrderHeader.File_Number
+
+        Set Add_Client_File to OrderDetail.File_Number
 
         Set Add_Server_File to Customer.File_Number
         Set Add_Server_File to SalesPerson.File_Number

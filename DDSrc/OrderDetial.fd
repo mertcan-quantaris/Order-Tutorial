@@ -1,0 +1,8 @@
+#REPLACE FILE6 OrderDetial
+#REPLACE OrderDetial.File_Number |CI6
+#REPLACE OrderDetial.Order_Number |FN6,1
+#REPLACE OrderDetial.Detail_Number |FN6,2
+#REPLACE OrderDetial.Item_ID |FN6,3
+#REPLACE OrderDetial.Qty_Ordered |FN6,4
+#REPLACE OrderDetial.Price |FN6,5
+#REPLACE OrderDetial.Extended_Price |FN6,6
