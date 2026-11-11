@@ -23,5 +23,16 @@
 				</DDClass>
 			</DDClasses>
 		</Table>
+		<Table>
+			<tableNumber>3</tableNumber>
+			<tableName>Vendor</tableName>
+			<DDClasses>
+				<DDClass>
+					<className>cVendorDataDictionary</className>
+					<classFile>cVendorDataDictionary.dd</classFile>
+					<preferred>true</preferred>
+				</DDClass>
+			</DDClasses>
+		</Table>
 	</Tables>
 </DataDictionaryList>

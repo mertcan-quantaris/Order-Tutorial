@@ -1,0 +1,10 @@
+#REPLACE FILE3 Vendor
+#REPLACE Vendor.File_Number |CI3
+#REPLACE Vendor.Id |FN3,1
+#REPLACE Vendor.Name |FS3,2
+#REPLACE Vendor.Address |FS3,3
+#REPLACE Vendor.City |FS3,4
+#REPLACE Vendor.State |FS3,5
+#REPLACE Vendor.Zip |FS3,6
+#REPLACE Vendor.Phone_Number |FS3,7
+#REPLACE Vendor.Fax_Number |FS3,8
