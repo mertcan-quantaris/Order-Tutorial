@@ -34,5 +34,16 @@
 				</DDClass>
 			</DDClasses>
 		</Table>
+		<Table>
+			<tableNumber>4</tableNumber>
+			<tableName>OrderHeader</tableName>
+			<DDClasses>
+				<DDClass>
+					<className>cOrderHeaderDataDictionary</className>
+					<classFile>cOrderHeaderDataDictionary.dd</classFile>
+					<preferred>true</preferred>
+				</DDClass>
+			</DDClasses>
+		</Table>
 	</Tables>
 </DataDictionaryList>
