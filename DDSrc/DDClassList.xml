@@ -12,5 +12,16 @@
 				</DDClass>
 			</DDClasses>
 		</Table>
+		<Table>
+			<tableNumber>2</tableNumber>
+			<tableName>SalesPerson</tableName>
+			<DDClasses>
+				<DDClass>
+					<className>cSalesPersonDataDictionary</className>
+					<classFile>cSalesPersonDataDictionary.dd</classFile>
+					<preferred>true</preferred>
+				</DDClass>
+			</DDClasses>
+		</Table>
 	</Tables>
 </DataDictionaryList>

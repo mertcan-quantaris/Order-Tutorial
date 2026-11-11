@@ -1,0 +1,5 @@
+#REPLACE FILE2 SalesPerson
+#REPLACE SalesPerson.File_Number |CI2
+#REPLACE SalesPerson.Id |FN2,1
+#REPLACE SalesPerson.Name |FS2,2
+#REPLACE SalesPerson.Avatar |FS2,3
