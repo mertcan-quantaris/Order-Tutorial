@@ -57,17 +57,6 @@
 			</DDClasses>
 		</Table>
 		<Table>
-			<tableNumber>6</tableNumber>
-			<tableName>OrderDetial</tableName>
-			<DDClasses>
-				<DDClass>
-					<className>cOrderDetialDataDictionary</className>
-					<classFile>cOrderDetialDataDictionary.dd</classFile>
-					<preferred>true</preferred>
-				</DDClass>
-			</DDClasses>
-		</Table>
-		<Table>
 			<tableNumber>7</tableNumber>
 			<tableName>OrderDetail</tableName>
 			<DDClasses>
