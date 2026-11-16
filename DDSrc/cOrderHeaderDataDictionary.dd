@@ -57,7 +57,7 @@ Class cOrderHeaderDataDictionary is a DataDictionary
         Set Field_Auto_Increment Field OrderHeader.Order_Number to File_Field DFLastID.Order_Number
         
         Set Field_Option Field OrderHeader.Order_Number DD_AUTOFIND to True
-        Set Field_Prompt_Object Field OrderHeader.Order_Number to OrderHeader_SL
+        Set Field_Prompt_Object Field OrderHeader.Order_Number to OrderHeader_sl
         Set Field_WebPrompt_Object Field OrderHeader.Order_Number to oOrderWebLookup
         
         Set Key_Field_State Field OrderHeader.Order_Number to True
@@ -67,7 +67,7 @@ Class cOrderHeaderDataDictionary is a DataDictionary
         Set Field_Class_Name Field OrderHeader.Order_Date to "Spin"
         Set Field_Entry_msg Field OrderHeader.Order_Date to Entry_Order_Date
         Set Field_Mask_Type Field OrderHeader.Order_Date to MASK_DATE_WINDOW
-        Set Field_Prompt_Object Field OrderHeader.Order_Date to OrderHeader_SL
+        Set Field_Prompt_Object Field OrderHeader.Order_Date to OrderHeader_sl
         Set Field_WebPrompt_Object Field OrderHeader.Order_Date to oOrderWebLookup
         
         Set Status_Help Field OrderHeader.Order_Date to "Date on which the order was placed"
