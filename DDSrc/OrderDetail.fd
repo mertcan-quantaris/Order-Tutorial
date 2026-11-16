@@ -1,8 +1,8 @@
-#REPLACE FILE31 OrderDetail
-#REPLACE OrderDetail.Recnum |FN31,0
-#REPLACE OrderDetail.Order_Number |FN31,1
-#REPLACE OrderDetail.Detail_Number |FN31,2
-#REPLACE OrderDetail.Item_ID |FS31,3
-#REPLACE OrderDetail.Qty_Ordered |FN31,4
-#REPLACE OrderDetail.Price |FN31,5
-#REPLACE OrderDetail.Extended_Price |FN31,6
+#REPLACE FILE7 OrderDetail
+#REPLACE OrderDetail.File_Number |CI7
+#REPLACE OrderDetail.Order_Number |FN7,1
+#REPLACE OrderDetail.Detail_Number |FN7,2
+#REPLACE OrderDetail.Item_ID |FN7,3
+#REPLACE OrderDetail.Qty_Ordered |FN7,4
+#REPLACE OrderDetail.Price |FN7,5
+#REPLACE OrderDetail.Extended_Price |FN7,6

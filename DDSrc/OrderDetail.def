@@ -1,0 +1,36 @@
+-----------------------------------------------------------------------------
+  DATE: 16-11-2026      TIME: 13:25                                  PAGE:  1
+  FILE DEFINITION FOR FILE: OrderDetail (# 7)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : MSSQLDRV
+  FILE ROOT NAME            : MSSQLDRV:OrderDetail
+  USER DISPLAY NAME         : dbo.OrderDetail
+  DATAFLEX FILE NAME        : OrderDetail
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 52        ( USED: 52 )
+  MAX NUMBER OF RECORDS     : 2147483647  ( USED: 0 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : RECORD
+  HEADER INTEGRITY CHECKING : NO 
+  TRANSACTION TYPE          : SERVER LOGGED
+  RECORD IDENTITY INDEX     : 1 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : DFCONNID=OrderTutorial
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  Order_Number     NUM    6.0     1  1   OrderHeader.FIELD_1 (4,1)
+  2  Detail_Number    NUM    4.0     8  1   
+  3  Item_ID          NUM   10.0    13      Inventory.FIELD_1 (5,1)
+  4  Qty_Ordered      NUM    6.0    24      
+  5  Price            NUM    6.2    31      
+  6  Extended_Price   NUM    8.2    41      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    Order_Number    NO  NO       0      0       2     ON-LINE
+       Detail_Number   NO  NO 
+

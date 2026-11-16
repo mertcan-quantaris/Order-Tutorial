@@ -1,0 +1,49 @@
+-----------------------------------------------------------------------------
+  DATE: 16-11-2026      TIME: 13:25                                  PAGE:  1
+  FILE DEFINITION FOR FILE: Customer (# 1)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : MSSQLDRV
+  FILE ROOT NAME            : MSSQLDRV:Customer
+  USER DISPLAY NAME         : Customer
+  DATAFLEX FILE NAME        : Customer
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 16586     ( USED: 16586 )
+  MAX NUMBER OF RECORDS     : 2147483647  ( USED: 0 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : RECORD
+  HEADER INTEGRITY CHECKING : NO 
+  TRANSACTION TYPE          : SERVER LOGGED
+  RECORD IDENTITY INDEX     : 1 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : DFCONNID=OrderTutorial
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  Customer_Number  NUM    6.0     1  1   
+  2  Name             ASC     30     8  2   
+  3  Address          ASC     30    38      
+  4  City             ASC     14    68      
+  5  State            ASC      2    82      
+  6  Zip              ASC     10    84      
+  7  Phone_Number     ASC     20    94      
+  8  Fax_Number       ASC     20   114      
+  9  Email_Address    ASC     30   134      
+ 10  Credit_Limit     NUM    6.2   164      
+ 11  Purchases        NUM    6.2   174      
+ 12  Balance          NUM    6.2   184  3   
+ 13  Comments         TEX   1024   194      
+ 14  Status           ASC     10 16577      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    Customer_Number NO  NO       0      0       1     ON-LINE
+
+  2    Customer_Number NO  NO       0      0       2     ON-LINE
+       Name            NO  NO 
+
+  3    Balance         NO  NO       0      0       2     ON-LINE
+       Customer_Number NO  NO 
+

@@ -1,0 +1,35 @@
+-----------------------------------------------------------------------------
+  DATE: 16-11-2026      TIME: 13:25                                  PAGE:  1
+  FILE DEFINITION FOR FILE: SalesPerson (# 2)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : MSSQLDRV
+  FILE ROOT NAME            : MSSQLDRV:SalesPerson
+  USER DISPLAY NAME         : SalesPerson
+  DATAFLEX FILE NAME        : SalesPerson
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 50        ( USED: 50 )
+  MAX NUMBER OF RECORDS     : 2147483647  ( USED: 0 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : RECORD
+  HEADER INTEGRITY CHECKING : NO 
+  TRANSACTION TYPE          : SERVER LOGGED
+  RECORD IDENTITY INDEX     : 1 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : DFCONNID=OrderTutorial
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  Id               NUM    4.0     1  1   
+  2  Name             ASC     25     6  2   
+  3  Avatar           ASC     20    31      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    Id              NO  NO       0      0       1     ON-LINE
+
+  2    Name            NO  NO       0      0       2     ON-LINE
+       Id              NO  NO 
+

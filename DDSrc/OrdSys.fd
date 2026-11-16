@@ -1,0 +1,3 @@
+#REPLACE FILE6 OrdSys
+#REPLACE OrdSys.Recnum |FN6,0
+#REPLACE OrdSys.OrdSysId |FN6,1

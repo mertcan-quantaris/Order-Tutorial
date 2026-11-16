@@ -1,0 +1,40 @@
+-----------------------------------------------------------------------------
+  DATE: 16-11-2026      TIME: 13:25                                  PAGE:  1
+  FILE DEFINITION FOR FILE: Vendor (# 3)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : MSSQLDRV
+  FILE ROOT NAME            : MSSQLDRV:Vendor
+  USER DISPLAY NAME         : Vendor
+  DATAFLEX FILE NAME        : Vendor
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 133       ( USED: 133 )
+  MAX NUMBER OF RECORDS     : 2147483647  ( USED: 0 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : RECORD
+  HEADER INTEGRITY CHECKING : NO 
+  TRANSACTION TYPE          : SERVER LOGGED
+  RECORD IDENTITY INDEX     : 1 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : DFCONNID=OrderTutorial
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  Id               NUM    6.0     1  1   
+  2  Name             ASC     30     8  2   
+  3  Address          ASC     30    38      
+  4  City             ASC     14    68      
+  5  State            ASC      2    82      
+  6  Zip              ASC     10    84      
+  7  Phone_Number     ASC     20    94      
+  8  Fax_Number       ASC     20   114      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    Id              NO  NO       0      0       1     ON-LINE
+
+  2    Name            NO  NO       0      0       2     ON-LINE
+       Id              NO  NO 
+

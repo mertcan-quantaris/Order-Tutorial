@@ -1,0 +1,42 @@
+-----------------------------------------------------------------------------
+  DATE: 16-11-2026      TIME: 13:25                                  PAGE:  1
+  FILE DEFINITION FOR FILE: Inventory (# 5)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : MSSQLDRV
+  FILE ROOT NAME            : MSSQLDRV:Inventory
+  USER DISPLAY NAME         : Inventory
+  DATAFLEX FILE NAME        : Inventory
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 81        ( USED: 81 )
+  MAX NUMBER OF RECORDS     : 2147483647  ( USED: 0 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : RECORD
+  HEADER INTEGRITY CHECKING : NO 
+  TRANSACTION TYPE          : SERVER LOGGED
+  RECORD IDENTITY INDEX     : 1 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : DFCONNID=OrderTutorial
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  Item_Id          NUM   10.0     1  1   
+  2  Description      ASC     35    12  3   
+  3  Vendor_Id        NUM    6.0    47  2   Vendor.FIELD_1 (3,1)
+  4  Vendor_Part_Id   NUM   10.0    54  2   
+  5  Unit_Price       NUM    6.2    65      
+  6  On_Hand          NUM    6.0    75      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    Item_Id         NO  NO       0      0       1     ON-LINE
+
+  2    Vendor_Id       NO  NO       0      0       3     ON-LINE
+       Vendor_Part_Id  NO  NO 
+       Item_Id         NO  NO 
+
+  3    Description     NO  NO       0      0       2     ON-LINE
+       Item_Id         NO  NO 
+
