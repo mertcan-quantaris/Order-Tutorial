@@ -49,7 +49,7 @@ CD_Popup_Object SalesPerson_sl is a dbModalPanel
 
     Object oOk_bn is a Button
         Set Label to C_$OkButtonLabel
-        Set Location to 115 47
+        Set Location to 115 48
         Set peAnchors to anBottomRight
 
         Procedure OnClick
