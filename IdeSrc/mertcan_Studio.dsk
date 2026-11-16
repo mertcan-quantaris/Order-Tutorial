@@ -1,13 +1,13 @@
 [Workspace]
 CurrentProject=Order.src
 Location=C:\DataFlex Projects\OrderTutorial\IdeSrc\mertcan_Studio.dsk
-CreateNew=-1
+CreateNew=2
 [TabWindows]
 GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=6
+SelectedTab=5
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
@@ -24,21 +24,94 @@ Top=21
 Left=0
 Bottom=724
 Right=1254
-CursorLine=0
-CursorColumn=0
+CursorLine=3
+CursorColumn=10
 TabIndex=1
 TabGroup=0
 [Window2]
-Filename=OrderHeader
-ViewType=4
+Filename=C:\DataFlex Projects\OrderTutorial\AppSrc\Order.src
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=112
+CursorColumn=51
+TabIndex=2
+TabGroup=0
+[Window3]
+Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\cOrderDetailDataDictionary.dd
+ViewType=3
 Top=21
 Left=0
 Bottom=724
 Right=1254
 TabIndex=3
 TabGroup=0
-[Window3]
-Filename=C:\DataFlex Projects\OrderTutorial\AppSrc\Order.src
+[Window4]
+Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\cInventoryDataDictionary.dd
+ViewType=3
+Top=21
+Left=0
+Bottom=724
+Right=1254
+TabIndex=4
+TabGroup=0
+[Window5]
+Filename=C:\DataFlex Projects\OrderTutorial\AppSrc\Customer.sl
+ViewType=2
+Top=21
+Left=0
+Bottom=724
+Right=1254
+TabIndex=6
+TabGroup=0
+[Window6]
+Filename=C:\Program Files\DataFlex 25.0\Pkg\Dd_pklst.pkg
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=199
+CursorColumn=0
+TabIndex=7
+TabGroup=0
+[Window7]
+Filename=C:\Program Files\DataFlex 25.0\Pkg\Dftimer.pkg
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=226
+CursorColumn=0
+TabIndex=8
+TabGroup=0
+[Window8]
+Filename=C:\Program Files\DataFlex 25.0\Pkg\cHtmlHelp.pkg
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=33
+CursorColumn=0
+TabIndex=9
+TabGroup=0
+[Window9]
+Filename=C:\Program Files\DataFlex 25.0\Pkg\Windows.pkg
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=1334
+CursorColumn=62
+TabIndex=10
+TabGroup=0
+[Window10]
+Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\CodeType.fd
 ViewType=1
 Top=21
 Left=0
@@ -46,32 +119,69 @@ Bottom=724
 Right=1254
 CursorLine=0
 CursorColumn=0
-TabIndex=4
+TabIndex=11
 TabGroup=0
-[Window4]
-Filename=Customer
-ViewType=4
+[Window11]
+Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\Customer.fd
+ViewType=1
 Top=21
 Left=0
 Bottom=724
 Right=1254
+CursorLine=0
+CursorColumn=0
+TabIndex=12
+TabGroup=0
+[Window12]
+Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\CodeMast.fd
+ViewType=2
+Top=21
+Left=0
+Bottom=724
+Right=1254
+TabIndex=13
+TabGroup=0
+[Window13]
+Filename=C:\DataFlex Projects\OrderTutorial\AppSrc\LoginEncryptionKey.inc
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=0
+CursorColumn=0
+TabIndex=14
+TabGroup=0
+[Window14]
+Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\DFLastID.fd
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=0
+CursorColumn=0
+TabIndex=15
+TabGroup=0
+[Window15]
+Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\OrderHeader.fd
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=0
+CursorColumn=0
+TabIndex=16
+TabGroup=0
+[Window16]
+Filename=C:\DataFlex Projects\OrderTutorial\AppSrc\CustomerEntry.vw
+ViewType=1
+Top=21
+Left=0
+Bottom=724
+Right=1254
+CursorLine=6
+CursorColumn=0
 TabIndex=5
-TabGroup=0
-[Window5]
-Filename=OrderDetail
-ViewType=4
-Top=21
-Left=0
-Bottom=724
-Right=1254
-TabIndex=2
-TabGroup=0
-[Window6]
-Filename=C:\DataFlex Projects\OrderTutorial\DDSrc\cOrderDetailDataDictionary.dd
-ViewType=3
-Top=21
-Left=0
-Bottom=724
-Right=1254
-TabIndex=6
 TabGroup=0
