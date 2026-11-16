@@ -93,6 +93,7 @@ Class cCustomerDataDictionary is a DataDictionary
         Set Field_Label_Short Field Customer.Balance to "Balance"
         Set Field_Mask_Type Field Customer.Balance to MASK_CURRENCY_WINDOW
         Set Field_Option Field Customer.Balance DD_DISPLAYONLY to True
+        Set Field_Prompt_Object Field Customer.Balance to Customer_sl
         
         Set Status_Help Field Customer.Comments to "Additional Comments and Notes."
         
