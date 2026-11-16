@@ -100,20 +100,6 @@ Object oMain is a Panel
                 Set psToolTip to "View"
                 Set psDescription to "Available Views"
 
-
-              Object oCustomerEntryViewMenuItem is a cCJMenuItem
-                    Set psCaption to "Customer Entry View"
-                    Set psShortcut to "Ctrl+1"
-                    Set psDescription to "Add, edit and delete Customer data."
-                    Set psToolTip to "Customer Entry View"
-                    
-                    Procedure OnExecute Variant vCommandBarControl
-                        Handle hoClient
-                        Get Client_Id to hoClient
-                        Send Activate_oCustomerView of hoClient
-                    End_Procedure
-                End_Object                
-
                 Object oSalesPersonEntryViewMenuItem is a cCJMenuItem
                     Set psCaption to "Sales Person Entry View"
                     Set psTooltip to "Sales Person Entry View"
@@ -122,6 +108,17 @@ Object oMain is a Panel
                         Handle hoClient
                         Get Client_Id to hoClient
                         Send Activate_SalesPersonView of hoClient
+                    End_Procedure
+                End_Object
+
+                Object oCustomerViewMenuItem is a cCJMenuItem
+                    Set psCaption to "CustomerView"
+                    Set psTooltip to "CustomerView"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oCustomerView of hoClient
                     End_Procedure
                 End_Object
             End_Object
