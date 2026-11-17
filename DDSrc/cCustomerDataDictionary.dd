@@ -133,7 +133,7 @@ Class cCustomerDataDictionary is a DataDictionary
 End_Class
 
 #IFDEF Is$WebApp
-Use CustomerWebLookup.wo
+//Use CustomerWebLookup.wo
 #ELSE
 
 Use Customer.sl
