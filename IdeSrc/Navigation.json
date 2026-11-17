@@ -1,0 +1,28 @@
+{
+   "Projects": [
+     {
+       "nZoom": 0.75,
+       "nPositionX": -845.33331299,
+       "nPositionY": -40,
+       "nWidth": 1950.66668701,
+       "nHeight": 882.66668701,
+       "sProject": "WebApp.src",
+       "bShowWebApp": false,
+       "bShowHidden": false,
+       "Elements": [
+         {
+           "Name": "oWebApp",
+           "Position": {
+             "sX": "0",
+             "sY": "0"
+           },
+           "TabColor": {
+             "sColorDM": "",
+             "sColorLM": ""
+           },
+           "bHidden": false
+         }
+       ]
+     }
+   ]
+ }

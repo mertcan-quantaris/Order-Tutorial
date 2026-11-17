@@ -1,0 +1,166 @@
+﻿// C:\DataFlex Projects\OrderTutorial\AppSrc\CustomerEntry.wo
+// Customer Entry
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+Use cWebTabContainer.pkg
+Use cWebTabPage.pkg
+Use cWebCombo.pkg
+Use cWebCheckBox.pkg
+Use cWebEdit.pkg
+
+Use cCustomerDataDictionary.dd
+
+Object oCustomerEntry is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Customer Entry"
+    Set piWidth to 700
+
+    Object oCustomer_DD is a cCustomerDataDictionary
+    End_Object 
+
+    Set Main_DD To oCustomer_DD
+    Set Server  To oCustomer_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oCustomerCustomer_Number is a cWebForm
+            Entry_Item Customer.Customer_Number
+            Set piColumnSpan to 4
+            Set piColumnIndex to 0
+            Set psLabel to "Customer Number:"
+            Set peLabelAlign to alignLeft
+        End_Object 
+
+        Object oCustomerName is a cWebForm
+            Entry_Item Customer.Name
+            Set piColumnSpan to 8
+            Set piColumnIndex to 4
+            Set psLabel to "Customer Name:"
+            Set peLabelAlign to alignLeft
+        End_Object 
+
+        Object oWebTabContainer is a cWebTabContainer
+            Set pbFillHeight to True
+            Set piColumnSpan to 12
+            Set pbShowLabel to False
+
+            Object oPage1 is a cWebTabPage
+                Set piColumnCount to 12
+                Set psCaption to "Address"
+
+                Object oCustomerAddress is a cWebForm
+                    Entry_Item Customer.Address
+                    Set piColumnSpan to 8
+                    Set piColumnIndex to 0
+                    Set psLabel to "Street Address:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerCity is a cWebForm
+                    Entry_Item Customer.City
+                    Set piColumnSpan to 5
+                    Set piColumnIndex to 0
+                    Set psLabel to "City:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerState is a cWebCombo
+                    Entry_Item Customer.State
+                    Set piColumnSpan to 4
+                    Set piColumnIndex to 5
+                    Set psLabel to "State:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerZip is a cWebForm
+                    Entry_Item Customer.Zip
+                    Set piColumnSpan to 3
+                    Set piColumnIndex to 9
+                    Set psLabel to "Zip/Postal Code:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerPhone_Number is a cWebForm
+                    Entry_Item Customer.Phone_Number
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 0
+                    Set psLabel to "Phone Number:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerFax_Number is a cWebForm
+                    Entry_Item Customer.Fax_Number
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 6
+                    Set psLabel to "Fax Number:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerEmail_Address is a cWebForm
+                    Entry_Item Customer.Email_Address
+                    Set piColumnSpan to 8
+                    Set piColumnIndex to 0
+                    Set psLabel to "E-Mail Address:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerStatus is a cWebCheckBox
+                    Entry_Item Customer.Status
+                    Set piColumnSpan to 4
+                    Set piColumnIndex to 0
+                    Set psCaption to "Active Status"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+            End_Object 
+
+            Object oPage2 is a cWebTabPage
+                Set piColumnCount to 12
+                Set psCaption to "Balances"
+
+                Object oCustomerCredit_Limit is a cWebForm
+                    Entry_Item Customer.Credit_Limit
+                    Set piColumnSpan to 5
+                    Set piColumnIndex to 0
+                    Set psLabel to "Credit Limit:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerPurchases is a cWebForm
+                    Entry_Item Customer.Purchases
+                    Set piColumnSpan to 4
+                    Set piColumnIndex to 0
+                    Set psLabel to "Total Purchases:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+
+                Object oCustomerBalance is a cWebForm
+                    Entry_Item Customer.Balance
+                    Set piColumnSpan to 4
+                    Set piColumnIndex to 0
+                    Set psLabel to "Balance Due:"
+                    Set peLabelAlign to alignLeft
+                End_Object 
+            End_Object 
+
+            Object oPage3 is a cWebTabPage
+                Set piColumnCount to 12
+                Set psCaption to "Comments"
+
+                Object oCustomerComments is a cWebEdit
+                    Entry_Item Customer.Comments
+                    Set piColumnSpan to 8
+                    Set piColumnIndex to 0
+                    Set psLabel to "Comments:"
+                    Set pbFillHeight to True
+                    Set peLabelAlign to alignLeft
+                End_Object 
+            End_Object 
+        End_Object 
+    End_Object 
+
+End_Object 
