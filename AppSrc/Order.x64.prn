@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\OrderTutorial\AppSrc\Order.src
-Memory Available: 9218600960
+Memory Available: 9212006400
 1>Use DFAllEnt.pkg
 Using pre-compiled package DFALLENT.PKG
 Including file: dfallent.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\dfallent.x64.pkd)
@@ -9240,30 +9240,36 @@ Including file: OrderReport.rv    (C:\DataFlex Projects\OrderTutorial\AppSrc\Ord
 79959>>>        // run the report
 79959>>>        Send Run_Report of oReport
 79960>>>
-79960>>>    End_Procedure 
-79961>>>
-79961>>>End_Object 
-79962>        
-79962>    
-79962>        Procedure Activate_About
-79965>            Send DoAbout "" "" "" "" ""
-79966>        End_Procedure
-79967>
-79967>    End_Object
-79968>
-79968>End_Object
-79969>
-79969>Start_UI
-79970>
+79960>>>    End_Procedure  
+79961>>>    
+79961>>>    Procedure PrintOrder Integer iNum
+79964>>>        Set Value of oSelStart to iNum
+79965>>>        Set Value of oSelStop to iNum
+79966>>>        Send StartReport
+79967>>>    End_Procedure
+79968>>>
+79968>>>End_Object 
+79969>        
+79969>    
+79969>        Procedure Activate_About
+79972>            Send DoAbout "" "" "" "" ""
+79973>        End_Procedure
+79974>
+79974>    End_Object
+79975>
+79975>End_Object
+79976>
+79976>Start_UI
+79977>
 Summary
-Memory Available: 9243156480
+Memory Available: 9201381376
 Total Warnings : 0
 Total Errors   : 0
-Total Symbols  : 45723
+Total Symbols  : 45726
 Total Resources: 0
-Total Commands : 79969
+Total Commands : 79976
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 579475
-Message area   : 564941
-Total Blocks   : 30053
+Static Data    : 579543
+Message area   : 564999
+Total Blocks   : 30056

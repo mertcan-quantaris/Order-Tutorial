@@ -466,6 +466,12 @@ Object OrderReport is a ReportView
         // run the report
         Send Run_Report of oReport
 
-    End_Procedure 
+    End_Procedure  
+    
+    Procedure PrintOrder Integer iNum
+        Set Value of oSelStart to iNum
+        Set Value of oSelStop to iNum
+        Send StartReport
+    End_Procedure
 
 End_Object 
