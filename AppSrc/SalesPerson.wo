@@ -1,0 +1,43 @@
+﻿// C:\DataFlex Projects\OrderTutorial\AppSrc\SalesPerson.wo
+// Sales Person Maintenance
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use cSalesPersonDataDictionary.dd
+
+Object oSalesPerson is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Sales Person Maintenance"
+    Set piWidth to 700
+
+    Object oSalesPerson_DD is a cSalesPersonDataDictionary
+    End_Object 
+
+    Set Main_DD To oSalesPerson_DD
+    Set Server  To oSalesPerson_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oSalesPersonId is a cWebForm
+            Entry_Item SalesPerson.Id
+            Set piColumnSpan to 2
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Sales Person ID"
+        End_Object 
+
+        Object oSalesPersonName is a cWebForm
+            Entry_Item SalesPerson.Name
+            Set piColumnSpan to 5
+            Set piColumnIndex to 2
+            Set peLabelPosition to lpTop
+            Set psLabel to "Sales Person Name"
+        End_Object 
+    End_Object 
+
+End_Object 

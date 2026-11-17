@@ -47,7 +47,7 @@ End_Class
 
 #IFDEF Is$WebApp
 
-Use SalesPersonWebLookup.wo
+//Use SalesPersonWebLookup.wo
 
 #ELSE
 
