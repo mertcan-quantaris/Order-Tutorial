@@ -1,0 +1,471 @@
+﻿// OrderReport.rv
+// Order Report
+Register_Object oReport
+
+Use DFRptVw.pkg
+Use cWinReport2.pkg
+Use Windows.pkg
+
+Use cCustomerDataDictionary.dd
+Use cSalesPersonDataDictionary.dd
+Use cVendorDataDictionary.dd
+Use cOrderHeaderDataDictionary.dd
+Use cInventoryDataDictionary.dd
+Use cOrderDetailDataDictionary.dd
+
+ACTIVATE_VIEW Activate_OrderReport FOR OrderReport
+Object OrderReport is a ReportView
+    Set Location to 6 6
+    Set Size to 100 202
+    Set Label To "Order Report"
+
+
+    Object oCustomer_DD is a cCustomerDataDictionary
+    End_Object 
+
+    Object oSalesPerson_DD is a cSalesPersonDataDictionary
+    End_Object 
+
+    Object oVendor_DD is a cVendorDataDictionary
+    End_Object 
+
+    Object oOrderHeader_DD is a cOrderHeaderDataDictionary
+        Set DDO_Server To oCustomer_DD
+        Set DDO_Server To oSalesPerson_DD
+        Property Number pnStartOrder_Number
+        Property Number pnStopOrder_Number
+
+        Procedure OnConstrain 
+            Number nStart nStop
+
+            Get pnStartOrder_Number To nStart
+            Get pnStopOrder_Number To nStop
+
+            Case Begin
+                Case (nStart <> 0 and nStop <> 0)
+                    Constrain OrderHeader.Order_Number between nStart and nStop
+                    Case Break
+                Case (nStart <> 0)
+                    Constrain OrderHeader.Order_Number GE nStart
+                    Case Break
+                Case (nStop <> 0)
+                    Constrain OrderHeader.Order_Number LE nStop
+            Case End
+        End_Procedure 
+    End_Object 
+
+    Object oInventory_DD is a cInventoryDataDictionary
+        Set DDO_Server To oVendor_DD
+    End_Object 
+
+    Object oOrderDetail_DD is a cOrderDetailDataDictionary
+        Set DDO_Server To oOrderHeader_DD
+        Set DDO_Server To oInventory_DD
+    End_Object 
+
+    Set Main_DD To oOrderDetail_DD
+
+
+
+    Object oOrder_NumberSelection is a Group
+        Set Size to 35 179
+        Set Location to 5 12
+        Set Label to "C_$Select Order Number"
+
+        Object oSelStart is a Form
+            Set Label to C_$FromValueLabel
+            Set Size to 12 60
+            Set Location to 13 30
+            Set Status_Help to C_$FirstValueInSelectionRange
+            Set Label_Col_Offset to 2
+            Set Label_Justification_Mode to jMode_Right
+            Set Form_datatype to 0
+        End_Object 
+
+        Object oSelStop is a Form
+            Set Label to C_$ToValueLabel
+            Set Size to 12 60
+            Set Location to 13 111
+            Set Status_Help to C_$LastValueInSelectionRange
+            Set Label_Col_Offset to 2
+            Set Label_Justification_Mode to jMode_Right
+            Set Form_datatype to 0
+        End_Object 
+
+
+        Function StartValue returns String
+            string sValue
+            Get Value of oSelStart to sValue
+            Function_return sValue
+        End_Function 
+
+        Function StopValue returns String
+            string sValue
+            Get Value of oSelStop to sValue
+            Function_return sValue
+        End_Function 
+
+    End_Object 
+
+    Object oPrintTo is a RadioGroup
+        Set Size to 38 118
+        Set Location to 50 12
+        Set Label to C_$SendReportTo
+
+        Object oRadio1 is a Radio
+            Set Label to C_$PrintToReportViewer
+            Set Size to 10 61
+            Set Location to 12 6
+            Set Status_Help to C_$PrintToScreenStatusHelp
+        End_Object 
+
+        Object oRadio2 is a Radio
+            Set Label to C_$PrintToPrinter
+            Set Size to 10 42
+            Set Location to 24 6
+            Set Status_Help to C_$PrintToPrinterStatusHelp
+        End_Object 
+
+
+        Function IsToPrinter Returns boolean
+            integer iRadio
+            Get Current_radio to iRadio
+            Function_return (iRadio=1)
+        End_Function 
+
+    End_Object 
+
+    Object oBtnPrint is a Button
+        Set Label to C_$PrintButtonLabel
+        Set Location to 45 140
+        Set Status_Help to C_$PrintButtonStatusHelp
+        Set Default_State to TRUE
+        Procedure OnClick
+            Send StartReport
+        End_Procedure
+    End_Object 
+
+    Object oBtnPrinterSetup is a Button
+        Set Label to C_$PrinterSetup
+        Set Location to 62 140
+        Set Status_Help to C_$PrinterSetupStatusHelp
+        Procedure OnClick
+            Send DFPrintSetup of oReport
+        End_Procedure
+    End_Object 
+
+    Object oBtnCancel is a Button
+        Set Label to C_$Cancel
+        Set Location to 79 140
+        Set Status_Help to C_$CloseThisPanel
+        Procedure OnClick
+            Send Close_Panel
+        End_Procedure
+    End_Object 
+
+
+
+    Object oReport is a cWinReport2
+
+        Set Report_Title to "Order Report"
+
+        // Set DDO, Index and breaks for the report
+        Set Server to oOrderDetail_DD
+        Set Ordering to 1
+        Report_Breaks OrderDetail.Order_Number
+
+        Function Starting_Main_Report Returns Integer
+            Boolean bErr
+            Send DFSetMetrics wpm_cm
+            Send DFSetmargins 1 1 1 1
+            //Send DFSetLandscape false // This can be used to force a page orientation
+            Forward Get Starting_Main_Report to bErr
+            Function_return bErr
+        End_Function 
+
+        // Page_Top is printed first at the top margin of each page
+        Procedure Page_Top 
+            string  sFont
+            integer iFontSize
+
+            Move "arial" to sFont
+            Move 8 to iFontSize
+
+            DFFont sFont
+            DFFontSize iFontSize
+            DFBeginHeader DFPageTop
+                DFHeaderFrame Hdr_NoFrame
+                DFHeaderPos   Hdr_Left
+                DFWriteLn (C_$WinPrintPage * "#pagecount#") (Font_Right)
+            DFEndHeader
+
+        End_Procedure 
+
+        // Report_Header is printed once in a report after Page_Top
+        //Procedure Report_Header
+        //    string  sFont
+        //    integer iFontSize
+        //    Move "arial" to sFont
+        //    Move 8 to iFontSize
+        //    DFFont sFont
+        //    DFFontSize iFontSize
+        //    DFBeginHeader  DFReportHeader
+        //        DFHeaderFrame  Hdr_Margins 0.01
+        //        DFHeaderPos    Hdr_Left
+        //        DFHeaderMargin Hm_BottomOuter 0.08
+        //        DFWrite     "Report_Header" (Font_Bold+Font_Center)
+        //    DFEndHeader
+        //End_Procedure
+
+        Procedure Page_Header 
+            integer iFill iBorder iStyle
+            string  sFont sReportTitle
+            integer iFontSize
+
+            Move "arial" to sFont
+            Move 16 to iFontSize
+            Move (Font_bold + rgb_White) to iStyle
+            Move (rgb_dGrey) to iFill
+            Move (rgb_dGrey) to iBorder
+            Get Report_Title to sReportTitle
+
+            DFFont sFont
+            DFFontSize iFontSize
+            DFBeginHeader DFPageHeader
+                DFHeaderPos   Hdr_Left
+                DFHeaderFrame Hdr_Margins 0.01 iBorder iFill
+                DFWritelnPos sReportTitle 0.1 iStyle
+                DFHeaderMargin HM_BottomOuter 0.08
+            DFEndHeader
+
+        End_Procedure 
+
+        // Page_Title appears on every page after Page_Header
+        //Procedure Page_Title
+        //    string  sFont
+        //    integer iFontSize
+        //    Move "arial" to sFont
+        //    Move 8 to iFontSize
+        //    DFFont sFont
+        //    DFFontSize iFontSize
+        //    DFBeginHeader  DFPageTitle
+        //        DFHeaderFrame  Hdr_Margins 0.01
+        //        DFHeaderPos    Hdr_Left
+        //        DFHeaderMargin Hm_BottomOuter 0.08
+        //        DFWrite     "Page_Title" (Font_Bold+Font_Center)
+        //    DFEndHeader
+        //End_Procedure
+
+        Procedure SubHeader1 
+            string  sFont 
+            integer iFontSize iStyle
+            integer iFill iBorder iHeaderStyle
+
+            Move "arial" to sFont
+            Move 8 to iFontSize
+            Move (Font_Bold + rgb_dBlue) to iStyle
+            Move (Font_Bold + rgb_dBlue) to iHeaderStyle
+            Move (rgb_dGrey) to iBorder
+            Get DFGetDFColor 242 242 242 to iFill
+
+            DFFont sFont
+            DFFontSize iFontSize
+            DFBeginHeader DFSubHeader 1
+                DFHeaderLineCheck 5
+                DFHeaderWrap   HDR_Wrap
+                DFHeaderPos    HDR_Left
+                DFHeaderFrame  Hdr_Margins 0.01 iBorder iFill
+                DFHeaderMargin hm_BottomOuter 0.08
+                DFHeaderMargin hm_TopInner    0.04
+                DFHeaderMargin hm_BottomInner 0.04
+
+                // display fields to be placed in this sub-header
+                DFWritePos "Order Number:"               0.1 iHeaderStyle -1 4.9
+                DFWritePos OrderHeader.Order_Number       5 (iStyle + Font_Right) 0
+                DFWriteLn
+                DFWritePos "Order Date:"                 0.1 iHeaderStyle -1 4.9
+                DFWritePos OrderHeader.Order_Date         5 iStyle -1
+                DFWriteLn
+                DFWritePos "Order Total:"                0.1 iHeaderStyle -1 4.9
+                DFWritePos OrderHeader.Order_Total        5 (iStyle + Font_Right) 2
+                DFWriteLn
+                DFWritePos "Sales Person Name:"          0.1 iHeaderStyle -1 4.9
+                DFWritePos SalesPerson.Name               5 iStyle -1
+                DFWriteLn
+
+                // write the heading for the body section
+                DFFontSize 1 // create a very small space on top and below the horizontal bar
+                DFWriteLn
+                DFWriteLine DFGR_CURRLINE DFGR_CURRLINE DFGR_RB_MARGIN DFGR_HORI iBorder
+                DFWriteLn
+                DFFontSize iFontSize
+                DFWritePos "Vendor"                       0.08 iHeaderStyle -1 5.11
+                DFWritePos "Item ID"                      (5.27 + 1.7) (iHeaderStyle + Font_Right) -1 1.7
+                DFWritePos "Description"                  7.05 iHeaderStyle -1 5.97
+                DFWritePos "Unit Price"                   (13.1 + 2.04) (iHeaderStyle + Font_Right) -1 2.04
+                DFWriteLn
+
+            DFEndHeader
+
+        End_Procedure 
+
+        Procedure Body 
+            string  sFont 
+            integer iFontSize iStyle
+
+            Move "arial" to sFont
+            Move 8 to iFontSize
+            Move (font_default) to iStyle
+
+            DFFont sFont
+            DFFontSize iFontSize
+
+            DFWritePos Vendor.Name                    0.08 iStyle -1 5.11
+            DFWritePos Inventory.Item_Id              (5.27 + 1.7) (iStyle + Font_Right) 0 1.7
+            DFWritePos Inventory.Description          7.05 iStyle -1 5.97
+            DFWritePos Inventory.Unit_Price           (13.1 + 2.04) (iStyle + Font_Right) 2 2.04
+            DFWriteLn
+
+        End_Procedure 
+
+        // Sub-totals appear at each break
+        //Procedure SubTotal1
+        //    string  sFont
+        //    integer iFontSize
+        //    Move "arial" to sFont
+        //    Move 8 to iFontSize
+        //    DFFont sFont
+        //    DFFontSize iFontSize
+        //    DFBeginHeader DFSubTotal
+        //        DFHeaderFrame  Hdr_Margins 0.01
+        //        DFHeaderPos    Hdr_Left
+        //        DFHeaderMargin Hm_BottomOuter 0.08
+        //        DFWrite     "SubTotal1" (Font_Bold+Font_Center)
+        //    DFEndHeader
+        //End_Procedure
+
+        // Totals appear at the end of the report before Report_Footer
+        //Procedure Total
+        //    string  sFont
+        //    integer iFontSize
+        //    Move "arial" to sFont
+        //    Move 8 to iFontSize
+        //    DFFont sFont
+        //    DFFontSize iFontSize
+        //    DFBeginHeader  DFTotal
+        //        DFHeaderFrame  Hdr_Margins 0.01
+        //        DFHeaderPos    Hdr_Left
+        //        DFHeaderMargin Hm_BottomOuter 0.08
+        //        DFWrite     "Total" (Font_Bold+Font_Center)
+        //    DFEndHeader
+        //End_Procedure
+
+        // Report_Footer is printed once on the last page before Page_Footer
+        //Procedure Report_Footer
+        //    string  sFont
+        //    integer iFontSize
+        //    Move "arial" to sFont
+        //    Move 8 to iFontSize
+        //    DFFont sFont
+        //    DFFontSize iFontSize
+        //    DFBeginHeader DFReportFooter
+        //        DFHeaderFrame  Hdr_Margins 0.01
+        //        DFHeaderPos    Hdr_Left
+        //        DFHeaderMargin Hm_BottomOuter 0.08
+        //        DFWrite     "Report_Footer" (Font_Bold+Font_Center)
+        //    DFEndHeader
+        //End_Procedure
+
+        Procedure Page_Footer 
+            string sStart sStop sText
+            string  sFont 
+            integer iFontSize iStyle
+
+            Move "arial" to sFont
+            Move 8 to iFontSize
+            Move (font_default) to iStyle
+
+            DFFont sFont
+            DFFontSize iFontSize
+            DFBeginHeader DFPageFooter
+                DFHeaderFrame hdr_NoFrame
+                DFHeaderPos   hdr_Left
+
+                Get pnStartOrder_Number of oOrderHeader_DD to sStart
+                Get pnStopOrder_Number  of oOrderHeader_DD to sStop
+                Get SelectionCriteraDescription "OrderHeader.Order_Number" sStart sStop to sText
+                If (sText<>"") begin
+                    DFWriteLnPos sText 0.1
+                end
+
+            DFEndHeader
+        End_Procedure 
+
+        // Page_Bottom is printed last at the bottom margin of each page
+        Procedure Page_Bottom 
+            string sFont
+            integer iFontSize iBorder iStyle
+            DateTime dtDT
+
+            Move (CurrentDateTime()) to dtDT
+
+            Move "arial" to sFont
+            Move 8 to iFontSize
+            Move (font_default) to iStyle
+            Move (rgb_dGrey) to iBorder
+
+            DFFont sFont
+            DFFontSize iFontSize
+            DFBeginHeader DFPageBottom
+                DFHeaderFrame Hdr_Margins 0.01 iBorder
+                DFHeaderPos Hdr_Left
+                DFWriteln (C_$ReportPrintedOn * string(dtDT)) (iStyle+Font_Center)
+            DFEndHeader
+
+        End_Procedure 
+
+        // Returns string with description of selection ranges
+        // Pass: Selection title, start value and end value. Return: description
+        Function SelectionCriteraDescription string sTitle string sStart string sStop returns String
+            string sText
+            If (sStart=""  AND sStop="") ;
+                function_return ""
+            If (sStart="0" AND sStop="0") ;
+                function_return ""
+            If (sStart<>"" AND sStop<>"") begin
+                Move (C_$ReportCriteriaBetween * sStart * C_$ReportCriteriaAnd * sStop) to sText
+            end
+            Else if (sStart > "") begin
+                Move (C_$ReportCriteriaStartingAt * sStart) to sText
+            end
+            Else if (sStop > "") begin
+                Move (C_$ReportCriteriaUpTo * sStop) to sText
+            End
+            function_return (sTitle * sText)
+        End_Function
+
+    End_Object 
+
+    Procedure StartReport 
+        Boolean bToPrinter
+        String sValue
+        Number nStart nStop
+
+        // Set all selection critera properties
+        Get StartValue of oOrder_NumberSelection to sValue
+        Set pnStartOrder_Number of oOrderHeader_DD To sValue
+
+        Get StopValue of oOrder_NumberSelection to sValue
+        Set pnStopOrder_Number of oOrderHeader_DD To sValue
+
+
+        // determine if direct print
+        Get IsToPrinter of oPrintTo to bToPrinter
+        Set OutPut_Device_Mode of oReport to (If(bToPrinter, PRINT_TO_PRINTER, PRINT_TO_WINDOW))
+
+        // run the report
+        Send Run_Report of oReport
+
+    End_Procedure 
+
+End_Object 

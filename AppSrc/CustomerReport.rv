@@ -42,7 +42,6 @@ Object CustomerReport is a ReportView
             Set Status_Help to C_$PrintToPrinterStatusHelp
         End_Object 
 
-
         Function IsToPrinter Returns boolean
             integer iRadio
             Get Current_radio to iRadio
@@ -312,5 +311,4 @@ Object CustomerReport is a ReportView
         Send Run_Report of oReport
 
     End_Procedure 
-
 End_Object 

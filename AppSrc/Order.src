@@ -172,6 +172,17 @@ Object oMain is a Panel
                         Send Activate_CustomerReport of hoClient
                     End_Procedure
                 End_Object
+
+                Object oOrderReportMenuItem is a cCJMenuItem
+                    Set psCaption to "Order Report"
+                    Set psTooltip to "Order Report"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_OrderReport of hoClient
+                    End_Procedure
+                End_Object
             End_Object
 
             Object oNavigateMenu is a cCJMenuItem
@@ -382,6 +393,7 @@ Object oMain is a Panel
         Use InventoryView.vw
         Use OrderEntryView.vw
         Use CustomerReport.rv
+        Use OrderReport.rv
         
     
         Procedure Activate_About
