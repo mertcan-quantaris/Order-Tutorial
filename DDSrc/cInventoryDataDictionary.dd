@@ -76,7 +76,7 @@ End_Class
 
 #IFDEF Is$WebApp
 
-Use InventoryWebLookup.wo
+//Use InventoryWebLookup.wo
 
 #ELSE
 

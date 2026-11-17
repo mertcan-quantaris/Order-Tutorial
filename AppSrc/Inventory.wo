@@ -1,0 +1,88 @@
+﻿// C:\DataFlex Projects\OrderTutorial\AppSrc\Inventory.wo
+// Inventory Maintenance
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use cVendorDataDictionary.dd
+Use cInventoryDataDictionary.dd
+
+Object Inventory is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Inventory Maintenance"
+    Set piWidth to 700
+
+    Object oVendor_DD is a cVendorDataDictionary
+    End_Object 
+
+    Object oInventory_DD is a cInventoryDataDictionary
+        Set DDO_Server To oVendor_DD
+    End_Object 
+
+    Set Main_DD To oInventory_DD
+    Set Server  To oInventory_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oInventoryItem_Id is a cWebForm
+            Entry_Item Inventory.Item_Id
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Inventory Item ID"
+        End_Object 
+
+        Object oInventoryDescription is a cWebForm
+            Entry_Item Inventory.Description
+            Set piColumnSpan to 7
+            Set piColumnIndex to 3
+            Set peLabelPosition to lpTop
+            Set psLabel to "Inventory. Description"
+        End_Object 
+
+        Object oVendorId is a cWebForm
+            Entry_Item Vendor.Id
+            Set piColumnSpan to 2
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Vendor ID"
+        End_Object 
+
+        Object oVendorName is a cWebForm
+            Entry_Item Vendor.Name
+            Set piColumnSpan to 6
+            Set piColumnIndex to 2
+            Set peLabelPosition to lpTop
+            Set psLabel to "Vendor Name"
+        End_Object 
+
+        Object oInventoryVendor_Part_Id is a cWebForm
+            Entry_Item Inventory.Vendor_Part_Id
+            Set piColumnSpan to 2
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Vendor Part Id"
+        End_Object 
+
+        Object oInventoryUnit_Price is a cWebForm
+            Entry_Item Inventory.Unit_Price
+            Set piColumnSpan to 2
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Unit Price"
+        End_Object 
+
+        Object oInventoryOn_Hand is a cWebForm
+            Entry_Item Inventory.On_Hand
+            Set piColumnSpan to 2
+            Set piColumnIndex to 2
+            Set peLabelPosition to lpTop
+            Set psLabel to "On Hand"
+        End_Object 
+    End_Object 
+
+End_Object 

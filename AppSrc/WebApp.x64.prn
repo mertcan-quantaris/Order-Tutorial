@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\OrderTutorial\AppSrc\WebApp.src
-Memory Available: 11220082688
+Memory Available: 8694910976
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -222,1741 +222,1917 @@ Including file: LoginEncryptionKey.inc    (C:\DataFlex Projects\OrderTutorial\Ap
 36463>                    Set psCaption to "Vendor Maintenance"
 36464>                    Set psLoadViewOnClick to "oVendor"
 36465>                End_Object
-36466>            End_Object  
-36467>        End_Object  
-36468>        
-36468>        Object oFindToolBar is a cWebToolBar
-36470>            Object oFirstMenuItem is a cWebMenuFindFirst
-36472>            End_Object  
-36473>    
-36473>            Object oPreviousMenuItem is a cWebMenuFindPrevious
-36475>            End_Object  
-36476>
-36476>            Object oFindMenuItem is a cWebMenuFind
-36478>            End_Object  
-36479>
-36479>            Object oNextMenuItem is a cWebMenuFindNext
-36481>            End_Object  
-36482>            
-36482>            Object oLastMenuItem is a cWebMenuFindLast
-36484>            End_Object
-36485>                           
-36485>            Object oPromptMenuItem is a cWebMenuPrompt
-36487>            End_Object 
-36488>        End_Object
-36489>        
-36489>        Object oFileToolBar is a cWebToolBar
-36491>            Set pbShowCaption to True
-36492>            
-36492>            Object oClearMenuItem is a cWebMenuClear
-36494>            End_Object              
-36495>             
-36495>            Object oClearAllMenuItem is a cWebMenuClearAll
-36497>            End_Object   
-36498>                        
-36498>            Object oSaveMenuItem is a cWebMenuSave
-36500>            End_Object  
-36501>            
-36501>            Object oDeleteMenuItem is a cWebMenuDelete
-36503>            End_Object 
-36504>        End_Object
-36505>    End_Object
-36506>
-36506>    Use SessionManager.wo
+36466>
+36466>                Object oInventoryMaintenanceItem1 is a cWebMenuItemLoadView
+36468>                    Set psCaption to "Inventory Maintenance"
+36469>                    Set psLoadViewOnClick to "Inventory"
+36470>                End_Object
+36471>            End_Object  
+36472>        End_Object  
+36473>        
+36473>        Object oFindToolBar is a cWebToolBar
+36475>            Object oFirstMenuItem is a cWebMenuFindFirst
+36477>            End_Object  
+36478>    
+36478>            Object oPreviousMenuItem is a cWebMenuFindPrevious
+36480>            End_Object  
+36481>
+36481>            Object oFindMenuItem is a cWebMenuFind
+36483>            End_Object  
+36484>
+36484>            Object oNextMenuItem is a cWebMenuFindNext
+36486>            End_Object  
+36487>            
+36487>            Object oLastMenuItem is a cWebMenuFindLast
+36489>            End_Object
+36490>                           
+36490>            Object oPromptMenuItem is a cWebMenuPrompt
+36492>            End_Object 
+36493>        End_Object
+36494>        
+36494>        Object oFileToolBar is a cWebToolBar
+36496>            Set pbShowCaption to True
+36497>            
+36497>            Object oClearMenuItem is a cWebMenuClear
+36499>            End_Object              
+36500>             
+36500>            Object oClearAllMenuItem is a cWebMenuClearAll
+36502>            End_Object   
+36503>                        
+36503>            Object oSaveMenuItem is a cWebMenuSave
+36505>            End_Object  
+36506>            
+36506>            Object oDeleteMenuItem is a cWebMenuDelete
+36508>            End_Object 
+36509>        End_Object
+36510>    End_Object
+36511>
+36511>    Use SessionManager.wo
 Including file: SessionManager.wo    (C:\DataFlex Projects\OrderTutorial\AppSrc\SessionManager.wo)
-36506>>>Use cWebSessionManagerStandard.pkg
+36511>>>Use cWebSessionManagerStandard.pkg
 Including file: cWebSessionManagerStandard.pkg    (C:\Program Files\DataFlex 25.0\Pkg\cWebSessionManagerStandard.pkg)
-36506>>>>>Use cWebSessionManager.pkg
-36506>>>>>Use cWebAppSessionDataDictionary.dd
+36511>>>>>Use cWebSessionManager.pkg
+36511>>>>>Use cWebAppSessionDataDictionary.dd
 Including file: cWebAppSessionDataDictionary.dd    (C:\Program Files\DataFlex 25.0\Pkg\cWebAppSessionDataDictionary.dd)
-36506>>>>>>>Use DataDict.pkg
-36506>>>>>>>
-36506>>>>>>>Open WebAppSession
+36511>>>>>>>Use DataDict.pkg
+36511>>>>>>>
+36511>>>>>>>Open WebAppSession
 Including file: WebAppSession.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\WebAppSession.fd)
-36508>>>>>>>Open WebAppUser
+36513>>>>>>>Open WebAppUser
 Including file: WebAppUser.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\WebAppUser.fd)
-36510>>>>>>>
-36510>>>>>>>Class cWebAppSessionDataDictionary is a DataDictionary
-36511>>>>>>>    Procedure Construct_Object
-36513>>>>>>>        Forward Send Construct_Object
 36515>>>>>>>
-36515>>>>>>>        Set Main_File to WebAppSession.File_Number
-36516>>>>>>>
-36516>>>>>>>        Set Add_Server_File to WebAppUser.File_Number
-36517>>>>>>>
-36517>>>>>>>        Set ParentNullAllowed WebAppUser.File_Number to True
-36518>>>>>>>
-36518>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
-36519>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
-36520>>>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
-36521>>>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+36515>>>>>>>Class cWebAppSessionDataDictionary is a DataDictionary
+36516>>>>>>>    Procedure Construct_Object
+36518>>>>>>>        Forward Send Construct_Object
+36520>>>>>>>
+36520>>>>>>>        Set Main_File to WebAppSession.File_Number
+36521>>>>>>>
+36521>>>>>>>        Set Add_Server_File to WebAppUser.File_Number
 36522>>>>>>>
-36522>>>>>>>        Set Field_Checkbox_Values Field WebAppSession.Active to "Y" "N"
-36523>>>>>>>        Set Field_Error Field WebAppSession.Active to 500 "Invalid WebAppSession Active State"
-36524>>>>>>>    End_Procedure
-36525>>>>>>>
-36525>>>>>>>    Procedure Creating
-36527>>>>>>>        DateTime dtCurrentDateTime
-36527>>>>>>>        
-36527>>>>>>>        Forward Send Creating
-36529>>>>>>>        
-36529>>>>>>>        //  Init usecounter
-36529>>>>>>>        Move 0 to WebAppSession.UseCount
-36530>>>>>>>        
-36530>>>>>>>        //  Set the creation and access time to the current time
-36530>>>>>>>        Move (CurrentDateTime()) to dtCurrentDateTime
-36531>>>>>>>    
-36531>>>>>>>        Get TimeToString dtCurrentDateTime to WebAppSession.CreateTime
-36532>>>>>>>        Get TimeToString dtCurrentDateTime to WebAppSession.LastAccessTime
-36533>>>>>>>        
-36533>>>>>>>        Move dtCurrentDateTime to WebAppSession.CreateDate
-36534>>>>>>>        Move dtCurrentDateTime to WebAppSession.LastAccessDate
-36535>>>>>>>    End_Procedure
+36522>>>>>>>        Set ParentNullAllowed WebAppUser.File_Number to True
+36523>>>>>>>
+36523>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+36524>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+36525>>>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+36526>>>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+36527>>>>>>>
+36527>>>>>>>        Set Field_Checkbox_Values Field WebAppSession.Active to "Y" "N"
+36528>>>>>>>        Set Field_Error Field WebAppSession.Active to 500 "Invalid WebAppSession Active State"
+36529>>>>>>>    End_Procedure
+36530>>>>>>>
+36530>>>>>>>    Procedure Creating
+36532>>>>>>>        DateTime dtCurrentDateTime
+36532>>>>>>>        
+36532>>>>>>>        Forward Send Creating
+36534>>>>>>>        
+36534>>>>>>>        //  Init usecounter
+36534>>>>>>>        Move 0 to WebAppSession.UseCount
+36535>>>>>>>        
+36535>>>>>>>        //  Set the creation and access time to the current time
+36535>>>>>>>        Move (CurrentDateTime()) to dtCurrentDateTime
 36536>>>>>>>    
-36536>>>>>>>    //
-36536>>>>>>>    //  Converts the given time to an string that can be saved in the database.
-36536>>>>>>>    //
-36536>>>>>>>    //  Params:
-36536>>>>>>>    //      dtTime  Time to convert
-36536>>>>>>>    //  Returns:
-36536>>>>>>>    //      String with "HH:MM:SS" format
-36536>>>>>>>    //
-36536>>>>>>>    Function TimeToString DateTime dtTime Returns String
-36538>>>>>>>        String sHours sMinutes sSeconds
+36536>>>>>>>        Get TimeToString dtCurrentDateTime to WebAppSession.CreateTime
+36537>>>>>>>        Get TimeToString dtCurrentDateTime to WebAppSession.LastAccessTime
 36538>>>>>>>        
-36538>>>>>>>        //  Extract parts
-36538>>>>>>>        Move (String(DateGetHour(dtTime))) to sHours
-36539>>>>>>>        Move (String(DateGetMinute(dtTime))) to sMinutes
-36540>>>>>>>        Move (String(DateGetSecond(dtTime))) to sSeconds
-36541>>>>>>>        
-36541>>>>>>>        //  Fill out with 0
-36541>>>>>>>        If (Length(sHours) = 1) ;            Move ("0" + sHours) to sHours
-36544>>>>>>>        If (Length(sMinutes) = 1) ;            Move ("0" + sMinutes) to sMinutes
-36547>>>>>>>        If (Length(sSeconds) = 1) ;            Move ("0" + sSeconds) to sSeconds
-36550>>>>>>>        
-36550>>>>>>>        Function_Return (sHours + ":" + sMinutes + ":" + sSeconds)
-36551>>>>>>>    End_Function
-36552>>>>>>>    
-36552>>>>>>>    //
-36552>>>>>>>    //  Sets the time of the datetime variable to the time in the string.
-36552>>>>>>>    //
-36552>>>>>>>    //  Params:
-36552>>>>>>>    //      dtTime  Datetime variable to add time to
-36552>>>>>>>    //      sTimeString String with time in the format "HH:MM:SS"
-36552>>>>>>>    //  Returns:
-36552>>>>>>>    //      dtDateTime with the loaded time
-36552>>>>>>>    //
-36552>>>>>>>    Function StringToTime DateTime dtTime String sTimeString Returns DateTime
-36554>>>>>>>        String sHours sMinutes sSeconds
-36554>>>>>>>        
-36554>>>>>>>        //  Extract parts
-36554>>>>>>>        Move (Mid(sTimeString, 2, 1)) to sHours
-36555>>>>>>>        Move (Mid(sTimeString, 2, 4)) to sMinutes
-36556>>>>>>>        Move (Mid(sTimeString, 2, 7)) to sSeconds
-36557>>>>>>>        
-36557>>>>>>>        //  Set to DateTime
-36557>>>>>>>        Move (DateSetHour(dtTime, (Integer(sHours)))) to dtTime
-36558>>>>>>>        Move (DateSetMinute(dtTime, (Integer(sMinutes)))) to dtTime
-36559>>>>>>>        Move (DateSetSecond(dtTime, (Integer(sSeconds)))) to dtTime
-36560>>>>>>>        
-36560>>>>>>>        Function_Return dtTime
-36561>>>>>>>    End_Function
-36562>>>>>>>End_Class
-36563>>>>>Use cWebAppUserDataDictionary.dd
+36538>>>>>>>        Move dtCurrentDateTime to WebAppSession.CreateDate
+36539>>>>>>>        Move dtCurrentDateTime to WebAppSession.LastAccessDate
+36540>>>>>>>    End_Procedure
+36541>>>>>>>    
+36541>>>>>>>    //
+36541>>>>>>>    //  Converts the given time to an string that can be saved in the database.
+36541>>>>>>>    //
+36541>>>>>>>    //  Params:
+36541>>>>>>>    //      dtTime  Time to convert
+36541>>>>>>>    //  Returns:
+36541>>>>>>>    //      String with "HH:MM:SS" format
+36541>>>>>>>    //
+36541>>>>>>>    Function TimeToString DateTime dtTime Returns String
+36543>>>>>>>        String sHours sMinutes sSeconds
+36543>>>>>>>        
+36543>>>>>>>        //  Extract parts
+36543>>>>>>>        Move (String(DateGetHour(dtTime))) to sHours
+36544>>>>>>>        Move (String(DateGetMinute(dtTime))) to sMinutes
+36545>>>>>>>        Move (String(DateGetSecond(dtTime))) to sSeconds
+36546>>>>>>>        
+36546>>>>>>>        //  Fill out with 0
+36546>>>>>>>        If (Length(sHours) = 1) ;            Move ("0" + sHours) to sHours
+36549>>>>>>>        If (Length(sMinutes) = 1) ;            Move ("0" + sMinutes) to sMinutes
+36552>>>>>>>        If (Length(sSeconds) = 1) ;            Move ("0" + sSeconds) to sSeconds
+36555>>>>>>>        
+36555>>>>>>>        Function_Return (sHours + ":" + sMinutes + ":" + sSeconds)
+36556>>>>>>>    End_Function
+36557>>>>>>>    
+36557>>>>>>>    //
+36557>>>>>>>    //  Sets the time of the datetime variable to the time in the string.
+36557>>>>>>>    //
+36557>>>>>>>    //  Params:
+36557>>>>>>>    //      dtTime  Datetime variable to add time to
+36557>>>>>>>    //      sTimeString String with time in the format "HH:MM:SS"
+36557>>>>>>>    //  Returns:
+36557>>>>>>>    //      dtDateTime with the loaded time
+36557>>>>>>>    //
+36557>>>>>>>    Function StringToTime DateTime dtTime String sTimeString Returns DateTime
+36559>>>>>>>        String sHours sMinutes sSeconds
+36559>>>>>>>        
+36559>>>>>>>        //  Extract parts
+36559>>>>>>>        Move (Mid(sTimeString, 2, 1)) to sHours
+36560>>>>>>>        Move (Mid(sTimeString, 2, 4)) to sMinutes
+36561>>>>>>>        Move (Mid(sTimeString, 2, 7)) to sSeconds
+36562>>>>>>>        
+36562>>>>>>>        //  Set to DateTime
+36562>>>>>>>        Move (DateSetHour(dtTime, (Integer(sHours)))) to dtTime
+36563>>>>>>>        Move (DateSetMinute(dtTime, (Integer(sMinutes)))) to dtTime
+36564>>>>>>>        Move (DateSetSecond(dtTime, (Integer(sSeconds)))) to dtTime
+36565>>>>>>>        
+36565>>>>>>>        Function_Return dtTime
+36566>>>>>>>    End_Function
+36567>>>>>>>End_Class
+36568>>>>>Use cWebAppUserDataDictionary.dd
 Including file: cWebAppUserDataDictionary.dd    (C:\Program Files\DataFlex 25.0\Pkg\cWebAppUserDataDictionary.dd)
-36563>>>>>>>Use DataDict.pkg
-36563>>>>>>>Open WebAppUser
-36565>>>>>>>Open WebAppSession
-36567>>>>>>>
-36567>>>>>>>Class cWebAppUserDataDictionary is a DataDictionary
-36568>>>>>>>    
-36568>>>>>>>    Procedure Construct_Object
-36570>>>>>>>        Forward Send Construct_Object
-36572>>>>>>>        Set Main_File to WebAppUser.File_Number
-36573>>>>>>>
-36573>>>>>>>        Set Add_Client_File to WebAppSession.File_Number
-36574>>>>>>>
-36574>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
-36575>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
-36576>>>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
-36577>>>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
-36578>>>>>>>    End_Procedure
+36568>>>>>>>Use DataDict.pkg
+36568>>>>>>>Open WebAppUser
+36570>>>>>>>Open WebAppSession
+36572>>>>>>>
+36572>>>>>>>Class cWebAppUserDataDictionary is a DataDictionary
+36573>>>>>>>    
+36573>>>>>>>    Procedure Construct_Object
+36575>>>>>>>        Forward Send Construct_Object
+36577>>>>>>>        Set Main_File to WebAppUser.File_Number
+36578>>>>>>>
+36578>>>>>>>        Set Add_Client_File to WebAppSession.File_Number
 36579>>>>>>>
-36579>>>>>>>End_Class
-36580>>>>>
-36580>>>>>Use cPasswordHasher.pkg
-Including file: cPasswordHasher.pkg    (C:\Program Files\DataFlex 25.0\Pkg\cPasswordHasher.pkg)
-36580>>>>>>>Use GlobalFunctionsProcedures.pkg
-36580>>>>>>>
-36580>>>>>>>Define CNG_BCRYPT_HASH_LENGTH           for "HashDigestLength"
-36580>>>>>>>
-36580>>>>>>>External_Function CNG_BCryptGenRandom "BCryptGenRandom" Bcrypt.dll ;    Handle   hAlgorithm ;    Pointer  pbBuffer ;    UInteger cbBuffer ;    UInteger dwFlags ;    Returns Integer
-36581>>>>>>>
-36581>>>>>>>External_Function CNG_BCryptOpenAlgorithmProvider "BCryptOpenAlgorithmProvider" Bcrypt.dll ;    Pointer  phAlgorithm ;    Pointer  pszAlgId ;    Pointer  pszImplementation ;    UInteger dwFlags ;    Returns Integer
-36582>>>>>>>
-36582>>>>>>>External_Function CNG_BCryptCloseAlgorithmProvider "BCryptCloseAlgorithmProvider" Bcrypt.dll ;    Handle   hAlgorithm ;    UInteger dwFlags ;    Returns Integer
-36583>>>>>>>
-36583>>>>>>>External_Function CNG_BCryptDeriveKeyPBKDF2 "BCryptDeriveKeyPBKDF2" Bcrypt.dll ;    Handle   hPrf ;    Pointer  pbPassword ;    UInteger cbPassword ;    Pointer  pbSalt ;    UInteger cbSalt ;    BigInt   cIterations ;    Pointer  pbDerivedKey ;    UInteger cbDerivedKey ;    UInteger dwFlags ;    Returns Integer
+36579>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+36580>>>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+36581>>>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+36582>>>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+36583>>>>>>>    End_Procedure
 36584>>>>>>>
-36584>>>>>>>External_Function CNG_BCryptGetProperty "BCryptGetProperty" Bcrypt.dll ;    Handle   hObject ;    Pointer  pszProperty ;    Pointer  pbOutput ;    UInteger cbOutput ;    Pointer  pcbResult ;    UInteger dwFlags ;    Returns Integer
+36584>>>>>>>End_Class
+36585>>>>>
+36585>>>>>Use cPasswordHasher.pkg
+Including file: cPasswordHasher.pkg    (C:\Program Files\DataFlex 25.0\Pkg\cPasswordHasher.pkg)
+36585>>>>>>>Use GlobalFunctionsProcedures.pkg
 36585>>>>>>>
-36585>>>>>>>Class cPasswordHasher_CNG_PBKDF2_HMAC_Mixin is a Mixin
+36585>>>>>>>Define CNG_BCRYPT_HASH_LENGTH           for "HashDigestLength"
+36585>>>>>>>
+36585>>>>>>>External_Function CNG_BCryptGenRandom "BCryptGenRandom" Bcrypt.dll ;    Handle   hAlgorithm ;    Pointer  pbBuffer ;    UInteger cbBuffer ;    UInteger dwFlags ;    Returns Integer
 36586>>>>>>>
-36586>>>>>>>    Function CNG_PBKDF2_HMAC_BufferSizeEx Handle hoProv Returns UInteger
-36588>>>>>>>        Integer iErr
-36588>>>>>>>        UInteger uiHashLen
-36588>>>>>>>        
-36588>>>>>>>        UInteger uiCbOut
-36588>>>>>>>        WString wsHashLengthProperty
-36588>>>>>>>        Move CNG_BCRYPT_HASH_LENGTH to wsHashLengthProperty
-36589>>>>>>>        Move (CNG_BCryptGetProperty(hoProv, AddressOf(wsHashLengthProperty), AddressOf(uiHashLen), 4, AddressOf(uiCbOut), 0)) to iErr
-36590>>>>>>>        If (iErr) Begin
-36592>>>>>>>            Function_Return 0
-36593>>>>>>>        End
-36593>>>>>>>>
+36586>>>>>>>External_Function CNG_BCryptOpenAlgorithmProvider "BCryptOpenAlgorithmProvider" Bcrypt.dll ;    Pointer  phAlgorithm ;    Pointer  pszAlgId ;    Pointer  pszImplementation ;    UInteger dwFlags ;    Returns Integer
+36587>>>>>>>
+36587>>>>>>>External_Function CNG_BCryptCloseAlgorithmProvider "BCryptCloseAlgorithmProvider" Bcrypt.dll ;    Handle   hAlgorithm ;    UInteger dwFlags ;    Returns Integer
+36588>>>>>>>
+36588>>>>>>>External_Function CNG_BCryptDeriveKeyPBKDF2 "BCryptDeriveKeyPBKDF2" Bcrypt.dll ;    Handle   hPrf ;    Pointer  pbPassword ;    UInteger cbPassword ;    Pointer  pbSalt ;    UInteger cbSalt ;    BigInt   cIterations ;    Pointer  pbDerivedKey ;    UInteger cbDerivedKey ;    UInteger dwFlags ;    Returns Integer
+36589>>>>>>>
+36589>>>>>>>External_Function CNG_BCryptGetProperty "BCryptGetProperty" Bcrypt.dll ;    Handle   hObject ;    Pointer  pszProperty ;    Pointer  pbOutput ;    UInteger cbOutput ;    Pointer  pcbResult ;    UInteger dwFlags ;    Returns Integer
+36590>>>>>>>
+36590>>>>>>>Class cPasswordHasher_CNG_PBKDF2_HMAC_Mixin is a Mixin
+36591>>>>>>>
+36591>>>>>>>    Function CNG_PBKDF2_HMAC_BufferSizeEx Handle hoProv Returns UInteger
+36593>>>>>>>        Integer iErr
+36593>>>>>>>        UInteger uiHashLen
 36593>>>>>>>        
-36593>>>>>>>        Function_Return uiHashLen
-36594>>>>>>>    End_Function
-36595>>>>>>>    
-36595>>>>>>>    Function CNG_PBKDF2_HMAC_BufferSize WString wsAlgo Returns UInteger
-36597>>>>>>>        Integer iErr
-36597>>>>>>>        UInteger uiHashLen
-36597>>>>>>>        
-36597>>>>>>>        // Open the algorithm.
-36597>>>>>>>        Handle hoProv
-36597>>>>>>>        Move (CNG_BCryptOpenAlgorithmProvider(AddressOf(hoProv), AddressOf(wsAlgo), 0, |CI$00000008 /*BCRYPT_ALG_HANDLE_HMAC_FLAG*/)) to iErr
-36598>>>>>>>        If (iErr) Begin
-36600>>>>>>>            Function_Return 0
-36601>>>>>>>        End
-36601>>>>>>>>
-36601>>>>>>>        
-36601>>>>>>>        Get CNG_PBKDF2_HMAC_BufferSizeEx hoProv to uiHashLen
+36593>>>>>>>        UInteger uiCbOut
+36593>>>>>>>        WString wsHashLengthProperty
+36593>>>>>>>        Move CNG_BCRYPT_HASH_LENGTH to wsHashLengthProperty
+36594>>>>>>>        Move (CNG_BCryptGetProperty(hoProv, AddressOf(wsHashLengthProperty), AddressOf(uiHashLen), 4, AddressOf(uiCbOut), 0)) to iErr
+36595>>>>>>>        If (iErr) Begin
+36597>>>>>>>            Function_Return 0
+36598>>>>>>>        End
+36598>>>>>>>>
+36598>>>>>>>        
+36598>>>>>>>        Function_Return uiHashLen
+36599>>>>>>>    End_Function
+36600>>>>>>>    
+36600>>>>>>>    Function CNG_PBKDF2_HMAC_BufferSize WString wsAlgo Returns UInteger
+36602>>>>>>>        Integer iErr
+36602>>>>>>>        UInteger uiHashLen
 36602>>>>>>>        
-36602>>>>>>>        Move (CNG_BCryptCloseAlgorithmProvider(hoProv, 0)) to iErr
-36603>>>>>>>        
-36603>>>>>>>        Function_Return uiHashLen
-36604>>>>>>>    End_Function
-36605>>>>>>>    
-36605>>>>>>>    Function CNG_PBKDF2_HMAC    WString wsAlgo ;                                UChar[] ucaData ;                                UChar[] ucaSalt ;                                UInteger uiTimeCost ;                                UChar[] ByRef ucaHashOut ;                                Boolean bOptThrow ;                                Returns Boolean
-36607>>>>>>>        Integer iErr iHashLen
+36602>>>>>>>        // Open the algorithm.
+36602>>>>>>>        Handle hoProv
+36602>>>>>>>        Move (CNG_BCryptOpenAlgorithmProvider(AddressOf(hoProv), AddressOf(wsAlgo), 0, |CI$00000008 /*BCRYPT_ALG_HANDLE_HMAC_FLAG*/)) to iErr
+36603>>>>>>>        If (iErr) Begin
+36605>>>>>>>            Function_Return 0
+36606>>>>>>>        End
+36606>>>>>>>>
+36606>>>>>>>        
+36606>>>>>>>        Get CNG_PBKDF2_HMAC_BufferSizeEx hoProv to uiHashLen
 36607>>>>>>>        
-36607>>>>>>>        // Handle Optionals
-36607>>>>>>>        // First the optional throwing of errors.
-36607>>>>>>>        Boolean bThrow
-36607>>>>>>>        Move True to bThrow
-36608>>>>>>>        If (num_arguments > 4) Move bOptThrow to bThrow
-36611>>>>>>>        
-36611>>>>>>>        // Open the algorithm.
-36611>>>>>>>        Handle hoProv
-36611>>>>>>>        Move (CNG_BCryptOpenAlgorithmProvider(AddressOf(hoProv), AddressOf(wsAlgo), 0, |CI$00000008 /*BCRYPT_ALG_HANDLE_HMAC_FLAG*/)) to iErr
-36612>>>>>>>        If (iErr) Begin
-36614>>>>>>>            If (bThrow) Error 8710 "Failed to open up the algo provider."
-36617>>>>>>>            Function_Return False
-36618>>>>>>>        End
-36618>>>>>>>>
-36618>>>>>>>        
-36618>>>>>>>        Get CNG_PBKDF2_HMAC_BufferSizeEx hoProv to iHashLen
-36619>>>>>>>        If (not(iHashLen)) Begin
-36621>>>>>>>            If (bThrow) Error 8710 "Failed to get expected length of hash."
-36624>>>>>>>            Function_Return False
-36625>>>>>>>        End
-36625>>>>>>>>
-36625>>>>>>>        
-36625>>>>>>>        // Resize buffers to the expected output.
-36625>>>>>>>        Move (ResizeArray(ucaHashOut, iHashLen)) to ucaHashOut
-36626>>>>>>>        
-36626>>>>>>>        Move (CNG_BCryptDeriveKeyPBKDF2(hoProv, AddressOf(ucaData), SizeOfArray(ucaData), AddressOf(ucaSalt), SizeOfArray(ucaSalt), uiTimeCost, AddressOf(ucaHashOut), SizeOfArray(ucaHashOut), 0)) to iErr
-36627>>>>>>>        If (iErr) Begin
-36629>>>>>>>            Move (CNG_BCryptCloseAlgorithmProvider(hoProv, 0)) to iErr
-36630>>>>>>>            If (bThrow) Error 8710 "Failed to create hash."
-36633>>>>>>>            Function_Return False
-36634>>>>>>>        End
-36634>>>>>>>>
-36634>>>>>>>        
-36634>>>>>>>        Move (CNG_BCryptCloseAlgorithmProvider(hoProv, 0)) to iErr
-36635>>>>>>>        If (iErr) Begin
-36637>>>>>>>            If (bThrow) Error 8710 "Failed to close algo provider."
-36640>>>>>>>            Function_Return False
-36641>>>>>>>        End
-36641>>>>>>>>
-36641>>>>>>>        
-36641>>>>>>>        Function_Return True
-36642>>>>>>>    End_Function
-36643>>>>>>>End_Class
-36644>>>>>>>
-36644>>>>>>>Class cPasswordHasher_Mixin is a Mixin
-36645>>>>>>>    
-36645>>>>>>>    Import_Class_Protocol cPasswordHasher_CNG_PBKDF2_HMAC_Mixin
-36646>>>>>>>    
-36646>>>>>>>    Enum_List // Algorithmes available for password hashing
-36646>>>>>>>        Define C_PWH_PBKDF2_HMAC_SHA_256        for 0 // Requires TimeCost
-36646>>>>>>>        Define C_PWH_PBKDF2_HMAC_SHA_512              // Requires TimeCost
-36646>>>>>>>    End_Enum_List
-36646>>>>>>>    
-36646>>>>>>>    Function RandomBuffer UInteger uiSize Returns UChar[]
-36648>>>>>>>        UChar[] ucaBuffer
-36649>>>>>>>        Move (ResizeArray(ucaBuffer, uiSize)) to ucaBuffer
-36650>>>>>>>        If (CNG_BCryptGenRandom(0, AddressOf(ucaBuffer), uiSize, |CI$00000002 /*BCRYPT_USE_SYSTEM_PREFERRED_RNG*/)) Begin
-36652>>>>>>>            Error 8710 "Failed to create random buffer."
-36653>>>>>>>>
-36653>>>>>>>        End
-36653>>>>>>>>
-36653>>>>>>>        Function_Return ucaBuffer
-36654>>>>>>>    End_Function
-36655>>>>>>>    
-36655>>>>>>>    Function Base64EncodeArr UChar[] ucaBuffer Returns String
-36657>>>>>>>        Integer iErr
-36657>>>>>>>        Pointer pBase64
-36657>>>>>>>        String sBase64
-36657>>>>>>>        Move (Base64Encode(AddressOf(ucaBuffer), SizeOfArray(ucaBuffer))) to pBase64
-36658>>>>>>>        If (not(pBase64)) Begin
-36660>>>>>>>            Function_Return sBase64
-36661>>>>>>>        End
-36661>>>>>>>>
-36661>>>>>>>        Move (PointerToString(pBase64)) to sBase64
-36662>>>>>>>        Move (Free(pBase64)) to iErr
-36663>>>>>>>        Function_Return sBase64
-36664>>>>>>>    End_Function
-36665>>>>>>>    
-36665>>>>>>>    Function Base64DecodeArr String sBase64 Returns UChar[]
-36667>>>>>>>        Integer iLen
-36667>>>>>>>        Pointer pBase64
-36667>>>>>>>        UChar[] ucaBuffer
-36668>>>>>>>        Move (Base64Decode(AddressOf(sBase64), &iLen)) to pBase64
-36669>>>>>>>        If (not(pBase64)) Begin
-36671>>>>>>>            Function_Return ucaBuffer
-36672>>>>>>>        End
-36672>>>>>>>>
-36672>>>>>>>        
-36672>>>>>>>        Move (ResizeArray(ucaBuffer, iLen)) to ucaBuffer
-36673>>>>>>>        Move (MemCopy(AddressOf(ucaBuffer), pBase64, iLen)) to iLen
-36674>>>>>>>        Move (Free(pBase64)) to iLen
-36675>>>>>>>        Function_Return ucaBuffer
-36676>>>>>>>    End_Function
-36677>>>>>>>    
-36677>>>>>>>    Function CreatePasswordHashExWithSalt UInteger uiAlgo UChar[] ucaSalt String sPassword String ByRef sHash UInteger uiOptTimeCost Returns Boolean
-36679>>>>>>>        Boolean bOk bRequireTimeCost
-36679>>>>>>>        UChar[] ucaHash
-36680>>>>>>>        
-36680>>>>>>>        Case Begin
-36680>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
-36682>>>>>>>                Get CNG_PBKDF2_HMAC "SHA256" (StringToUCharArray(sPassword)) ucaSalt uiOptTimeCost (&ucaHash) False to bOk
-36683>>>>>>>                If (not(bOk)) Function_Return False
-36686>>>>>>>                
-36686>>>>>>>                Move True to bRequireTimeCost
-36687>>>>>>>                Case Break
-36688>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
-36691>>>>>>>                Get CNG_PBKDF2_HMAC "SHA512" (StringToUCharArray(sPassword)) ucaSalt uiOptTimeCost (&ucaHash) False to bOk
-36692>>>>>>>                If (not(bOk)) Function_Return False
-36695>>>>>>>                
-36695>>>>>>>                Move True to bRequireTimeCost
-36696>>>>>>>                Case Break
-36697>>>>>>>            Case Else
-36697>>>>>>>                Error 8710 "Invalid algorithm selected."
-36698>>>>>>>>
-36698>>>>>>>                Function_Return False
-36699>>>>>>>        Case End
-36699>>>>>>>        
-36699>>>>>>>        String sSalt
-36699>>>>>>>        Get Base64EncodeArr ucaSalt to sSalt
-36700>>>>>>>        If (not(SizeOfString(sSalt))) Function_Return False
-36703>>>>>>>        Get Base64EncodeArr ucaHash to sHash
-36704>>>>>>>        If (not(SizeOfString(sHash))) Function_Return False
-36707>>>>>>>        
-36707>>>>>>>        If (bRequireTimeCost) Begin
-36709>>>>>>>            Move (SFormat("%1$%2$%3$%4",            ;                            String(uiAlgo),         ;                            sSalt,                  ;                            String(uiOptTimeCost),  ;                            sHash)) to sHash
-36710>>>>>>>        End
-36710>>>>>>>>
-36710>>>>>>>        Else Begin
-36711>>>>>>>            Move (SFormat("%1$%2$%3",               ;                            String(uiAlgo),         ;                            sSalt,                  ;                            sHash)) to sHash
-36712>>>>>>>        End
-36712>>>>>>>>
+36607>>>>>>>        Move (CNG_BCryptCloseAlgorithmProvider(hoProv, 0)) to iErr
+36608>>>>>>>        
+36608>>>>>>>        Function_Return uiHashLen
+36609>>>>>>>    End_Function
+36610>>>>>>>    
+36610>>>>>>>    Function CNG_PBKDF2_HMAC    WString wsAlgo ;                                UChar[] ucaData ;                                UChar[] ucaSalt ;                                UInteger uiTimeCost ;                                UChar[] ByRef ucaHashOut ;                                Boolean bOptThrow ;                                Returns Boolean
+36612>>>>>>>        Integer iErr iHashLen
+36612>>>>>>>        
+36612>>>>>>>        // Handle Optionals
+36612>>>>>>>        // First the optional throwing of errors.
+36612>>>>>>>        Boolean bThrow
+36612>>>>>>>        Move True to bThrow
+36613>>>>>>>        If (num_arguments > 4) Move bOptThrow to bThrow
+36616>>>>>>>        
+36616>>>>>>>        // Open the algorithm.
+36616>>>>>>>        Handle hoProv
+36616>>>>>>>        Move (CNG_BCryptOpenAlgorithmProvider(AddressOf(hoProv), AddressOf(wsAlgo), 0, |CI$00000008 /*BCRYPT_ALG_HANDLE_HMAC_FLAG*/)) to iErr
+36617>>>>>>>        If (iErr) Begin
+36619>>>>>>>            If (bThrow) Error 8710 "Failed to open up the algo provider."
+36622>>>>>>>            Function_Return False
+36623>>>>>>>        End
+36623>>>>>>>>
+36623>>>>>>>        
+36623>>>>>>>        Get CNG_PBKDF2_HMAC_BufferSizeEx hoProv to iHashLen
+36624>>>>>>>        If (not(iHashLen)) Begin
+36626>>>>>>>            If (bThrow) Error 8710 "Failed to get expected length of hash."
+36629>>>>>>>            Function_Return False
+36630>>>>>>>        End
+36630>>>>>>>>
+36630>>>>>>>        
+36630>>>>>>>        // Resize buffers to the expected output.
+36630>>>>>>>        Move (ResizeArray(ucaHashOut, iHashLen)) to ucaHashOut
+36631>>>>>>>        
+36631>>>>>>>        Move (CNG_BCryptDeriveKeyPBKDF2(hoProv, AddressOf(ucaData), SizeOfArray(ucaData), AddressOf(ucaSalt), SizeOfArray(ucaSalt), uiTimeCost, AddressOf(ucaHashOut), SizeOfArray(ucaHashOut), 0)) to iErr
+36632>>>>>>>        If (iErr) Begin
+36634>>>>>>>            Move (CNG_BCryptCloseAlgorithmProvider(hoProv, 0)) to iErr
+36635>>>>>>>            If (bThrow) Error 8710 "Failed to create hash."
+36638>>>>>>>            Function_Return False
+36639>>>>>>>        End
+36639>>>>>>>>
+36639>>>>>>>        
+36639>>>>>>>        Move (CNG_BCryptCloseAlgorithmProvider(hoProv, 0)) to iErr
+36640>>>>>>>        If (iErr) Begin
+36642>>>>>>>            If (bThrow) Error 8710 "Failed to close algo provider."
+36645>>>>>>>            Function_Return False
+36646>>>>>>>        End
+36646>>>>>>>>
+36646>>>>>>>        
+36646>>>>>>>        Function_Return True
+36647>>>>>>>    End_Function
+36648>>>>>>>End_Class
+36649>>>>>>>
+36649>>>>>>>Class cPasswordHasher_Mixin is a Mixin
+36650>>>>>>>    
+36650>>>>>>>    Import_Class_Protocol cPasswordHasher_CNG_PBKDF2_HMAC_Mixin
+36651>>>>>>>    
+36651>>>>>>>    Enum_List // Algorithmes available for password hashing
+36651>>>>>>>        Define C_PWH_PBKDF2_HMAC_SHA_256        for 0 // Requires TimeCost
+36651>>>>>>>        Define C_PWH_PBKDF2_HMAC_SHA_512              // Requires TimeCost
+36651>>>>>>>    End_Enum_List
+36651>>>>>>>    
+36651>>>>>>>    Function RandomBuffer UInteger uiSize Returns UChar[]
+36653>>>>>>>        UChar[] ucaBuffer
+36654>>>>>>>        Move (ResizeArray(ucaBuffer, uiSize)) to ucaBuffer
+36655>>>>>>>        If (CNG_BCryptGenRandom(0, AddressOf(ucaBuffer), uiSize, |CI$00000002 /*BCRYPT_USE_SYSTEM_PREFERRED_RNG*/)) Begin
+36657>>>>>>>            Error 8710 "Failed to create random buffer."
+36658>>>>>>>>
+36658>>>>>>>        End
+36658>>>>>>>>
+36658>>>>>>>        Function_Return ucaBuffer
+36659>>>>>>>    End_Function
+36660>>>>>>>    
+36660>>>>>>>    Function Base64EncodeArr UChar[] ucaBuffer Returns String
+36662>>>>>>>        Integer iErr
+36662>>>>>>>        Pointer pBase64
+36662>>>>>>>        String sBase64
+36662>>>>>>>        Move (Base64Encode(AddressOf(ucaBuffer), SizeOfArray(ucaBuffer))) to pBase64
+36663>>>>>>>        If (not(pBase64)) Begin
+36665>>>>>>>            Function_Return sBase64
+36666>>>>>>>        End
+36666>>>>>>>>
+36666>>>>>>>        Move (PointerToString(pBase64)) to sBase64
+36667>>>>>>>        Move (Free(pBase64)) to iErr
+36668>>>>>>>        Function_Return sBase64
+36669>>>>>>>    End_Function
+36670>>>>>>>    
+36670>>>>>>>    Function Base64DecodeArr String sBase64 Returns UChar[]
+36672>>>>>>>        Integer iLen
+36672>>>>>>>        Pointer pBase64
+36672>>>>>>>        UChar[] ucaBuffer
+36673>>>>>>>        Move (Base64Decode(AddressOf(sBase64), &iLen)) to pBase64
+36674>>>>>>>        If (not(pBase64)) Begin
+36676>>>>>>>            Function_Return ucaBuffer
+36677>>>>>>>        End
+36677>>>>>>>>
+36677>>>>>>>        
+36677>>>>>>>        Move (ResizeArray(ucaBuffer, iLen)) to ucaBuffer
+36678>>>>>>>        Move (MemCopy(AddressOf(ucaBuffer), pBase64, iLen)) to iLen
+36679>>>>>>>        Move (Free(pBase64)) to iLen
+36680>>>>>>>        Function_Return ucaBuffer
+36681>>>>>>>    End_Function
+36682>>>>>>>    
+36682>>>>>>>    Function CreatePasswordHashExWithSalt UInteger uiAlgo UChar[] ucaSalt String sPassword String ByRef sHash UInteger uiOptTimeCost Returns Boolean
+36684>>>>>>>        Boolean bOk bRequireTimeCost
+36684>>>>>>>        UChar[] ucaHash
+36685>>>>>>>        
+36685>>>>>>>        Case Begin
+36685>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
+36687>>>>>>>                Get CNG_PBKDF2_HMAC "SHA256" (StringToUCharArray(sPassword)) ucaSalt uiOptTimeCost (&ucaHash) False to bOk
+36688>>>>>>>                If (not(bOk)) Function_Return False
+36691>>>>>>>                
+36691>>>>>>>                Move True to bRequireTimeCost
+36692>>>>>>>                Case Break
+36693>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
+36696>>>>>>>                Get CNG_PBKDF2_HMAC "SHA512" (StringToUCharArray(sPassword)) ucaSalt uiOptTimeCost (&ucaHash) False to bOk
+36697>>>>>>>                If (not(bOk)) Function_Return False
+36700>>>>>>>                
+36700>>>>>>>                Move True to bRequireTimeCost
+36701>>>>>>>                Case Break
+36702>>>>>>>            Case Else
+36702>>>>>>>                Error 8710 "Invalid algorithm selected."
+36703>>>>>>>>
+36703>>>>>>>                Function_Return False
+36704>>>>>>>        Case End
+36704>>>>>>>        
+36704>>>>>>>        String sSalt
+36704>>>>>>>        Get Base64EncodeArr ucaSalt to sSalt
+36705>>>>>>>        If (not(SizeOfString(sSalt))) Function_Return False
+36708>>>>>>>        Get Base64EncodeArr ucaHash to sHash
+36709>>>>>>>        If (not(SizeOfString(sHash))) Function_Return False
 36712>>>>>>>        
-36712>>>>>>>        Function_Return bOk
-36713>>>>>>>    End_Function
-36714>>>>>>>    
-36714>>>>>>>    Function CreatePasswordHashEx UInteger uiAlgo UInteger uiSaltSize String sPassword String ByRef sHash UInteger uiOptTimeCost Returns Boolean
-36716>>>>>>>        UChar[] ucaSalt
-36717>>>>>>>        Get RandomBuffer uiSaltSize to ucaSalt
-36718>>>>>>>        If (not(SizeOfArray(ucaSalt))) Function_Return False
-36721>>>>>>>        
-36721>>>>>>>        If (num_arguments > 4) Begin
-36723>>>>>>>            Function_Return (CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sHash, uiOptTimeCost))
-36724>>>>>>>        End
-36724>>>>>>>>
-36724>>>>>>>        Function_Return (CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sHash))
-36725>>>>>>>    End_Function
-36726>>>>>>>    
-36726>>>>>>>    Function VerifyPasswordHash String sPassword String sHash Returns Boolean
-36728>>>>>>>        Boolean bRequiresTimeCost
-36728>>>>>>>        UInteger uiAlgo uiTimeCost
-36728>>>>>>>        Integer iBegin iEnd
-36728>>>>>>>        String sSalt
-36728>>>>>>>        
-36728>>>>>>>        Move 1 to iBegin
-36729>>>>>>>        
-36729>>>>>>>        // Parse Algo
-36729>>>>>>>        Move (Pos("$", sHash, iBegin)) to iEnd
-36730>>>>>>>        If (not(iEnd)) Function_Return False
-36733>>>>>>>        Move (Mid(sHash, iEnd - iBegin, iBegin)) to uiAlgo
+36712>>>>>>>        If (bRequireTimeCost) Begin
+36714>>>>>>>            Move (SFormat("%1$%2$%3$%4",            ;                            String(uiAlgo),         ;                            sSalt,                  ;                            String(uiOptTimeCost),  ;                            sHash)) to sHash
+36715>>>>>>>        End
+36715>>>>>>>>
+36715>>>>>>>        Else Begin
+36716>>>>>>>            Move (SFormat("%1$%2$%3",               ;                            String(uiAlgo),         ;                            sSalt,                  ;                            sHash)) to sHash
+36717>>>>>>>        End
+36717>>>>>>>>
+36717>>>>>>>        
+36717>>>>>>>        Function_Return bOk
+36718>>>>>>>    End_Function
+36719>>>>>>>    
+36719>>>>>>>    Function CreatePasswordHashEx UInteger uiAlgo UInteger uiSaltSize String sPassword String ByRef sHash UInteger uiOptTimeCost Returns Boolean
+36721>>>>>>>        UChar[] ucaSalt
+36722>>>>>>>        Get RandomBuffer uiSaltSize to ucaSalt
+36723>>>>>>>        If (not(SizeOfArray(ucaSalt))) Function_Return False
+36726>>>>>>>        
+36726>>>>>>>        If (num_arguments > 4) Begin
+36728>>>>>>>            Function_Return (CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sHash, uiOptTimeCost))
+36729>>>>>>>        End
+36729>>>>>>>>
+36729>>>>>>>        Function_Return (CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sHash))
+36730>>>>>>>    End_Function
+36731>>>>>>>    
+36731>>>>>>>    Function VerifyPasswordHash String sPassword String sHash Returns Boolean
+36733>>>>>>>        Boolean bRequiresTimeCost
+36733>>>>>>>        UInteger uiAlgo uiTimeCost
+36733>>>>>>>        Integer iBegin iEnd
+36733>>>>>>>        String sSalt
+36733>>>>>>>        
+36733>>>>>>>        Move 1 to iBegin
 36734>>>>>>>        
-36734>>>>>>>        // Parse Salt
-36734>>>>>>>        Move (iEnd + 1) to iBegin
-36735>>>>>>>        Move (Pos("$", sHash, iBegin)) to iEnd
-36736>>>>>>>        If (not(iEnd)) Function_Return False
-36739>>>>>>>        Move (Mid(sHash, iEnd - iBegin, iBegin)) to sSalt
-36740>>>>>>>        
-36740>>>>>>>        Case Begin
-36740>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
-36742>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
-36745>>>>>>>                Move True to bRequiresTimeCost
-36746>>>>>>>                Case Break
-36747>>>>>>>            Case Else
-36747>>>>>>>                Error 8710 "Invalid algorithm selected."
-36748>>>>>>>>
-36748>>>>>>>                Function_Return False
-36749>>>>>>>        Case End
-36749>>>>>>>        
-36749>>>>>>>        // Parse optional timecost
-36749>>>>>>>        If (bRequiresTimeCost) Begin
-36751>>>>>>>            Move (iEnd + 1) to iBegin
-36752>>>>>>>            Move (Pos("$", sHash, iBegin)) to iEnd
-36753>>>>>>>            If (not(iEnd)) Function_Return False
-36756>>>>>>>            Move (Mid(sHash, iEnd - iBegin, iBegin)) to uiTimeCost
-36757>>>>>>>        End
-36757>>>>>>>>
-36757>>>>>>>        
-36757>>>>>>>        // Parse rest hash
-36757>>>>>>>        Move (iEnd + 1) to iBegin
-36758>>>>>>>        Move (Pos("$", sHash, iBegin)) to iEnd
-36759>>>>>>>        If (iEnd) Function_Return False // inverse check if there are any other errors.
+36734>>>>>>>        // Parse Algo
+36734>>>>>>>        Move (Pos("$", sHash, iBegin)) to iEnd
+36735>>>>>>>        If (not(iEnd)) Function_Return False
+36738>>>>>>>        Move (Mid(sHash, iEnd - iBegin, iBegin)) to uiAlgo
+36739>>>>>>>        
+36739>>>>>>>        // Parse Salt
+36739>>>>>>>        Move (iEnd + 1) to iBegin
+36740>>>>>>>        Move (Pos("$", sHash, iBegin)) to iEnd
+36741>>>>>>>        If (not(iEnd)) Function_Return False
+36744>>>>>>>        Move (Mid(sHash, iEnd - iBegin, iBegin)) to sSalt
+36745>>>>>>>        
+36745>>>>>>>        Case Begin
+36745>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
+36747>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
+36750>>>>>>>                Move True to bRequiresTimeCost
+36751>>>>>>>                Case Break
+36752>>>>>>>            Case Else
+36752>>>>>>>                Error 8710 "Invalid algorithm selected."
+36753>>>>>>>>
+36753>>>>>>>                Function_Return False
+36754>>>>>>>        Case End
+36754>>>>>>>        
+36754>>>>>>>        // Parse optional timecost
+36754>>>>>>>        If (bRequiresTimeCost) Begin
+36756>>>>>>>            Move (iEnd + 1) to iBegin
+36757>>>>>>>            Move (Pos("$", sHash, iBegin)) to iEnd
+36758>>>>>>>            If (not(iEnd)) Function_Return False
+36761>>>>>>>            Move (Mid(sHash, iEnd - iBegin, iBegin)) to uiTimeCost
+36762>>>>>>>        End
+36762>>>>>>>>
 36762>>>>>>>        
-36762>>>>>>>        // Base64Decode
-36762>>>>>>>        UChar[] ucaSalt
-36763>>>>>>>        Get Base64DecodeArr sSalt to ucaSalt
-36764>>>>>>>        If (not(SizeOfArray(ucaSalt))) Function_Return False
+36762>>>>>>>        // Parse rest hash
+36762>>>>>>>        Move (iEnd + 1) to iBegin
+36763>>>>>>>        Move (Pos("$", sHash, iBegin)) to iEnd
+36764>>>>>>>        If (iEnd) Function_Return False // inverse check if there are any other errors.
 36767>>>>>>>        
-36767>>>>>>>        // Create new hash
-36767>>>>>>>        String sNewHash
-36767>>>>>>>        If (bRequiresTimeCost) Begin
-36769>>>>>>>            If (not(CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sNewHash, uiTimeCost))) Begin
-36771>>>>>>>                Function_Return False 
-36772>>>>>>>            End
-36772>>>>>>>>
-36772>>>>>>>        End
-36772>>>>>>>>
-36772>>>>>>>        Else Begin
-36773>>>>>>>            If (not(CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sNewHash))) Begin
-36775>>>>>>>                Function_Return False 
-36776>>>>>>>            End
-36776>>>>>>>>
-36776>>>>>>>        End
-36776>>>>>>>>
-36776>>>>>>>        Function_Return (sNewHash = sHash)
-36777>>>>>>>    End_Function
-36778>>>>>>>    
-36778>>>>>>>    Function RequiredBufferSizeEx UInteger uiAlgo UInteger uiSaltSize UInteger uiOptTimeCost Returns UBigInt
-36780>>>>>>>        Boolean bRequireTimeCost
-36780>>>>>>>        UBigInt ullSize
-36780>>>>>>>        UChar[] ucaSalt
-36781>>>>>>>        String sSalt
-36781>>>>>>>        
-36781>>>>>>>        Get RandomBuffer uiSaltSize to ucaSalt
-36782>>>>>>>        Get Base64EncodeArr ucaSalt to sSalt
-36783>>>>>>>        If (not(SizeOfString(sSalt))) Function_Return 0
+36767>>>>>>>        // Base64Decode
+36767>>>>>>>        UChar[] ucaSalt
+36768>>>>>>>        Get Base64DecodeArr sSalt to ucaSalt
+36769>>>>>>>        If (not(SizeOfArray(ucaSalt))) Function_Return False
+36772>>>>>>>        
+36772>>>>>>>        // Create new hash
+36772>>>>>>>        String sNewHash
+36772>>>>>>>        If (bRequiresTimeCost) Begin
+36774>>>>>>>            If (not(CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sNewHash, uiTimeCost))) Begin
+36776>>>>>>>                Function_Return False 
+36777>>>>>>>            End
+36777>>>>>>>>
+36777>>>>>>>        End
+36777>>>>>>>>
+36777>>>>>>>        Else Begin
+36778>>>>>>>            If (not(CreatePasswordHashExWithSalt(Self, uiAlgo, ucaSalt, sPassword, &sNewHash))) Begin
+36780>>>>>>>                Function_Return False 
+36781>>>>>>>            End
+36781>>>>>>>>
+36781>>>>>>>        End
+36781>>>>>>>>
+36781>>>>>>>        Function_Return (sNewHash = sHash)
+36782>>>>>>>    End_Function
+36783>>>>>>>    
+36783>>>>>>>    Function RequiredBufferSizeEx UInteger uiAlgo UInteger uiSaltSize UInteger uiOptTimeCost Returns UBigInt
+36785>>>>>>>        Boolean bRequireTimeCost
+36785>>>>>>>        UBigInt ullSize
+36785>>>>>>>        UChar[] ucaSalt
+36786>>>>>>>        String sSalt
 36786>>>>>>>        
-36786>>>>>>>        Case Begin
-36786>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
-36788>>>>>>>                Get CNG_PBKDF2_HMAC_BufferSize "SHA256" to ullSize
-36789>>>>>>>                Move True to bRequireTimeCost
-36790>>>>>>>                Case Break
-36791>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
-36794>>>>>>>                Get CNG_PBKDF2_HMAC_BufferSize "SHA512" to ullSize
-36795>>>>>>>                Move True to bRequireTimeCost
-36796>>>>>>>                Case Break
-36797>>>>>>>            Case Else
-36797>>>>>>>                Error 8710 "Invalid algorithm selected."
-36798>>>>>>>>
-36798>>>>>>>                Function_Return 0
-36799>>>>>>>        Case End
-36799>>>>>>>        
-36799>>>>>>>        // calculate base64 in a non-floating-manner
-36799>>>>>>>        Move (((ullSize + 3 -1) / 3) * 4) to ullSize
-36800>>>>>>>        
-36800>>>>>>>        Move (ullSize + SizeOfString(String(uiAlgo))) to ullSize
-36801>>>>>>>        Move (ullSize + SizeOfString(sSalt)) to ullSize
-36802>>>>>>>        If (bRequireTimeCost) Begin
-36804>>>>>>>            Move (ullSize + SizeOfString(String(uiOptTimeCost))) to ullSize
-36805>>>>>>>            Move (ullSize + 3 /*$*/) to ullSize
-36806>>>>>>>        End
-36806>>>>>>>>
-36806>>>>>>>        Else Begin
-36807>>>>>>>            Move (ullSize + 2 /*$*/) to ullSize
-36808>>>>>>>        End
-36808>>>>>>>>
-36808>>>>>>>        
-36808>>>>>>>        Function_Return ullSize
-36809>>>>>>>    End_Function
-36810>>>>>>>End_Class
-36811>>>>>>>
-36811>>>>>>>Class cPasswordHasher is a cObject
-36812>>>>>>>    
-36812>>>>>>>    Import_Class_Protocol cPasswordHasher_Mixin
-36813>>>>>>>    
-36813>>>>>>>    Procedure Construct_Object
-36815>>>>>>>        Forward Send Construct_Object
-36817>>>>>>>        
-36817>>>>>>>        Property UInteger   peAlgorithm         C_PWH_PBKDF2_HMAC_SHA_512 
-36818>>>>>>>        Property UInteger   puiSaltSize         16
-36819>>>>>>>        
-36819>>>>>>>        Property UInteger   puiOptTimeCost      420000
-36820>>>>>>>    End_Procedure
-36821>>>>>>>    
-36821>>>>>>>    Function CreatePasswordHash String sPassword String ByRef sHash Returns Boolean
-36823>>>>>>>        Boolean bOk
-36823>>>>>>>        UInteger uiAlgo
-36823>>>>>>>        Get peAlgorithm to uiAlgo
+36786>>>>>>>        Get RandomBuffer uiSaltSize to ucaSalt
+36787>>>>>>>        Get Base64EncodeArr ucaSalt to sSalt
+36788>>>>>>>        If (not(SizeOfString(sSalt))) Function_Return 0
+36791>>>>>>>        
+36791>>>>>>>        Case Begin
+36791>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
+36793>>>>>>>                Get CNG_PBKDF2_HMAC_BufferSize "SHA256" to ullSize
+36794>>>>>>>                Move True to bRequireTimeCost
+36795>>>>>>>                Case Break
+36796>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
+36799>>>>>>>                Get CNG_PBKDF2_HMAC_BufferSize "SHA512" to ullSize
+36800>>>>>>>                Move True to bRequireTimeCost
+36801>>>>>>>                Case Break
+36802>>>>>>>            Case Else
+36802>>>>>>>                Error 8710 "Invalid algorithm selected."
+36803>>>>>>>>
+36803>>>>>>>                Function_Return 0
+36804>>>>>>>        Case End
+36804>>>>>>>        
+36804>>>>>>>        // calculate base64 in a non-floating-manner
+36804>>>>>>>        Move (((ullSize + 3 -1) / 3) * 4) to ullSize
+36805>>>>>>>        
+36805>>>>>>>        Move (ullSize + SizeOfString(String(uiAlgo))) to ullSize
+36806>>>>>>>        Move (ullSize + SizeOfString(sSalt)) to ullSize
+36807>>>>>>>        If (bRequireTimeCost) Begin
+36809>>>>>>>            Move (ullSize + SizeOfString(String(uiOptTimeCost))) to ullSize
+36810>>>>>>>            Move (ullSize + 3 /*$*/) to ullSize
+36811>>>>>>>        End
+36811>>>>>>>>
+36811>>>>>>>        Else Begin
+36812>>>>>>>            Move (ullSize + 2 /*$*/) to ullSize
+36813>>>>>>>        End
+36813>>>>>>>>
+36813>>>>>>>        
+36813>>>>>>>        Function_Return ullSize
+36814>>>>>>>    End_Function
+36815>>>>>>>End_Class
+36816>>>>>>>
+36816>>>>>>>Class cPasswordHasher is a cObject
+36817>>>>>>>    
+36817>>>>>>>    Import_Class_Protocol cPasswordHasher_Mixin
+36818>>>>>>>    
+36818>>>>>>>    Procedure Construct_Object
+36820>>>>>>>        Forward Send Construct_Object
+36822>>>>>>>        
+36822>>>>>>>        Property UInteger   peAlgorithm         C_PWH_PBKDF2_HMAC_SHA_512 
+36823>>>>>>>        Property UInteger   puiSaltSize         16
 36824>>>>>>>        
-36824>>>>>>>        Case Begin
-36824>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
-36826>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
-36829>>>>>>>                Get CreatePasswordHashEx uiAlgo (puiSaltSize(Self)) sPassword (&sHash) (puiOptTimeCost(Self)) to bOk
-36830>>>>>>>                Case Break
-36831>>>>>>>            Case Else
-36831>>>>>>>                Error 8710 "Invalid algorithm selected."
-36832>>>>>>>>
-36832>>>>>>>                Function_Return False
-36833>>>>>>>        Case End
-36833>>>>>>>        
-36833>>>>>>>        Function_Return bOk
-36834>>>>>>>    End_Function
-36835>>>>>>>    
-36835>>>>>>>    Function RequiredBufferSize Returns UBigInt
-36837>>>>>>>        UBigInt ullSize
-36837>>>>>>>        UInteger uiAlgo
-36837>>>>>>>        Get peAlgorithm to uiAlgo
+36824>>>>>>>        Property UInteger   puiOptTimeCost      420000
+36825>>>>>>>    End_Procedure
+36826>>>>>>>    
+36826>>>>>>>    Function CreatePasswordHash String sPassword String ByRef sHash Returns Boolean
+36828>>>>>>>        Boolean bOk
+36828>>>>>>>        UInteger uiAlgo
+36828>>>>>>>        Get peAlgorithm to uiAlgo
+36829>>>>>>>        
+36829>>>>>>>        Case Begin
+36829>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
+36831>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
+36834>>>>>>>                Get CreatePasswordHashEx uiAlgo (puiSaltSize(Self)) sPassword (&sHash) (puiOptTimeCost(Self)) to bOk
+36835>>>>>>>                Case Break
+36836>>>>>>>            Case Else
+36836>>>>>>>                Error 8710 "Invalid algorithm selected."
+36837>>>>>>>>
+36837>>>>>>>                Function_Return False
+36838>>>>>>>        Case End
 36838>>>>>>>        
-36838>>>>>>>        Case Begin
-36838>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
-36840>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
-36843>>>>>>>                Get RequiredBufferSizeEx uiAlgo (puiSaltSize(Self)) (puiOptTimeCost(Self)) to ullSize
-36844>>>>>>>                Case Break
-36845>>>>>>>            Case Else
-36845>>>>>>>                Error 8710 "Invalid algorithm selected."
-36846>>>>>>>>
-36846>>>>>>>                Function_Return 0
-36847>>>>>>>        Case End
-36847>>>>>>>        
-36847>>>>>>>        Function_Return ullSize
-36848>>>>>>>    End_Function
-36849>>>>>>>
-36849>>>>>>>End_Class
-36850>>>>>
-36850>>>>>Class cWebSessionManagerStandard is a cWebSessionManager
-36851>>>>>    
-36851>>>>>    Procedure Construct_Object
-36853>>>>>        Handle hoObj
-36853>>>>>        
-36853>>>>>        Forward Send Construct_Object
-36855>>>>>        
-36855>>>>>        Set pbSessionCookieHttpOnly to True
-36856>>>>>        
-36856>>>>>        Property Handle phoUserDD 0      // Handle to the WebAppUser DDO
-36857>>>>>        Property Handle phoSessionDD 0   // Handle to the WebAppSession DDO  
-36858>>>>>        Property Handle phoCrypto 0      // Handle to the PasswordHasher
-36859>>>>>        
-36859>>>>>        Get CreateNamed (RefClass(cWebAppUserDataDictionary)) 'oUserDD' to hoObj
-36860>>>>>        Set phoUserDD to hoObj
+36838>>>>>>>        Function_Return bOk
+36839>>>>>>>    End_Function
+36840>>>>>>>    
+36840>>>>>>>    Function RequiredBufferSize Returns UBigInt
+36842>>>>>>>        UBigInt ullSize
+36842>>>>>>>        UInteger uiAlgo
+36842>>>>>>>        Get peAlgorithm to uiAlgo
+36843>>>>>>>        
+36843>>>>>>>        Case Begin
+36843>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_256)
+36845>>>>>>>            Case (uiAlgo = C_PWH_PBKDF2_HMAC_SHA_512)
+36848>>>>>>>                Get RequiredBufferSizeEx uiAlgo (puiSaltSize(Self)) (puiOptTimeCost(Self)) to ullSize
+36849>>>>>>>                Case Break
+36850>>>>>>>            Case Else
+36850>>>>>>>                Error 8710 "Invalid algorithm selected."
+36851>>>>>>>>
+36851>>>>>>>                Function_Return 0
+36852>>>>>>>        Case End
+36852>>>>>>>        
+36852>>>>>>>        Function_Return ullSize
+36853>>>>>>>    End_Function
+36854>>>>>>>
+36854>>>>>>>End_Class
+36855>>>>>
+36855>>>>>Class cWebSessionManagerStandard is a cWebSessionManager
+36856>>>>>    
+36856>>>>>    Procedure Construct_Object
+36858>>>>>        Handle hoObj
+36858>>>>>        
+36858>>>>>        Forward Send Construct_Object
+36860>>>>>        
+36860>>>>>        Set pbSessionCookieHttpOnly to True
 36861>>>>>        
-36861>>>>>        Get CreateNamed (RefClass(cWebAppSessionDataDictionary)) 'oSessionDD' to hoObj
-36862>>>>>        Set DDO_Server of hoObj to (phoUserDD(Self))
-36863>>>>>        Set phoSessionDD to hoObj
+36861>>>>>        Property Handle phoUserDD 0      // Handle to the WebAppUser DDO
+36862>>>>>        Property Handle phoSessionDD 0   // Handle to the WebAppSession DDO  
+36863>>>>>        Property Handle phoCrypto 0      // Handle to the PasswordHasher
 36864>>>>>        
-36864>>>>>        Property Handle phoCrypto 0   // Handle to the Cryptographer
-36865>>>>>        Get CreateNamed (RefClass(cPasswordHasher)) 'oCrypto' to hoObj
-36866>>>>>        Set phoCrypto to hoObj
-36867>>>>>        
-36867>>>>>        Property Boolean pbPasswordHashing True
-36868>>>>>        
-36868>>>>>        Property Boolean pbCreatingNewSession False
-36869>>>>>        Property String psLoginName
-36870>>>>>        Property String psUserName ""
-36871>>>>>        Property Integer piUserRights 0
-36872>>>>>    End_Procedure
-36873>>>>>    
-36873>>>>>    Procedure End_Construct_Object
-36875>>>>>        Forward Send End_Construct_Object
-36877>>>>>        
-36877>>>>>        Handle hoCrypto
-36877>>>>>        Integer iFieldLen
-36877>>>>>        If (pbPasswordHashing(Self)) Begin
-36879>>>>>            Get phoCrypto to hoCrypto
-36880>>>>>            Get_Attribute DF_FIELD_LENGTH of (RefTable(WebAppUser)) (RefTable(WebAppUser.Password)) to iFieldLen
-36883>>>>>            If (iFieldLen < (RequiredBufferSize(hoCrypto) + 3)) Begin
-36885>>>>>                Error DFERR_PROGRAM "The password field of WebAppUser is not large enough (128)"
-36886>>>>>>
-36886>>>>>            End
-36886>>>>>>
-36886>>>>>        End
-36886>>>>>>
-36886>>>>>    End_Procedure
-36887>>>>>    
-36887>>>>>    Function CreateSession String sRemoteAddress Returns String
-36889>>>>>        String sSessionKey
-36889>>>>>        Integer iErr
-36889>>>>>        Boolean bLogWebSession
-36889>>>>>        Handle hoSessionDD       
-36889>>>>>        Get phoSessionDD to hoSessionDD
-36890>>>>>        
-36890>>>>>        //  Get session key
-36890>>>>>        Forward Get CreateSession sRemoteAddress to sSessionKey
-36892>>>>>        
-36892>>>>>        Get pbLogWebSession to bLogWebSession
-36893>>>>>        If not bLogWebSession Begin
-36895>>>>>            Function_Return sSessionKey        
-36896>>>>>        End
-36896>>>>>>
-36896>>>>>
-36896>>>>>        //  Store session
-36896>>>>>        Send Clear of hoSessionDD
-36897>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.SessionKey to sSessionKey
-36898>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.RemoteAddress to sRemoteAddress
-36899>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.Active to "Y"
-36900>>>>>        Get Request_Validate of hoSessionDD to iErr
-36901>>>>>        If (iErr) Begin
-36903>>>>>            // this should not happen. If it does its a programming error
-36903>>>>>            Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
-36904>>>>>>
-36904>>>>>            Function_Return ""
-36905>>>>>        End
-36905>>>>>>
-36905>>>>>        Send Request_Save of hoSessionDD
-36906>>>>>        If (Err) Begin
-36908>>>>>            // this shouldn't happen, if it does likely a duplicate session key issue, even through request_save already gave an error we give another one to make tracking down easier
-36908>>>>>            Error DFERR_PROGRAM C_$WebAppSessionSaveFailed
+36864>>>>>        Get CreateNamed (RefClass(cWebAppUserDataDictionary)) 'oUserDD' to hoObj
+36865>>>>>        Set phoUserDD to hoObj
+36866>>>>>        
+36866>>>>>        Get CreateNamed (RefClass(cWebAppSessionDataDictionary)) 'oSessionDD' to hoObj
+36867>>>>>        Set DDO_Server of hoObj to (phoUserDD(Self))
+36868>>>>>        Set phoSessionDD to hoObj
+36869>>>>>        
+36869>>>>>        Property Handle phoCrypto 0   // Handle to the Cryptographer
+36870>>>>>        Get CreateNamed (RefClass(cPasswordHasher)) 'oCrypto' to hoObj
+36871>>>>>        Set phoCrypto to hoObj
+36872>>>>>        
+36872>>>>>        Property Boolean pbPasswordHashing True
+36873>>>>>        
+36873>>>>>        Property Boolean pbCreatingNewSession False
+36874>>>>>        Property String psLoginName
+36875>>>>>        Property String psUserName ""
+36876>>>>>        Property Integer piUserRights 0
+36877>>>>>    End_Procedure
+36878>>>>>    
+36878>>>>>    Procedure End_Construct_Object
+36880>>>>>        Forward Send End_Construct_Object
+36882>>>>>        
+36882>>>>>        Handle hoCrypto
+36882>>>>>        Integer iFieldLen
+36882>>>>>        If (pbPasswordHashing(Self)) Begin
+36884>>>>>            Get phoCrypto to hoCrypto
+36885>>>>>            Get_Attribute DF_FIELD_LENGTH of (RefTable(WebAppUser)) (RefTable(WebAppUser.Password)) to iFieldLen
+36888>>>>>            If (iFieldLen < (RequiredBufferSize(hoCrypto) + 3)) Begin
+36890>>>>>                Error DFERR_PROGRAM "The password field of WebAppUser is not large enough (128)"
+36891>>>>>>
+36891>>>>>            End
+36891>>>>>>
+36891>>>>>        End
+36891>>>>>>
+36891>>>>>    End_Procedure
+36892>>>>>    
+36892>>>>>    Function CreateSession String sRemoteAddress Returns String
+36894>>>>>        String sSessionKey
+36894>>>>>        Integer iErr
+36894>>>>>        Boolean bLogWebSession
+36894>>>>>        Handle hoSessionDD       
+36894>>>>>        Get phoSessionDD to hoSessionDD
+36895>>>>>        
+36895>>>>>        //  Get session key
+36895>>>>>        Forward Get CreateSession sRemoteAddress to sSessionKey
+36897>>>>>        
+36897>>>>>        Get pbLogWebSession to bLogWebSession
+36898>>>>>        If not bLogWebSession Begin
+36900>>>>>            Function_Return sSessionKey        
+36901>>>>>        End
+36901>>>>>>
+36901>>>>>
+36901>>>>>        //  Store session
+36901>>>>>        Send Clear of hoSessionDD
+36902>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.SessionKey to sSessionKey
+36903>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.RemoteAddress to sRemoteAddress
+36904>>>>>        Set Field_Changed_Value of hoSessionDD Field WebAppSession.Active to "Y"
+36905>>>>>        Get Request_Validate of hoSessionDD to iErr
+36906>>>>>        If (iErr) Begin
+36908>>>>>            // this should not happen. If it does its a programming error
+36908>>>>>            Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
 36909>>>>>>
 36909>>>>>            Function_Return ""
 36910>>>>>        End
 36910>>>>>>
-36910>>>>>       
-36910>>>>>        Function_Return sSessionKey        
-36911>>>>>    End_Function
-36912>>>>>    
-36912>>>>>    Function ValidateSession String sSessionKey Boolean bOptLoadWebApp Returns Boolean
-36914>>>>>        DateTime dtLastAccess dtCurrent
-36914>>>>>        TimeSpan tsDiff
-36914>>>>>        Integer iErr iSessionTimeout iSpanMinutes
-36914>>>>>        Boolean bResult bCreatingNewSession
-36914>>>>>        Boolean bLogWebSession bLoadWebApp
-36914>>>>>        Integer eLoginMode
-36914>>>>>        String sTime
-36914>>>>>        Handle hoSessionDD hoUserDD       
-36914>>>>>        
-36914>>>>>        Move False to bLoadWebApp
-36915>>>>>        If (num_arguments >= 2) Begin
-36917>>>>>            Move bOptLoadWebApp to bLoadWebApp
-36918>>>>>        End
-36918>>>>>>
-36918>>>>>        
-36918>>>>>        Get phoSessionDD to hoSessionDD
-36919>>>>>        Get phoUserDD to hoUserDD
-36920>>>>>        
-36920>>>>>        Get pbLogWebSession to bLogWebSession
-36921>>>>>        Get peLoginMode to eLoginMode
-36922>>>>>        
-36922>>>>>        // for this object, you can only disable logging if login completely is disabled
-36922>>>>>        If (not(bLogWebSession) and (eLoginMode<>lmLoginNone)) Begin
-36924>>>>>            Error DFERR_PROGRAM C_$WebSessionLoggingMustBeEnabled
-36925>>>>>>
-36925>>>>>            Function_Return False
-36926>>>>>        End
-36926>>>>>>
-36926>>>>>
-36926>>>>>        //  Clear session properties
-36926>>>>>        Set psSessionKey to ""
-36927>>>>>        Send UpdateSessionProperties True
-36928>>>>>        
-36928>>>>>        If not bLogWebSession Begin
-36930>>>>>            Forward Get ValidateSession sSessionKey to bResult
-36932>>>>>            Function_Return bResult
-36933>>>>>        End        
-36933>>>>>>
+36910>>>>>        Send Request_Save of hoSessionDD
+36911>>>>>        If (Err) Begin
+36913>>>>>            // this shouldn't happen, if it does likely a duplicate session key issue, even through request_save already gave an error we give another one to make tracking down easier
+36913>>>>>            Error DFERR_PROGRAM C_$WebAppSessionSaveFailed
+36914>>>>>>
+36914>>>>>            Function_Return ""
+36915>>>>>        End
+36915>>>>>>
+36915>>>>>       
+36915>>>>>        Function_Return sSessionKey        
+36916>>>>>    End_Function
+36917>>>>>    
+36917>>>>>    Function ValidateSession String sSessionKey Boolean bOptLoadWebApp Returns Boolean
+36919>>>>>        DateTime dtLastAccess dtCurrent
+36919>>>>>        TimeSpan tsDiff
+36919>>>>>        Integer iErr iSessionTimeout iSpanMinutes
+36919>>>>>        Boolean bResult bCreatingNewSession
+36919>>>>>        Boolean bLogWebSession bLoadWebApp
+36919>>>>>        Integer eLoginMode
+36919>>>>>        String sTime
+36919>>>>>        Handle hoSessionDD hoUserDD       
+36919>>>>>        
+36919>>>>>        Move False to bLoadWebApp
+36920>>>>>        If (num_arguments >= 2) Begin
+36922>>>>>            Move bOptLoadWebApp to bLoadWebApp
+36923>>>>>        End
+36923>>>>>>
+36923>>>>>        
+36923>>>>>        Get phoSessionDD to hoSessionDD
+36924>>>>>        Get phoUserDD to hoUserDD
+36925>>>>>        
+36925>>>>>        Get pbLogWebSession to bLogWebSession
+36926>>>>>        Get peLoginMode to eLoginMode
+36927>>>>>        
+36927>>>>>        // for this object, you can only disable logging if login completely is disabled
+36927>>>>>        If (not(bLogWebSession) and (eLoginMode<>lmLoginNone)) Begin
+36929>>>>>            Error DFERR_PROGRAM C_$WebSessionLoggingMustBeEnabled
+36930>>>>>>
+36930>>>>>            Function_Return False
+36931>>>>>        End
+36931>>>>>>
+36931>>>>>
+36931>>>>>        //  Clear session properties
+36931>>>>>        Set psSessionKey to ""
+36932>>>>>        Send UpdateSessionProperties True
 36933>>>>>        
-36933>>>>>        Move False to bResult
-36934>>>>>        Get piSessionTimeout to iSessionTimeout 
-36935>>>>>        
-36935>>>>>        //  Check if session exists
-36935>>>>>        Send Clear of hoSessionDD
-36936>>>>>        Move sSessionKey to WebAppSession.SessionKey
-36937>>>>>        Send Find of hoSessionDD EQ Index.1
-36938>>>>>            
-36938>>>>>        If (Found) Begin
-36940>>>>>            //  Calculate timespan between now and last access time
-36940>>>>>            Move (CurrentDateTime()) to dtCurrent
-36941>>>>>            Move WebAppSession.LastAccessDate to dtLastAccess
-36942>>>>>            Get StringToTime of hoSessionDD dtLastAccess WebAppSession.LastAccessTime to dtLastAccess
-36943>>>>>            Move (dtCurrent - dtLastAccess) to tsDiff
-36944>>>>>            Move (SpanTotalMinutes(tsDiff)) to iSpanMinutes
-36945>>>>>            
-36945>>>>>            //  Check if session didn't time out
-36945>>>>>            If (IsDateValid(dtLastAccess) and (iSessionTimeout <= 0 or (iSpanMinutes < iSessionTimeout)) and WebAppSession.Active = "Y") Begin
-36947>>>>>                Forward Get ValidateSession sSessionKey to bResult
-36949>>>>>                   
-36949>>>>>                If (bResult) Begin
-36951>>>>>                    //  Update session record
-36951>>>>>                    Get TimeToString of hoSessionDD dtCurrent to sTime 
-36952>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.LastAccessDate to dtCurrent
-36953>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.LastAccessTime to sTime
-36954>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.UseCount to (WebAppSession.UseCount + 1)
-36955>>>>>                    Get Request_Validate of hoSessionDD to iErr
-36956>>>>>                    If (iErr) Begin
-36958>>>>>                        // this should not happen. If it does its a programming error
-36958>>>>>                        Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
-36959>>>>>>
-36959>>>>>                        Function_Return False
-36960>>>>>                    End
-36960>>>>>>
-36960>>>>>                    Send Request_Save of hoSessionDD
-36961>>>>>                    
-36961>>>>>                    //  Update user properties
-36961>>>>>                    Send UpdateSessionProperties False
-36962>>>>>                End
-36962>>>>>>
-36962>>>>>            End
-36962>>>>>>
-36962>>>>>            Else Begin
-36963>>>>>                // Test the Creating New Session Flag to protect against infinite recursion....
-36963>>>>>                Get pbCreatingNewSession to bCreatingNewSession
-36964>>>>>                
-36964>>>>>                If (not(bCreatingNewSession)) Begin
-36966>>>>>                    If (not(bLoadWebApp)) Begin
-36968>>>>>                        Move False to bResult   //  We can only continue immediately if we were loading the webapp, other operations are not allowed!
-36969>>>>>                        Error DFERR_WEBAPP_SESSION_TIMEOUT "Your application session has timed out or is inactive, please login again."
-36970>>>>>>
-36970>>>>>                        Send NavigateRefresh of ghoWebApp          // refresh the WebApp at the client (triggers a login)
-36971>>>>>                    End
-36971>>>>>>
-36971>>>>>                    Else Begin
-36972>>>>>                        Set pbCreatingNewSession to True                    
-36973>>>>>                        Get RecreateSession of ghoWebApp to bResult 
-36974>>>>>                        Set pbCreatingNewSession to False                        
-36975>>>>>                    End
+36933>>>>>        If not bLogWebSession Begin
+36935>>>>>            Forward Get ValidateSession sSessionKey to bResult
+36937>>>>>            Function_Return bResult
+36938>>>>>        End        
+36938>>>>>>
+36938>>>>>        
+36938>>>>>        Move False to bResult
+36939>>>>>        Get piSessionTimeout to iSessionTimeout 
+36940>>>>>        
+36940>>>>>        //  Check if session exists
+36940>>>>>        Send Clear of hoSessionDD
+36941>>>>>        Move sSessionKey to WebAppSession.SessionKey
+36942>>>>>        Send Find of hoSessionDD EQ Index.1
+36943>>>>>            
+36943>>>>>        If (Found) Begin
+36945>>>>>            //  Calculate timespan between now and last access time
+36945>>>>>            Move (CurrentDateTime()) to dtCurrent
+36946>>>>>            Move WebAppSession.LastAccessDate to dtLastAccess
+36947>>>>>            Get StringToTime of hoSessionDD dtLastAccess WebAppSession.LastAccessTime to dtLastAccess
+36948>>>>>            Move (dtCurrent - dtLastAccess) to tsDiff
+36949>>>>>            Move (SpanTotalMinutes(tsDiff)) to iSpanMinutes
+36950>>>>>            
+36950>>>>>            //  Check if session didn't time out
+36950>>>>>            If (IsDateValid(dtLastAccess) and (iSessionTimeout <= 0 or (iSpanMinutes < iSessionTimeout)) and WebAppSession.Active = "Y") Begin
+36952>>>>>                Forward Get ValidateSession sSessionKey to bResult
+36954>>>>>                   
+36954>>>>>                If (bResult) Begin
+36956>>>>>                    //  Update session record
+36956>>>>>                    Get TimeToString of hoSessionDD dtCurrent to sTime 
+36957>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.LastAccessDate to dtCurrent
+36958>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.LastAccessTime to sTime
+36959>>>>>                    Set Field_Changed_Value of hoSessionDD Field WebAppSession.UseCount to (WebAppSession.UseCount + 1)
+36960>>>>>                    Get Request_Validate of hoSessionDD to iErr
+36961>>>>>                    If (iErr) Begin
+36963>>>>>                        // this should not happen. If it does its a programming error
+36963>>>>>                        Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
+36964>>>>>>
+36964>>>>>                        Function_Return False
+36965>>>>>                    End
+36965>>>>>>
+36965>>>>>                    Send Request_Save of hoSessionDD
+36966>>>>>                    
+36966>>>>>                    //  Update user properties
+36966>>>>>                    Send UpdateSessionProperties False
+36967>>>>>                End
+36967>>>>>>
+36967>>>>>            End
+36967>>>>>>
+36967>>>>>            Else Begin
+36968>>>>>                // Test the Creating New Session Flag to protect against infinite recursion....
+36968>>>>>                Get pbCreatingNewSession to bCreatingNewSession
+36969>>>>>                
+36969>>>>>                If (not(bCreatingNewSession)) Begin
+36971>>>>>                    If (not(bLoadWebApp)) Begin
+36973>>>>>                        Move False to bResult   //  We can only continue immediately if we were loading the webapp, other operations are not allowed!
+36974>>>>>                        Error DFERR_WEBAPP_SESSION_TIMEOUT "Your application session has timed out or is inactive, please login again."
 36975>>>>>>
-36975>>>>>                End
-36975>>>>>>
-36975>>>>>            End
-36975>>>>>>
-36975>>>>>        End
-36975>>>>>>
-36975>>>>>        Else Begin
-36976>>>>>            Error DFERR_WEBAPP_BAD_SESSION_KEY "Session key not known (reload page to recreate session)"
-36977>>>>>>
-36977>>>>>        End
-36977>>>>>>
-36977>>>>>        
-36977>>>>>        Function_Return bResult
-36978>>>>>    End_Function
-36979>>>>>    
-36979>>>>>    Function CreatePasswordHash String sPassword String ByRef sHash Returns Boolean
-36981>>>>>        If (not(pbPasswordHashing(Self))) Begin
-36983>>>>>            Move sPassword to sHash
-36984>>>>>            Function_Return True
-36985>>>>>        End
-36985>>>>>>
-36985>>>>>        
-36985>>>>>        If (not(CreatePasswordHash(phoCrypto(Self), sPassword, &sHash))) Begin
-36987>>>>>            Function_Return False
-36988>>>>>        End
-36988>>>>>>
-36988>>>>>        Move ("V1$" + sHash) to sHash
-36989>>>>>        Function_Return True
-36990>>>>>    End_Function
-36991>>>>>    
-36991>>>>>    Function VerifyPasswordHash String sUserPassword String sEnteredPassword Boolean ByRef bShouldUpgrade Returns Boolean
-36993>>>>>        If (not(pbPasswordHashing(Self))) Begin
-36995>>>>>            Move False to bShouldUpgrade
-36996>>>>>            Function_Return (sUserPassword = sEnteredPassword)
-36997>>>>>        End
-36997>>>>>>
-36997>>>>>        
-36997>>>>>        String sVersion
-36997>>>>>        Move (Left(sUserPassword, 3)) to sVersion
-36998>>>>>        If (sVersion = "V1$") Begin
-37000>>>>>            If (num_arguments > 2) Move False to bShouldUpgrade
-37003>>>>>            Function_Return (VerifyPasswordHash(phoCrypto(Self), sEnteredPassword, Right(sUserPassword, Length(sUserPassword) - 3)))
-37004>>>>>        End
-37004>>>>>>
-37004>>>>>        Else Begin
-37005>>>>>            If (num_arguments > 2) Move True to bShouldUpgrade
-37008>>>>>            Function_Return False
+36975>>>>>                        Send NavigateRefresh of ghoWebApp          // refresh the WebApp at the client (triggers a login)
+36976>>>>>                    End
+36976>>>>>>
+36976>>>>>                    Else Begin
+36977>>>>>                        Set pbCreatingNewSession to True                    
+36978>>>>>                        Get RecreateSession of ghoWebApp to bResult 
+36979>>>>>                        Set pbCreatingNewSession to False                        
+36980>>>>>                    End
+36980>>>>>>
+36980>>>>>                End
+36980>>>>>>
+36980>>>>>            End
+36980>>>>>>
+36980>>>>>        End
+36980>>>>>>
+36980>>>>>        Else Begin
+36981>>>>>            Error DFERR_WEBAPP_BAD_SESSION_KEY "Session key not known (reload page to recreate session)"
+36982>>>>>>
+36982>>>>>        End
+36982>>>>>>
+36982>>>>>        
+36982>>>>>        Function_Return bResult
+36983>>>>>    End_Function
+36984>>>>>    
+36984>>>>>    Function CreatePasswordHash String sPassword String ByRef sHash Returns Boolean
+36986>>>>>        If (not(pbPasswordHashing(Self))) Begin
+36988>>>>>            Move sPassword to sHash
+36989>>>>>            Function_Return True
+36990>>>>>        End
+36990>>>>>>
+36990>>>>>        
+36990>>>>>        If (not(CreatePasswordHash(phoCrypto(Self), sPassword, &sHash))) Begin
+36992>>>>>            Function_Return False
+36993>>>>>        End
+36993>>>>>>
+36993>>>>>        Move ("V1$" + sHash) to sHash
+36994>>>>>        Function_Return True
+36995>>>>>    End_Function
+36996>>>>>    
+36996>>>>>    Function VerifyPasswordHash String sUserPassword String sEnteredPassword Boolean ByRef bShouldUpgrade Returns Boolean
+36998>>>>>        If (not(pbPasswordHashing(Self))) Begin
+37000>>>>>            Move False to bShouldUpgrade
+37001>>>>>            Function_Return (sUserPassword = sEnteredPassword)
+37002>>>>>        End
+37002>>>>>>
+37002>>>>>        
+37002>>>>>        String sVersion
+37002>>>>>        Move (Left(sUserPassword, 3)) to sVersion
+37003>>>>>        If (sVersion = "V1$") Begin
+37005>>>>>            If (num_arguments > 2) Move False to bShouldUpgrade
+37008>>>>>            Function_Return (VerifyPasswordHash(phoCrypto(Self), sEnteredPassword, Right(sUserPassword, Length(sUserPassword) - 3)))
 37009>>>>>        End
 37009>>>>>>
-37009>>>>>    End_Function
-37010>>>>>    
-37010>>>>>    Function UserRegister String sLoginName String sPassword Returns Boolean
-37012>>>>>        Handle hoUserDD
-37012>>>>>        Integer iErr
-37012>>>>>        Get phoUserDD to hoUserDD
-37013>>>>>        
-37013>>>>>        //  Find the user
-37013>>>>>        Send Clear of hoUserDD
-37014>>>>>        Move sLoginName to WebAppUser.LoginName
-37015>>>>>        Send Find of hoUserDD EQ Index.1
-37016>>>>>        If (Found) Begin
-37018>>>>>            Send Clear of hoUserDD
-37019>>>>>            Function_Return False
-37020>>>>>        End
-37020>>>>>>
-37020>>>>>        
-37020>>>>>        Send Clear of hoUserDD
-37021>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.FullName to sLoginName
-37022>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.LoginName to sLoginName
-37023>>>>>        If (not(CreatePasswordHash(Self, Trim(sPassword), &sPassword))) Begin
-37025>>>>>            Send Clear of hoUserDD
-37026>>>>>            Function_Return False
-37027>>>>>        End
-37027>>>>>>
-37027>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.Password to sPassword
-37028>>>>>        Get Request_Validate of hoUserDD to iErr
-37029>>>>>        If (iErr) Begin
-37031>>>>>            Send Clear of hoUserDD
-37032>>>>>            Function_Return False
-37033>>>>>        End
-37033>>>>>>
-37033>>>>>        
-37033>>>>>        Send Request_Save of hoUserDD
-37034>>>>>        Function_Return (not(Err))
-37035>>>>>    End_Function
-37036>>>>>    
-37036>>>>>    Function UserLogin String sLoginName String sPassword Returns Boolean
-37038>>>>>        String sSessionKey sUserPassword
-37038>>>>>        Handle hoSessionDD hoUserDD
-37038>>>>>        Boolean bMatch bUpgrade
+37009>>>>>        Else Begin
+37010>>>>>            If (num_arguments > 2) Move True to bShouldUpgrade
+37013>>>>>            Function_Return False
+37014>>>>>        End
+37014>>>>>>
+37014>>>>>    End_Function
+37015>>>>>    
+37015>>>>>    Function UserRegister String sLoginName String sPassword Returns Boolean
+37017>>>>>        Handle hoUserDD
+37017>>>>>        Integer iErr
+37017>>>>>        Get phoUserDD to hoUserDD
+37018>>>>>        
+37018>>>>>        //  Find the user
+37018>>>>>        Send Clear of hoUserDD
+37019>>>>>        Move sLoginName to WebAppUser.LoginName
+37020>>>>>        Send Find of hoUserDD EQ Index.1
+37021>>>>>        If (Found) Begin
+37023>>>>>            Send Clear of hoUserDD
+37024>>>>>            Function_Return False
+37025>>>>>        End
+37025>>>>>>
+37025>>>>>        
+37025>>>>>        Send Clear of hoUserDD
+37026>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.FullName to sLoginName
+37027>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.LoginName to sLoginName
+37028>>>>>        If (not(CreatePasswordHash(Self, Trim(sPassword), &sPassword))) Begin
+37030>>>>>            Send Clear of hoUserDD
+37031>>>>>            Function_Return False
+37032>>>>>        End
+37032>>>>>>
+37032>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.Password to sPassword
+37033>>>>>        Get Request_Validate of hoUserDD to iErr
+37034>>>>>        If (iErr) Begin
+37036>>>>>            Send Clear of hoUserDD
+37037>>>>>            Function_Return False
+37038>>>>>        End
+37038>>>>>>
 37038>>>>>        
-37038>>>>>        Get phoSessionDD to hoSessionDD
-37039>>>>>        Get phoUserDD to hoUserDD
-37040>>>>>        Integer iErr eLoginMode
-37040>>>>>        
-37040>>>>>        // Refind session record
-37040>>>>>        Get psSessionKey to sSessionKey
-37041>>>>>        Send Clear of hoSessionDD
-37042>>>>>        Move sSessionKey to WebAppSession.SessionKey
-37043>>>>>        Send Find of hoSessionDD EQ Index.1
-37044>>>>>        
-37044>>>>>        If (Found and WebAppSession.SessionKey = sSessionKey) Begin
-37046>>>>>            Get peLoginMode to eLoginMode
-37047>>>>>            
-37047>>>>>            //  Find the user
-37047>>>>>            Move sLoginName to WebAppUser.LoginName
-37048>>>>>            Send Find of hoUserDD EQ Index.1
-37049>>>>>            
-37049>>>>>            // Check username and password
-37049>>>>>            If (Found and (Lowercase(sLoginName) = Lowercase(Trim(WebAppUser.LoginName)))) Begin
-37051>>>>>                Get Field_Current_Value of hoUserDD Field WebAppUser.Password to sUserPassword
-37052>>>>>                Get VerifyPasswordHash (Trim(sUserPassword)) (Trim(sPassword)) (&bUpgrade) to bMatch
-37053>>>>>                
-37053>>>>>                If (bMatch) Begin
-37055>>>>>                    // Store the login
-37055>>>>>                    If (bUpgrade) Begin
-37057>>>>>                        Get CreatePasswordHash (Trim(sPassword)) (&sPassword) to bUpgrade
-37058>>>>>                        If (bUpgrade) Set Field_Changed_Value of hoUserDD Field WebAppUser.Password to sPassword
-37061>>>>>                    End
-37061>>>>>>
-37061>>>>>                    Set Field_Changed_Value of hoUserDD Field WebAppUser.LastLogin to (CurrentDateTime())
-37062>>>>>                    Get Request_Validate of hoSessionDD to iErr
-37063>>>>>                    If (iErr) Begin
-37065>>>>>                        // this should not happen. If it does its a programming error
-37065>>>>>                        Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
+37038>>>>>        Send Request_Save of hoUserDD
+37039>>>>>        Function_Return (not(Err))
+37040>>>>>    End_Function
+37041>>>>>    
+37041>>>>>    Function UserLogin String sLoginName String sPassword Returns Boolean
+37043>>>>>        String sSessionKey sUserPassword
+37043>>>>>        Handle hoSessionDD hoUserDD
+37043>>>>>        Boolean bMatch bUpgrade
+37043>>>>>        
+37043>>>>>        Get phoSessionDD to hoSessionDD
+37044>>>>>        Get phoUserDD to hoUserDD
+37045>>>>>        Integer iErr eLoginMode
+37045>>>>>        
+37045>>>>>        // Refind session record
+37045>>>>>        Get psSessionKey to sSessionKey
+37046>>>>>        Send Clear of hoSessionDD
+37047>>>>>        Move sSessionKey to WebAppSession.SessionKey
+37048>>>>>        Send Find of hoSessionDD EQ Index.1
+37049>>>>>        
+37049>>>>>        If (Found and WebAppSession.SessionKey = sSessionKey) Begin
+37051>>>>>            Get peLoginMode to eLoginMode
+37052>>>>>            
+37052>>>>>            //  Find the user
+37052>>>>>            Move sLoginName to WebAppUser.LoginName
+37053>>>>>            Send Find of hoUserDD EQ Index.1
+37054>>>>>            
+37054>>>>>            // Check username and password
+37054>>>>>            If (Found and (Lowercase(sLoginName) = Lowercase(Trim(WebAppUser.LoginName)))) Begin
+37056>>>>>                Get Field_Current_Value of hoUserDD Field WebAppUser.Password to sUserPassword
+37057>>>>>                Get VerifyPasswordHash (Trim(sUserPassword)) (Trim(sPassword)) (&bUpgrade) to bMatch
+37058>>>>>                
+37058>>>>>                If (bMatch) Begin
+37060>>>>>                    // Store the login
+37060>>>>>                    If (bUpgrade) Begin
+37062>>>>>                        Get CreatePasswordHash (Trim(sPassword)) (&sPassword) to bUpgrade
+37063>>>>>                        If (bUpgrade) Set Field_Changed_Value of hoUserDD Field WebAppUser.Password to sPassword
+37066>>>>>                    End
 37066>>>>>>
-37066>>>>>                        Function_Return False
-37067>>>>>                    End
-37067>>>>>>
-37067>>>>>                    
-37067>>>>>                    Send Request_Save of hoSessionDD
-37068>>>>>                    
-37068>>>>>                    // Update session properties
-37068>>>>>                    Send UpdateSessionProperties False
-37069>>>>>                    Send NotifyChangeRights
-37070>>>>>                    Function_Return True
-37071>>>>>                End
+37066>>>>>                    Set Field_Changed_Value of hoUserDD Field WebAppUser.LastLogin to (CurrentDateTime())
+37067>>>>>                    Get Request_Validate of hoSessionDD to iErr
+37068>>>>>                    If (iErr) Begin
+37070>>>>>                        // this should not happen. If it does its a programming error
+37070>>>>>                        Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
 37071>>>>>>
-37071>>>>>                Else Begin
-37072>>>>>                    //  We should rely directly on this buffer elsewhere but just be sure
-37072>>>>>                    Send Clear of hoUserDD
-37073>>>>>                End
-37073>>>>>>
-37073>>>>>            End
-37073>>>>>>
-37073>>>>>            Else Begin
-37074>>>>>                // This is added to delay latency to avoid hackers finding out whether the user exists or not.
-37074>>>>>                Get CreatePasswordHash "This is to delay the response latency." (&sPassword) to iErr
-37075>>>>>            End
-37075>>>>>>
-37075>>>>>        End
-37075>>>>>>
-37075>>>>>        Else Begin
-37076>>>>>            // This is added to delay latency to avoid hackers finding out whether the user exists or not.
-37076>>>>>            Get CreatePasswordHash "This is to delay the response latency." (&sPassword) to iErr
-37077>>>>>        End
-37077>>>>>>
-37077>>>>>          
-37077>>>>>        Function_Return False
-37078>>>>>    End_Function
-37079>>>>>    
-37079>>>>>    Function SetUserPassword String sLoginName String sPassword Returns Boolean
-37081>>>>>        Handle hoUserDD
-37081>>>>>        Integer iErr
-37081>>>>>        Get phoUserDD to hoUserDD
-37082>>>>>        
-37082>>>>>        //  Find the user
-37082>>>>>        Send Clear of hoUserDD
-37083>>>>>        Move sLoginName to WebAppUser.LoginName
-37084>>>>>        Send Find of hoUserDD EQ Index.1
-37085>>>>>        If (not(Found)) Begin
-37087>>>>>            Send Clear of hoUserDD
-37088>>>>>            Function_Return False
-37089>>>>>        End
-37089>>>>>>
-37089>>>>>        
-37089>>>>>        If (not(CreatePasswordHash(Self, Trim(sPassword), &sPassword))) Begin
-37091>>>>>            Send Clear of hoUserDD
-37092>>>>>            Function_Return False
-37093>>>>>        End
-37093>>>>>>
-37093>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.Password to sPassword
-37094>>>>>        Get Request_Validate of hoUserDD to iErr
-37095>>>>>        If (iErr) Begin
-37097>>>>>            Send Clear of hoUserDD
-37098>>>>>            Function_Return False
-37099>>>>>        End
-37099>>>>>>
-37099>>>>>        
-37099>>>>>        Send Request_Save of hoUserDD
-37100>>>>>        Function_Return (not(Err))
-37101>>>>>    End_Function
-37102>>>>>    
-37102>>>>>    Function IsLoggedIn Returns Boolean
-37104>>>>>        String sLoginName
-37104>>>>>        Boolean bLogWebSession bLoggedIn
+37071>>>>>                        Function_Return False
+37072>>>>>                    End
+37072>>>>>>
+37072>>>>>                    
+37072>>>>>                    Send Request_Save of hoSessionDD
+37073>>>>>                    
+37073>>>>>                    // Update session properties
+37073>>>>>                    Send UpdateSessionProperties False
+37074>>>>>                    Send NotifyChangeRights
+37075>>>>>                    Function_Return True
+37076>>>>>                End
+37076>>>>>>
+37076>>>>>                Else Begin
+37077>>>>>                    //  We should rely directly on this buffer elsewhere but just be sure
+37077>>>>>                    Send Clear of hoUserDD
+37078>>>>>                End
+37078>>>>>>
+37078>>>>>            End
+37078>>>>>>
+37078>>>>>            Else Begin
+37079>>>>>                // This is added to delay latency to avoid hackers finding out whether the user exists or not.
+37079>>>>>                Get CreatePasswordHash "This is to delay the response latency." (&sPassword) to iErr
+37080>>>>>            End
+37080>>>>>>
+37080>>>>>        End
+37080>>>>>>
+37080>>>>>        Else Begin
+37081>>>>>            // This is added to delay latency to avoid hackers finding out whether the user exists or not.
+37081>>>>>            Get CreatePasswordHash "This is to delay the response latency." (&sPassword) to iErr
+37082>>>>>        End
+37082>>>>>>
+37082>>>>>          
+37082>>>>>        Function_Return False
+37083>>>>>    End_Function
+37084>>>>>    
+37084>>>>>    Function SetUserPassword String sLoginName String sPassword Returns Boolean
+37086>>>>>        Handle hoUserDD
+37086>>>>>        Integer iErr
+37086>>>>>        Get phoUserDD to hoUserDD
+37087>>>>>        
+37087>>>>>        //  Find the user
+37087>>>>>        Send Clear of hoUserDD
+37088>>>>>        Move sLoginName to WebAppUser.LoginName
+37089>>>>>        Send Find of hoUserDD EQ Index.1
+37090>>>>>        If (not(Found)) Begin
+37092>>>>>            Send Clear of hoUserDD
+37093>>>>>            Function_Return False
+37094>>>>>        End
+37094>>>>>>
+37094>>>>>        
+37094>>>>>        If (not(CreatePasswordHash(Self, Trim(sPassword), &sPassword))) Begin
+37096>>>>>            Send Clear of hoUserDD
+37097>>>>>            Function_Return False
+37098>>>>>        End
+37098>>>>>>
+37098>>>>>        Set Field_Changed_Value of hoUserDD Field WebAppUser.Password to sPassword
+37099>>>>>        Get Request_Validate of hoUserDD to iErr
+37100>>>>>        If (iErr) Begin
+37102>>>>>            Send Clear of hoUserDD
+37103>>>>>            Function_Return False
+37104>>>>>        End
+37104>>>>>>
 37104>>>>>        
-37104>>>>>        Get pbLogWebSession to bLogWebSession
-37105>>>>>        If not bLogWebSession Begin
-37107>>>>>            Forward Get IsLoggedIn to bLoggedIn
-37109>>>>>            Function_Return bLoggedIn
-37110>>>>>        End
-37110>>>>>>
-37110>>>>>        
-37110>>>>>        Get psLoginName to sLoginName
-37111>>>>>        
-37111>>>>>        Function_Return (sLoginName <> "")
-37112>>>>>    End_Function
-37113>>>>>    
-37113>>>>>    
-37113>>>>>    //
-37113>>>>>    // This procedure is called when validating a session and after logging in. Its purpose is to 
-37113>>>>>    // update properties based on the session and user data. Augment this function to update 
-37113>>>>>    // properties based on the session / user table. Note that WebAppUser and WebAppSession contain
-37113>>>>>    // the right records when this procedure is called.
-37113>>>>>    //
-37113>>>>>    // Params:
-37113>>>>>    //      bClear   True if the procedure is called before session validation to clear properties.
-37113>>>>>    //
-37113>>>>>    Procedure UpdateSessionProperties Boolean bClear
-37115>>>>>        Handle hoUserDD
+37104>>>>>        Send Request_Save of hoUserDD
+37105>>>>>        Function_Return (not(Err))
+37106>>>>>    End_Function
+37107>>>>>    
+37107>>>>>    Function IsLoggedIn Returns Boolean
+37109>>>>>        String sLoginName
+37109>>>>>        Boolean bLogWebSession bLoggedIn
+37109>>>>>        
+37109>>>>>        Get pbLogWebSession to bLogWebSession
+37110>>>>>        If not bLogWebSession Begin
+37112>>>>>            Forward Get IsLoggedIn to bLoggedIn
+37114>>>>>            Function_Return bLoggedIn
+37115>>>>>        End
+37115>>>>>>
 37115>>>>>        
-37115>>>>>        Get phoUserDD to hoUserDD
+37115>>>>>        Get psLoginName to sLoginName
 37116>>>>>        
-37116>>>>>        //  Update user properties
-37116>>>>>        If (not(bClear) and HasRecord(hoUserDD)) Begin
-37118>>>>>            Set psUsername to (Trim(WebAppUser.FullName))
-37119>>>>>            Set psLoginName to (Trim(WebAppUser.LoginName))
-37120>>>>>            Set piUserRights to WebAppUser.Rights
-37121>>>>>            
-37121>>>>>            Send OnSessionPropertiesSet 
-37122>>>>>        End
-37122>>>>>>
-37122>>>>>        Else Begin
-37123>>>>>            Set psUsername to ""
-37124>>>>>            Set psLoginName to ""
-37125>>>>>            Set piUserRights to 0
+37116>>>>>        Function_Return (sLoginName <> "")
+37117>>>>>    End_Function
+37118>>>>>    
+37118>>>>>    
+37118>>>>>    //
+37118>>>>>    // This procedure is called when validating a session and after logging in. Its purpose is to 
+37118>>>>>    // update properties based on the session and user data. Augment this function to update 
+37118>>>>>    // properties based on the session / user table. Note that WebAppUser and WebAppSession contain
+37118>>>>>    // the right records when this procedure is called.
+37118>>>>>    //
+37118>>>>>    // Params:
+37118>>>>>    //      bClear   True if the procedure is called before session validation to clear properties.
+37118>>>>>    //
+37118>>>>>    Procedure UpdateSessionProperties Boolean bClear
+37120>>>>>        Handle hoUserDD
+37120>>>>>        
+37120>>>>>        Get phoUserDD to hoUserDD
+37121>>>>>        
+37121>>>>>        //  Update user properties
+37121>>>>>        If (not(bClear) and HasRecord(hoUserDD)) Begin
+37123>>>>>            Set psUsername to (Trim(WebAppUser.FullName))
+37124>>>>>            Set psLoginName to (Trim(WebAppUser.LoginName))
+37125>>>>>            Set piUserRights to WebAppUser.Rights
 37126>>>>>            
-37126>>>>>            Send OnSessionPropertiesClear
+37126>>>>>            Send OnSessionPropertiesSet 
 37127>>>>>        End
 37127>>>>>>
-37127>>>>>    End_Procedure
-37128>>>>>    
-37128>>>>>    Procedure OnSessionPropertiesSet
-37130>>>>>        //  Empty event stub
-37130>>>>>    End_Procedure
-37131>>>>>    
-37131>>>>>    Procedure OnSessionPropertiesClear
-37133>>>>>        //  Empty event stub
-37133>>>>>    End_Procedure
-37134>>>>>    
-37134>>>>>    Procedure EndSession
-37136>>>>>        Integer iErr
-37136>>>>>        Boolean bLogWebSession
-37136>>>>>        Handle hoSessionDD       
-37136>>>>>        
-37136>>>>>        Get phoSessionDD to hoSessionDD
-37137>>>>>        Get pbLogWebSession to bLogWebSession
-37138>>>>>        If not bLogWebSession Begin
-37140>>>>>            Forward Send EndSession
-37142>>>>>            Procedure_Return
-37143>>>>>        End
-37143>>>>>>
-37143>>>>>            
-37143>>>>>        //  Check if session exists
-37143>>>>>        Send Clear of hoSessionDD
-37144>>>>>        Get psSessionKey to WebAppSession.SessionKey
-37145>>>>>        
-37145>>>>>        Send Find of hoSessionDD EQ Index.1
-37146>>>>>        If (Found) Begin
-37148>>>>>            Set Field_Changed_Value of hoSessionDD Field WebAppSession.Active to "N"
-37149>>>>>            Get Request_Validate of hoSessionDD to iErr
-37150>>>>>            If (iErr) Begin
-37152>>>>>                // this should not happen. If it does its a programming error
-37152>>>>>                Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
-37153>>>>>>
-37153>>>>>                Procedure_Return
-37154>>>>>            End
-37154>>>>>>
-37154>>>>>            Send Request_Save of hoSessionDD
-37155>>>>>        End
-37155>>>>>>
-37155>>>>>    End_Procedure
-37156>>>>>
-37156>>>>>End_Class
-37157>>>>>
-37157>>>
-37157>>>Object oSessionManager is a cWebSessionManagerStandard
-37159>>>End_Object
-37160>>>
-37160>>>
-37160>    Use LoginDialog.wo
+37127>>>>>        Else Begin
+37128>>>>>            Set psUsername to ""
+37129>>>>>            Set psLoginName to ""
+37130>>>>>            Set piUserRights to 0
+37131>>>>>            
+37131>>>>>            Send OnSessionPropertiesClear
+37132>>>>>        End
+37132>>>>>>
+37132>>>>>    End_Procedure
+37133>>>>>    
+37133>>>>>    Procedure OnSessionPropertiesSet
+37135>>>>>        //  Empty event stub
+37135>>>>>    End_Procedure
+37136>>>>>    
+37136>>>>>    Procedure OnSessionPropertiesClear
+37138>>>>>        //  Empty event stub
+37138>>>>>    End_Procedure
+37139>>>>>    
+37139>>>>>    Procedure EndSession
+37141>>>>>        Integer iErr
+37141>>>>>        Boolean bLogWebSession
+37141>>>>>        Handle hoSessionDD       
+37141>>>>>        
+37141>>>>>        Get phoSessionDD to hoSessionDD
+37142>>>>>        Get pbLogWebSession to bLogWebSession
+37143>>>>>        If not bLogWebSession Begin
+37145>>>>>            Forward Send EndSession
+37147>>>>>            Procedure_Return
+37148>>>>>        End
+37148>>>>>>
+37148>>>>>            
+37148>>>>>        //  Check if session exists
+37148>>>>>        Send Clear of hoSessionDD
+37149>>>>>        Get psSessionKey to WebAppSession.SessionKey
+37150>>>>>        
+37150>>>>>        Send Find of hoSessionDD EQ Index.1
+37151>>>>>        If (Found) Begin
+37153>>>>>            Set Field_Changed_Value of hoSessionDD Field WebAppSession.Active to "N"
+37154>>>>>            Get Request_Validate of hoSessionDD to iErr
+37155>>>>>            If (iErr) Begin
+37157>>>>>                // this should not happen. If it does its a programming error
+37157>>>>>                Error DFERR_PROGRAM C_$WebAppSessionValidateFailed
+37158>>>>>>
+37158>>>>>                Procedure_Return
+37159>>>>>            End
+37159>>>>>>
+37159>>>>>            Send Request_Save of hoSessionDD
+37160>>>>>        End
+37160>>>>>>
+37160>>>>>    End_Procedure
+37161>>>>>
+37161>>>>>End_Class
+37162>>>>>
+37162>>>
+37162>>>Object oSessionManager is a cWebSessionManagerStandard
+37164>>>End_Object
+37165>>>
+37165>>>
+37165>    Use LoginDialog.wo
 Including file: LoginDialog.wo    (C:\DataFlex Projects\OrderTutorial\AppSrc\LoginDialog.wo)
-37160>>>Use cWebModalDialog.pkg
-37160>>>Use cWebForm.pkg
-37160>>>Use cWebButton.pkg
-37160>>>Use cWebPanel.pkg
-37160>>>Use cWebLabel.pkg
-37160>>>
-37160>>>Object oLoginDialog is a cWebModalDialog
-37162>>>    Set piMinWidth to 370
-37163>>>    Set piMinHeight to 220
-37164>>>    Set psCaption to "Login"
-37165>>>    Set pbShowClose to (peLoginMode(oWebApp) <> lmLoginRequired)
-37166>>>    Set pbLoginModeEnforced to False
-37167>>>    
-37167>>>    Delegate Set phoLoginView to Self
-37169>>>    
-37169>>>    Object oTopPanel is a cWebPanel
-37171>>>        Set peRegion to prTop
-37172>>>        Set piHeight to 55       
-37173>>>        
-37173>>>        Object oDescription is a cWebLabel
-37175>>>            Set psCaption to "Please enter your username and password to login."
-37176>>>            Set peAlign to alignCenter
-37177>>>        End_Object
-37178>>>    End_Object
-37179>>>    
-37179>>>    Object oRightPanel is a cWebPanel
-37181>>>        Set peRegion to prRight
-37182>>>        Set piWidth to 20       
+37165>>>Use cWebModalDialog.pkg
+37165>>>Use cWebForm.pkg
+37165>>>Use cWebButton.pkg
+37165>>>Use cWebPanel.pkg
+37165>>>Use cWebLabel.pkg
+37165>>>
+37165>>>Object oLoginDialog is a cWebModalDialog
+37167>>>    Set piMinWidth to 370
+37168>>>    Set piMinHeight to 220
+37169>>>    Set psCaption to "Login"
+37170>>>    Set pbShowClose to (peLoginMode(oWebApp) <> lmLoginRequired)
+37171>>>    Set pbLoginModeEnforced to False
+37172>>>    
+37172>>>    Delegate Set phoLoginView to Self
+37174>>>    
+37174>>>    Object oTopPanel is a cWebPanel
+37176>>>        Set peRegion to prTop
+37177>>>        Set piHeight to 55       
+37178>>>        
+37178>>>        Object oDescription is a cWebLabel
+37180>>>            Set psCaption to "Please enter your username and password to login."
+37181>>>            Set peAlign to alignCenter
+37182>>>        End_Object
 37183>>>    End_Object
 37184>>>    
-37184>>>    Object oMainPanel is a cWebPanel
-37186>>>        Set peRegion to prCenter
-37187>>>        
-37187>>>        Object oLoginName is a cWebForm
-37189>>>            Set psLabel to "Login Name:"
-37190>>>            Set peLabelAlign to alignRight
-37191>>>            Set piMaxLength to 20
-37192>>>            Set psAutoComplete to "username"
-37193>>>        End_Object
-37194>>>        
-37194>>>        Object oPassword is a cWebForm
-37196>>>            Set psLabel to "Password:"
-37197>>>            Set pbPassword to True
-37198>>>            Set peLabelAlign to alignRight
-37199>>>            Set piMaxLength to 20
-37200>>>            Set psAutoComplete to "current-password"
-37201>>>        End_Object   
-37202>>>        
-37202>>>        Object oWarning is a cWebLabel
-37204>>>            Set pbVisible to False
-37205>>>            Set psCaption to "Invalid loginname or password."
-37206>>>            Set psCSSClass to "Warning"
-37207>>>            Set peAlign to alignCenter
-37208>>>        End_Object
-37209>>>    End_Object
-37210>>>    
-37210>>>    Object oButtonPanel is a cWebPanel
-37212>>>        Set peRegion to prBottom
-37213>>>        Set piColumnCount to 3
-37214>>>        Set piMinHeight to 40
-37215>>>
-37215>>>        Object oLoginButton is a cWebButton
-37217>>>            Set pbShowLabel to False
-37218>>>            Set piColumnIndex to 2
-37219>>>            Set psCaption to "Login"
-37220>>>            Set pbServerOnClick to True
-37221>>>                        
-37221>>>            Procedure OnClick
-37224>>>                Send DoLogin
-37225>>>            End_Procedure
-37226>>>            
-37226>>>        End_Object
-37227>>>        
-37227>>>    End_Object
-37228>>>    
-37228>>>    Procedure DoLogin
-37231>>>        String sLoginName sPassword
-37231>>>        Boolean bResult
-37231>>>        Handle hoDefaultView
-37231>>>        
-37231>>>        WebGet psValue of oLoginName to sLoginName
-37232>>>        WebGet psValue of oPassword to sPassword
-37233>>>        
-37233>>>        Get UserLogin of ghoWebSessionManager sLoginName sPassword to bResult
-37234>>>        
-37234>>>        If (bResult) Begin
-37236>>>            Send Hide of oLoginDialog
-37237>>>            Get GetDefaultView to hoDefaultView
-37238>>>            If (hoDefaultView > 0) Begin
-37240>>>                Send Show of hoDefaultView
-37241>>>            End
-37241>>>>
-37241>>>            
-37241>>>            // clear the login values. we don't want to return the login id & password as synchronized properties....
-37241>>>            WebSet psValue of oLoginName to ""
-37242>>>            WebSet psValue of oPassword  to ""
-37243>>>            WebSet pbVisible of oWarning to False
-37244>>>        End
-37244>>>>
-37244>>>        Else Begin
-37245>>>            WebSet pbVisible of oWarning to True
-37246>>>        End
+37184>>>    Object oRightPanel is a cWebPanel
+37186>>>        Set peRegion to prRight
+37187>>>        Set piWidth to 20       
+37188>>>    End_Object
+37189>>>    
+37189>>>    Object oMainPanel is a cWebPanel
+37191>>>        Set peRegion to prCenter
+37192>>>        
+37192>>>        Object oLoginName is a cWebForm
+37194>>>            Set psLabel to "Login Name:"
+37195>>>            Set peLabelAlign to alignRight
+37196>>>            Set piMaxLength to 20
+37197>>>            Set psAutoComplete to "username"
+37198>>>        End_Object
+37199>>>        
+37199>>>        Object oPassword is a cWebForm
+37201>>>            Set psLabel to "Password:"
+37202>>>            Set pbPassword to True
+37203>>>            Set peLabelAlign to alignRight
+37204>>>            Set piMaxLength to 20
+37205>>>            Set psAutoComplete to "current-password"
+37206>>>        End_Object   
+37207>>>        
+37207>>>        Object oWarning is a cWebLabel
+37209>>>            Set pbVisible to False
+37210>>>            Set psCaption to "Invalid loginname or password."
+37211>>>            Set psCSSClass to "Warning"
+37212>>>            Set peAlign to alignCenter
+37213>>>        End_Object
+37214>>>    End_Object
+37215>>>    
+37215>>>    Object oButtonPanel is a cWebPanel
+37217>>>        Set peRegion to prBottom
+37218>>>        Set piColumnCount to 3
+37219>>>        Set piMinHeight to 40
+37220>>>
+37220>>>        Object oLoginButton is a cWebButton
+37222>>>            Set pbShowLabel to False
+37223>>>            Set piColumnIndex to 2
+37224>>>            Set psCaption to "Login"
+37225>>>            Set pbServerOnClick to True
+37226>>>                        
+37226>>>            Procedure OnClick
+37229>>>                Send DoLogin
+37230>>>            End_Procedure
+37231>>>            
+37231>>>        End_Object
+37232>>>        
+37232>>>    End_Object
+37233>>>    
+37233>>>    Procedure DoLogin
+37236>>>        String sLoginName sPassword
+37236>>>        Boolean bResult
+37236>>>        Handle hoDefaultView
+37236>>>        
+37236>>>        WebGet psValue of oLoginName to sLoginName
+37237>>>        WebGet psValue of oPassword to sPassword
+37238>>>        
+37238>>>        Get UserLogin of ghoWebSessionManager sLoginName sPassword to bResult
+37239>>>        
+37239>>>        If (bResult) Begin
+37241>>>            Send Hide of oLoginDialog
+37242>>>            Get GetDefaultView to hoDefaultView
+37243>>>            If (hoDefaultView > 0) Begin
+37245>>>                Send Show of hoDefaultView
+37246>>>            End
 37246>>>>
-37246>>>    End_Procedure
-37247>>>    
-37247>>>    
-37247>>>    Set pbServerOnSubmit to True
-37248>>>    Procedure OnSubmit
-37251>>>         Send DoLogin
-37252>>>    End_Procedure
-37253>>>End_Object
-37254>    Use WebResourceManager.wo
+37246>>>            
+37246>>>            // clear the login values. we don't want to return the login id & password as synchronized properties....
+37246>>>            WebSet psValue of oLoginName to ""
+37247>>>            WebSet psValue of oPassword  to ""
+37248>>>            WebSet pbVisible of oWarning to False
+37249>>>        End
+37249>>>>
+37249>>>        Else Begin
+37250>>>            WebSet pbVisible of oWarning to True
+37251>>>        End
+37251>>>>
+37251>>>    End_Procedure
+37252>>>    
+37252>>>    
+37252>>>    Set pbServerOnSubmit to True
+37253>>>    Procedure OnSubmit
+37256>>>         Send DoLogin
+37257>>>    End_Procedure
+37258>>>End_Object
+37259>    Use WebResourceManager.wo
 Including file: WebResourceManager.wo    (C:\DataFlex Projects\OrderTutorial\AppSrc\WebResourceManager.wo)
-37254>>>Use cWebResourceManager.pkg
-37254>>>
-37254>>>Object oWebResourceManager is a cWebResourceManager
-37256>>>End_Object
-37257>    Use CustomerEntry.wo
+37259>>>Use cWebResourceManager.pkg
+37259>>>
+37259>>>Object oWebResourceManager is a cWebResourceManager
+37261>>>End_Object
+37262>    Use CustomerEntry.wo
 Including file: CustomerEntry.wo    (C:\DataFlex Projects\OrderTutorial\AppSrc\CustomerEntry.wo)
-37257>>>// C:\DataFlex Projects\OrderTutorial\AppSrc\CustomerEntry.wo
-37257>>>// Customer Entry
-37257>>>//
-37257>>>
-37257>>>Use cWebView.pkg
-37257>>>Use cWebPanel.pkg
-37257>>>Use cWebForm.pkg
-37257>>>Use cWebTabContainer.pkg
-37257>>>Use cWebTabPage.pkg
-37257>>>Use cWebCombo.pkg
-37257>>>Use cWebCheckBox.pkg
-37257>>>Use cWebEdit.pkg
-37257>>>
-37257>>>Use cCustomerDataDictionary.dd
+37262>>>// C:\DataFlex Projects\OrderTutorial\AppSrc\CustomerEntry.wo
+37262>>>// Customer Entry
+37262>>>//
+37262>>>
+37262>>>Use cWebView.pkg
+37262>>>Use cWebPanel.pkg
+37262>>>Use cWebForm.pkg
+37262>>>Use cWebTabContainer.pkg
+37262>>>Use cWebTabPage.pkg
+37262>>>Use cWebCombo.pkg
+37262>>>Use cWebCheckBox.pkg
+37262>>>Use cWebEdit.pkg
+37262>>>
+37262>>>Use cCustomerDataDictionary.dd
 Including file: cCustomerDataDictionary.dd    (C:\DataFlex Projects\OrderTutorial\DDSrc\cCustomerDataDictionary.dd)
-37257>>>>>Use DataDict.pkg
-37257>>>>>
-37257>>>>>Open Customer
+37262>>>>>Use DataDict.pkg
+37262>>>>>
+37262>>>>>Open Customer
 Including file: Customer.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\Customer.fd)
-37259>>>>>Open OrderHeader
+37264>>>>>Open OrderHeader
 Including file: OrderHeader.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\OrderHeader.fd)
-37261>>>>>Open DFLastID
+37266>>>>>Open DFLastID
 Including file: DFLastID.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\DFLastID.fd)
-37263>>>>>
-37263>>>>>Register_Object Customer_State_VT
-37263>>>>>Register_Object Customer_sl
-37263>>>>>
-37263>>>>>Object Customer_State_VT is a CodeValidationTable
-37265>>>>>    Set Type_Value to "STATES"
-37266>>>>>    Set Table_Title to "States"
-37267>>>>>End_Object
 37268>>>>>
-37268>>>>>Register_Function ValidateEmail Integer iColumn String sValue Returns Boolean
+37268>>>>>Register_Object Customer_State_VT
+37268>>>>>Register_Object Customer_sl
 37268>>>>>
-37268>>>>>Register_Object oCustomerWebLookup
-37268>>>>>Class cCustomerDataDictionary is a DataDictionary
-37269>>>>>    
-37269>>>>>    Procedure Construct_Object
-37271>>>>>        Forward Send Construct_Object
-37273>>>>>        
-37273>>>>>        Set Main_File to Customer.File_Number
-37274>>>>>        Set Cascade_Delete_State to False
-37275>>>>>        
-37275>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
-37276>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
-37277>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+37268>>>>>Object Customer_State_VT is a CodeValidationTable
+37270>>>>>    Set Type_Value to "STATES"
+37271>>>>>    Set Table_Title to "States"
+37272>>>>>End_Object
+37273>>>>>
+37273>>>>>Register_Function ValidateEmail Integer iColumn String sValue Returns Boolean
+37273>>>>>
+37273>>>>>Register_Object oCustomerWebLookup
+37273>>>>>Class cCustomerDataDictionary is a DataDictionary
+37274>>>>>    
+37274>>>>>    Procedure Construct_Object
+37276>>>>>        Forward Send Construct_Object
 37278>>>>>        
-37278>>>>>        Set Add_Client_File to OrderHeader.File_Number
-37279>>>>>        
-37279>>>>>        Set Add_System_File to DFLastID.File_Number DD_LOCK_ON_NEW_SAVE
+37278>>>>>        Set Main_File to Customer.File_Number
+37279>>>>>        Set Cascade_Delete_State to False
 37280>>>>>        
-37280>>>>>        Set Field_Auto_Increment Field Customer.Customer_Number to File_Field DFLastID.Cust_Number
-37281>>>>>        Set Field_Label_Long Field Customer.Customer_Number to "Customer Number"
-37282>>>>>        Set Field_Label_Short Field Customer.Customer_Number to "Number"
-37283>>>>>        Set Field_Option Field Customer.Customer_Number DD_AUTOFIND to True
-37284>>>>>        Set Field_Option Field Customer.Customer_Number DD_NOPUT to True
-37285>>>>>        Set Field_Prompt_Object Field Customer.Customer_Number to Customer_sl
-37286>>>>>        Set Field_WebPrompt_Object Field Customer.Customer_Number to oCustomerWebLookup
-37287>>>>>        Set Key_Field_State Field Customer.Customer_Number to True
-37288>>>>>        Set Status_Help Field Customer.Customer_Number to "Customer Id Number (system assigned)."
-37289>>>>>        
-37289>>>>>        Set Field_Label_Long Field Customer.Name to "Customer Name"
-37290>>>>>        Set Field_Label_Short Field Customer.Name to "Customer Name"
-37291>>>>>        Set Field_Option Field Customer.Name DD_REQUIRED to True
-37292>>>>>        Set Field_Prompt_Object Field Customer.Name to Customer_sl
-37293>>>>>        Set Field_WebPrompt_Object Field Customer.Name to oCustomerWebLookup
-37294>>>>>        Set Status_Help Field Customer.Name to "Customer/Company Name."
-37295>>>>>        
-37295>>>>>        Set Field_Label_Long Field Customer.Address to "Street Address"
-37296>>>>>        Set Field_Label_Short Field Customer.Address to "Address"
-37297>>>>>        Set Status_Help Field Customer.Address to "Street Address."
-37298>>>>>        
-37298>>>>>        Set Status_Help Field Customer.City to "City Name."
-37299>>>>>        
-37299>>>>>        Set Field_Class_Name Field Customer.State to "Combo"
-37300>>>>>        Set Field_Label_Long Field Customer.State to "State"
-37301>>>>>        Set Field_Label_Short Field Customer.State to "St."
-37302>>>>>        Set Field_Option Field Customer.State DD_CAPSLOCK to True
-37303>>>>>        Set Field_Value_Table Field Customer.State to Customer_State_VT
-37304>>>>>        Set Status_Help Field Customer.State to "Two letter state ID."
-37305>>>>>        
-37305>>>>>        Set Field_Label_Long Field Customer.Zip to "Zip/Postal Code"
-37306>>>>>        Set Field_Label_Short Field Customer.Zip to "Zip"
-37307>>>>>        Set Field_Mask Field Customer.Zip to "#####-####"
-37308>>>>>        Set Field_Mask_Type Field Customer.Zip to MASK_WINDOW
-37309>>>>>        Set Status_Help Field Customer.Zip to "Zip or Postal Code."
+37280>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+37281>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+37282>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+37283>>>>>        
+37283>>>>>        Set Add_Client_File to OrderHeader.File_Number
+37284>>>>>        
+37284>>>>>        Set Add_System_File to DFLastID.File_Number DD_LOCK_ON_NEW_SAVE
+37285>>>>>        
+37285>>>>>        Set Field_Auto_Increment Field Customer.Customer_Number to File_Field DFLastID.Cust_Number
+37286>>>>>        Set Field_Label_Long Field Customer.Customer_Number to "Customer Number"
+37287>>>>>        Set Field_Label_Short Field Customer.Customer_Number to "Number"
+37288>>>>>        Set Field_Option Field Customer.Customer_Number DD_AUTOFIND to True
+37289>>>>>        Set Field_Option Field Customer.Customer_Number DD_NOPUT to True
+37290>>>>>        Set Field_Prompt_Object Field Customer.Customer_Number to Customer_sl
+37291>>>>>        Set Field_WebPrompt_Object Field Customer.Customer_Number to oCustomerWebLookup
+37292>>>>>        Set Key_Field_State Field Customer.Customer_Number to True
+37293>>>>>        Set Status_Help Field Customer.Customer_Number to "Customer Id Number (system assigned)."
+37294>>>>>        
+37294>>>>>        Set Field_Label_Long Field Customer.Name to "Customer Name"
+37295>>>>>        Set Field_Label_Short Field Customer.Name to "Customer Name"
+37296>>>>>        Set Field_Option Field Customer.Name DD_REQUIRED to True
+37297>>>>>        Set Field_Prompt_Object Field Customer.Name to Customer_sl
+37298>>>>>        Set Field_WebPrompt_Object Field Customer.Name to oCustomerWebLookup
+37299>>>>>        Set Status_Help Field Customer.Name to "Customer/Company Name."
+37300>>>>>        
+37300>>>>>        Set Field_Label_Long Field Customer.Address to "Street Address"
+37301>>>>>        Set Field_Label_Short Field Customer.Address to "Address"
+37302>>>>>        Set Status_Help Field Customer.Address to "Street Address."
+37303>>>>>        
+37303>>>>>        Set Status_Help Field Customer.City to "City Name."
+37304>>>>>        
+37304>>>>>        Set Field_Class_Name Field Customer.State to "Combo"
+37305>>>>>        Set Field_Label_Long Field Customer.State to "State"
+37306>>>>>        Set Field_Label_Short Field Customer.State to "St."
+37307>>>>>        Set Field_Option Field Customer.State DD_CAPSLOCK to True
+37308>>>>>        Set Field_Value_Table Field Customer.State to Customer_State_VT
+37309>>>>>        Set Status_Help Field Customer.State to "Two letter state ID."
 37310>>>>>        
-37310>>>>>        Set Field_Label_Long Field Customer.Phone_Number to "Phone Number"
-37311>>>>>        Set Field_Label_Short Field Customer.Phone_Number to "Phone"
-37312>>>>>        Set Status_Help Field Customer.Phone_Number to "Phone Number."
-37313>>>>>        
-37313>>>>>        Set Field_Label_Long Field Customer.Fax_Number to "Fax Number"
-37314>>>>>        Set Field_Label_Short Field Customer.Fax_Number to "Fax"
-37315>>>>>        Set Status_Help Field Customer.Fax_Number to "Fax Phone Number."
-37316>>>>>        
-37316>>>>>        Set Field_Label_Long Field Customer.Email_Address to "E-Mail Address"
-37317>>>>>        Set Field_Label_Short Field Customer.Email_Address to "E-Mail"
-37318>>>>>        Set Status_Help Field Customer.Email_Address to "E-mail Address (internet)."
-37319>>>>>        Set Field_Validate_msg Field Customer.EMail_Address to (RefFunc(ValidateEmail))
-37320>>>>>        Set Field_Option Field Customer.EMail_Address DD_REQUIRED to True
+37310>>>>>        Set Field_Label_Long Field Customer.Zip to "Zip/Postal Code"
+37311>>>>>        Set Field_Label_Short Field Customer.Zip to "Zip"
+37312>>>>>        Set Field_Mask Field Customer.Zip to "#####-####"
+37313>>>>>        Set Field_Mask_Type Field Customer.Zip to MASK_WINDOW
+37314>>>>>        Set Status_Help Field Customer.Zip to "Zip or Postal Code."
+37315>>>>>        
+37315>>>>>        Set Field_Label_Long Field Customer.Phone_Number to "Phone Number"
+37316>>>>>        Set Field_Label_Short Field Customer.Phone_Number to "Phone"
+37317>>>>>        Set Status_Help Field Customer.Phone_Number to "Phone Number."
+37318>>>>>        
+37318>>>>>        Set Field_Label_Long Field Customer.Fax_Number to "Fax Number"
+37319>>>>>        Set Field_Label_Short Field Customer.Fax_Number to "Fax"
+37320>>>>>        Set Status_Help Field Customer.Fax_Number to "Fax Phone Number."
 37321>>>>>        
-37321>>>>>        Set Field_Class_Name Field Customer.Credit_Limit to "Spin"
-37322>>>>>        Set Field_Mask_Type Field Customer.Credit_Limit to MASK_CURRENCY_WINDOW
-37323>>>>>        
-37323>>>>>        Set Field_Label_Long Field Customer.Purchases to "Total Purchases"
-37324>>>>>        Set Field_Label_Short Field Customer.Purchases to "Purchases"
-37325>>>>>        Set Field_Mask_Type Field Customer.Purchases to MASK_CURRENCY_WINDOW
-37326>>>>>        Set Field_Option Field Customer.Purchases DD_DISPLAYONLY to True
-37327>>>>>        
-37327>>>>>        Set Field_Label_Long Field Customer.Balance to "Balance Due"
-37328>>>>>        Set Field_Label_Short Field Customer.Balance to "Balance"
-37329>>>>>        Set Field_Mask_Type Field Customer.Balance to MASK_CURRENCY_WINDOW
-37330>>>>>        Set Field_Option Field Customer.Balance DD_DISPLAYONLY to True
-37331>>>>>        Set Field_Prompt_Object Field Customer.Balance to Customer_sl
+37321>>>>>        Set Field_Label_Long Field Customer.Email_Address to "E-Mail Address"
+37322>>>>>        Set Field_Label_Short Field Customer.Email_Address to "E-Mail"
+37323>>>>>        Set Status_Help Field Customer.Email_Address to "E-mail Address (internet)."
+37324>>>>>        Set Field_Validate_msg Field Customer.EMail_Address to (RefFunc(ValidateEmail))
+37325>>>>>        Set Field_Option Field Customer.EMail_Address DD_REQUIRED to True
+37326>>>>>        
+37326>>>>>        Set Field_Class_Name Field Customer.Credit_Limit to "Spin"
+37327>>>>>        Set Field_Mask_Type Field Customer.Credit_Limit to MASK_CURRENCY_WINDOW
+37328>>>>>        
+37328>>>>>        Set Field_Label_Long Field Customer.Purchases to "Total Purchases"
+37329>>>>>        Set Field_Label_Short Field Customer.Purchases to "Purchases"
+37330>>>>>        Set Field_Mask_Type Field Customer.Purchases to MASK_CURRENCY_WINDOW
+37331>>>>>        Set Field_Option Field Customer.Purchases DD_DISPLAYONLY to True
 37332>>>>>        
-37332>>>>>        Set Status_Help Field Customer.Comments to "Additional Comments and Notes."
-37333>>>>>        
-37333>>>>>        Set Field_Checkbox_Values Field Customer.Status to "Y" "N"
-37334>>>>>        Set Field_Label_Long Field Customer.Status to "Active Status"
-37335>>>>>        Set Field_Label_Short Field Customer.Status to "Status"
-37336>>>>>        Set Status_Help Field Customer.Status to "Active Inactive Status of customer"
+37332>>>>>        Set Field_Label_Long Field Customer.Balance to "Balance Due"
+37333>>>>>        Set Field_Label_Short Field Customer.Balance to "Balance"
+37334>>>>>        Set Field_Mask_Type Field Customer.Balance to MASK_CURRENCY_WINDOW
+37335>>>>>        Set Field_Option Field Customer.Balance DD_DISPLAYONLY to True
+37336>>>>>        Set Field_Prompt_Object Field Customer.Balance to Customer_sl
 37337>>>>>        
-37337>>>>>        Set piPrimaryIndex to 1
-37338>>>>>    End_Procedure
-37339>>>>>    
-37339>>>>>    Procedure Field_defaults
-37341>>>>>        Forward Send Field_Defaults
-37343>>>>>        Set Field_Changed_Value   Field Customer.State to "FL"
-37344>>>>>        Set Field_Changed_Value   Field Customer.Credit_Limit to 1000
-37345>>>>>        Set Field_Changed_Value   Field Customer.Status to "Y"
-37346>>>>>    End_Procedure
-37347>>>>>    
-37347>>>>>    //  Validates if the field contains a valid email address (it allows empty values too).
-37347>>>>>    Function ValidateEmail Integer iColumn String sValue Returns Boolean
-37349>>>>>        Integer iAt iDot
-37349>>>>>        Boolean bResult
-37349>>>>>        
-37349>>>>>        If (Trim(sValue) <> "") Begin
-37351>>>>>            Move (Pos("@", sValue)) to iAt
-37352>>>>>            Move (RightPos(".", sValue)) to iDot
-37353>>>>>            
-37353>>>>>            If (not(iAt > 1 and iDot > 0 and iDot > iAt + 1 and iDot < Length(sValue))) Begin
-37355>>>>>                Send Data_set_error iColumn DFERR_OPERATOR "Please enter a valid email address"
-37356>>>>>                Move True to bResult
-37357>>>>>            End
-37357>>>>>>
-37357>>>>>        End
-37357>>>>>>
-37357>>>>>        
-37357>>>>>        Function_Return bResult
-37358>>>>>    End_Function
-37359>>>>>    
-37359>>>>>End_Class
-37360>>>>>
-37360>>>>>//Use CustomerWebLookup.wo
-37360>>>
-37360>>>Object oCustomerEntry is a cWebView
-37362>>>    Set piColumnCount to 12
-37363>>>    Set psCaption to "Customer Entry"
-37364>>>    Set piWidth to 700
+37337>>>>>        Set Status_Help Field Customer.Comments to "Additional Comments and Notes."
+37338>>>>>        
+37338>>>>>        Set Field_Checkbox_Values Field Customer.Status to "Y" "N"
+37339>>>>>        Set Field_Label_Long Field Customer.Status to "Active Status"
+37340>>>>>        Set Field_Label_Short Field Customer.Status to "Status"
+37341>>>>>        Set Status_Help Field Customer.Status to "Active Inactive Status of customer"
+37342>>>>>        
+37342>>>>>        Set piPrimaryIndex to 1
+37343>>>>>    End_Procedure
+37344>>>>>    
+37344>>>>>    Procedure Field_defaults
+37346>>>>>        Forward Send Field_Defaults
+37348>>>>>        Set Field_Changed_Value   Field Customer.State to "FL"
+37349>>>>>        Set Field_Changed_Value   Field Customer.Credit_Limit to 1000
+37350>>>>>        Set Field_Changed_Value   Field Customer.Status to "Y"
+37351>>>>>    End_Procedure
+37352>>>>>    
+37352>>>>>    //  Validates if the field contains a valid email address (it allows empty values too).
+37352>>>>>    Function ValidateEmail Integer iColumn String sValue Returns Boolean
+37354>>>>>        Integer iAt iDot
+37354>>>>>        Boolean bResult
+37354>>>>>        
+37354>>>>>        If (Trim(sValue) <> "") Begin
+37356>>>>>            Move (Pos("@", sValue)) to iAt
+37357>>>>>            Move (RightPos(".", sValue)) to iDot
+37358>>>>>            
+37358>>>>>            If (not(iAt > 1 and iDot > 0 and iDot > iAt + 1 and iDot < Length(sValue))) Begin
+37360>>>>>                Send Data_set_error iColumn DFERR_OPERATOR "Please enter a valid email address"
+37361>>>>>                Move True to bResult
+37362>>>>>            End
+37362>>>>>>
+37362>>>>>        End
+37362>>>>>>
+37362>>>>>        
+37362>>>>>        Function_Return bResult
+37363>>>>>    End_Function
+37364>>>>>    
+37364>>>>>End_Class
+37365>>>>>
+37365>>>>>//Use CustomerWebLookup.wo
 37365>>>
-37365>>>    Object oCustomer_DD is a cCustomerDataDictionary
-37367>>>    End_Object 
-37368>>>
-37368>>>    Set Main_DD To oCustomer_DD
-37369>>>    Set Server  To oCustomer_DD
+37365>>>Object oCustomerEntry is a cWebView
+37367>>>    Set piColumnCount to 12
+37368>>>    Set psCaption to "Customer Entry"
+37369>>>    Set piWidth to 700
 37370>>>
-37370>>>
-37370>>>    Object oWebMainPanel is a cWebPanel
-37372>>>        Set piColumnCount to 12
+37370>>>    Object oCustomer_DD is a cCustomerDataDictionary
+37372>>>    End_Object 
 37373>>>
-37373>>>        Object oCustomerCustomer_Number is a cWebForm
-37375>>>            Entry_Item Customer.Customer_Number
-37376>>>            Set piColumnSpan to 4
-37377>>>            Set piColumnIndex to 0
-37378>>>            Set psLabel to "Customer Number:"
-37379>>>            Set peLabelAlign to alignLeft
-37380>>>        End_Object 
-37381>>>
-37381>>>        Object oCustomerName is a cWebForm
-37383>>>            Entry_Item Customer.Name
-37384>>>            Set piColumnSpan to 8
-37385>>>            Set piColumnIndex to 4
-37386>>>            Set psLabel to "Customer Name:"
-37387>>>            Set peLabelAlign to alignLeft
-37388>>>        End_Object 
-37389>>>
-37389>>>        Object oWebTabContainer is a cWebTabContainer
-37391>>>            Set pbFillHeight to True
-37392>>>            Set piColumnSpan to 12
-37393>>>            Set pbShowLabel to False
+37373>>>    Set Main_DD To oCustomer_DD
+37374>>>    Set Server  To oCustomer_DD
+37375>>>
+37375>>>
+37375>>>    Object oWebMainPanel is a cWebPanel
+37377>>>        Set piColumnCount to 12
+37378>>>
+37378>>>        Object oCustomerCustomer_Number is a cWebForm
+37380>>>            Entry_Item Customer.Customer_Number
+37381>>>            Set piColumnSpan to 4
+37382>>>            Set piColumnIndex to 0
+37383>>>            Set psLabel to "Customer Number:"
+37384>>>            Set peLabelAlign to alignLeft
+37385>>>        End_Object 
+37386>>>
+37386>>>        Object oCustomerName is a cWebForm
+37388>>>            Entry_Item Customer.Name
+37389>>>            Set piColumnSpan to 8
+37390>>>            Set piColumnIndex to 4
+37391>>>            Set psLabel to "Customer Name:"
+37392>>>            Set peLabelAlign to alignLeft
+37393>>>        End_Object 
 37394>>>
-37394>>>            Object oPage1 is a cWebTabPage
-37396>>>                Set piColumnCount to 12
-37397>>>                Set psCaption to "Address"
-37398>>>
-37398>>>                Object oCustomerAddress is a cWebForm
-37400>>>                    Entry_Item Customer.Address
-37401>>>                    Set piColumnSpan to 8
-37402>>>                    Set piColumnIndex to 0
-37403>>>                    Set psLabel to "Street Address:"
-37404>>>                    Set peLabelAlign to alignLeft
-37405>>>                End_Object 
-37406>>>
-37406>>>                Object oCustomerCity is a cWebForm
-37408>>>                    Entry_Item Customer.City
-37409>>>                    Set piColumnSpan to 5
-37410>>>                    Set piColumnIndex to 0
-37411>>>                    Set psLabel to "City:"
-37412>>>                    Set peLabelAlign to alignLeft
-37413>>>                End_Object 
-37414>>>
-37414>>>                Object oCustomerState is a cWebCombo
-37416>>>                    Entry_Item Customer.State
-37417>>>                    Set piColumnSpan to 4
-37418>>>                    Set piColumnIndex to 5
-37419>>>                    Set psLabel to "State:"
-37420>>>                    Set peLabelAlign to alignLeft
-37421>>>                End_Object 
-37422>>>
-37422>>>                Object oCustomerZip is a cWebForm
-37424>>>                    Entry_Item Customer.Zip
-37425>>>                    Set piColumnSpan to 3
-37426>>>                    Set piColumnIndex to 9
-37427>>>                    Set psLabel to "Zip/Postal Code:"
-37428>>>                    Set peLabelAlign to alignLeft
-37429>>>                End_Object 
-37430>>>
-37430>>>                Object oCustomerPhone_Number is a cWebForm
-37432>>>                    Entry_Item Customer.Phone_Number
-37433>>>                    Set piColumnSpan to 6
-37434>>>                    Set piColumnIndex to 0
-37435>>>                    Set psLabel to "Phone Number:"
-37436>>>                    Set peLabelAlign to alignLeft
-37437>>>                End_Object 
-37438>>>
-37438>>>                Object oCustomerFax_Number is a cWebForm
-37440>>>                    Entry_Item Customer.Fax_Number
-37441>>>                    Set piColumnSpan to 6
-37442>>>                    Set piColumnIndex to 6
-37443>>>                    Set psLabel to "Fax Number:"
-37444>>>                    Set peLabelAlign to alignLeft
-37445>>>                End_Object 
-37446>>>
-37446>>>                Object oCustomerEmail_Address is a cWebForm
-37448>>>                    Entry_Item Customer.Email_Address
-37449>>>                    Set piColumnSpan to 8
-37450>>>                    Set piColumnIndex to 0
-37451>>>                    Set psLabel to "E-Mail Address:"
-37452>>>                    Set peLabelAlign to alignLeft
-37453>>>                End_Object 
-37454>>>
-37454>>>                Object oCustomerStatus is a cWebCheckBox
-37456>>>                    Entry_Item Customer.Status
-37457>>>                    Set piColumnSpan to 4
-37458>>>                    Set piColumnIndex to 0
-37459>>>                    Set psCaption to "Active Status"
-37460>>>                    Set peLabelAlign to alignLeft
-37461>>>                End_Object 
-37462>>>            End_Object 
-37463>>>
-37463>>>            Object oPage2 is a cWebTabPage
-37465>>>                Set piColumnCount to 12
-37466>>>                Set psCaption to "Balances"
-37467>>>
-37467>>>                Object oCustomerCredit_Limit is a cWebForm
-37469>>>                    Entry_Item Customer.Credit_Limit
-37470>>>                    Set piColumnSpan to 5
-37471>>>                    Set piColumnIndex to 0
-37472>>>                    Set psLabel to "Credit Limit:"
-37473>>>                    Set peLabelAlign to alignLeft
-37474>>>                End_Object 
-37475>>>
-37475>>>                Object oCustomerPurchases is a cWebForm
-37477>>>                    Entry_Item Customer.Purchases
-37478>>>                    Set piColumnSpan to 4
-37479>>>                    Set piColumnIndex to 0
-37480>>>                    Set psLabel to "Total Purchases:"
-37481>>>                    Set peLabelAlign to alignLeft
-37482>>>                End_Object 
-37483>>>
-37483>>>                Object oCustomerBalance is a cWebForm
-37485>>>                    Entry_Item Customer.Balance
-37486>>>                    Set piColumnSpan to 4
-37487>>>                    Set piColumnIndex to 0
-37488>>>                    Set psLabel to "Balance Due:"
-37489>>>                    Set peLabelAlign to alignLeft
-37490>>>                End_Object 
-37491>>>            End_Object 
-37492>>>
-37492>>>            Object oPage3 is a cWebTabPage
-37494>>>                Set piColumnCount to 12
-37495>>>                Set psCaption to "Comments"
-37496>>>
-37496>>>                Object oCustomerComments is a cWebEdit
-37498>>>                    Entry_Item Customer.Comments
-37499>>>                    Set piColumnSpan to 8
-37500>>>                    Set piColumnIndex to 0
-37501>>>                    Set psLabel to "Comments:"
-37502>>>                    Set pbFillHeight to True
-37503>>>                    Set peLabelAlign to alignLeft
-37504>>>                End_Object 
-37505>>>            End_Object 
-37506>>>        End_Object 
-37507>>>    End_Object 
-37508>>>
-37508>>>End_Object 
-37509>    Use SalesPerson.wo
+37394>>>        Object oWebTabContainer is a cWebTabContainer
+37396>>>            Set pbFillHeight to True
+37397>>>            Set piColumnSpan to 12
+37398>>>            Set pbShowLabel to False
+37399>>>
+37399>>>            Object oPage1 is a cWebTabPage
+37401>>>                Set piColumnCount to 12
+37402>>>                Set psCaption to "Address"
+37403>>>
+37403>>>                Object oCustomerAddress is a cWebForm
+37405>>>                    Entry_Item Customer.Address
+37406>>>                    Set piColumnSpan to 8
+37407>>>                    Set piColumnIndex to 0
+37408>>>                    Set psLabel to "Street Address:"
+37409>>>                    Set peLabelAlign to alignLeft
+37410>>>                End_Object 
+37411>>>
+37411>>>                Object oCustomerCity is a cWebForm
+37413>>>                    Entry_Item Customer.City
+37414>>>                    Set piColumnSpan to 5
+37415>>>                    Set piColumnIndex to 0
+37416>>>                    Set psLabel to "City:"
+37417>>>                    Set peLabelAlign to alignLeft
+37418>>>                End_Object 
+37419>>>
+37419>>>                Object oCustomerState is a cWebCombo
+37421>>>                    Entry_Item Customer.State
+37422>>>                    Set piColumnSpan to 4
+37423>>>                    Set piColumnIndex to 5
+37424>>>                    Set psLabel to "State:"
+37425>>>                    Set peLabelAlign to alignLeft
+37426>>>                End_Object 
+37427>>>
+37427>>>                Object oCustomerZip is a cWebForm
+37429>>>                    Entry_Item Customer.Zip
+37430>>>                    Set piColumnSpan to 3
+37431>>>                    Set piColumnIndex to 9
+37432>>>                    Set psLabel to "Zip/Postal Code:"
+37433>>>                    Set peLabelAlign to alignLeft
+37434>>>                End_Object 
+37435>>>
+37435>>>                Object oCustomerPhone_Number is a cWebForm
+37437>>>                    Entry_Item Customer.Phone_Number
+37438>>>                    Set piColumnSpan to 6
+37439>>>                    Set piColumnIndex to 0
+37440>>>                    Set psLabel to "Phone Number:"
+37441>>>                    Set peLabelAlign to alignLeft
+37442>>>                End_Object 
+37443>>>
+37443>>>                Object oCustomerFax_Number is a cWebForm
+37445>>>                    Entry_Item Customer.Fax_Number
+37446>>>                    Set piColumnSpan to 6
+37447>>>                    Set piColumnIndex to 6
+37448>>>                    Set psLabel to "Fax Number:"
+37449>>>                    Set peLabelAlign to alignLeft
+37450>>>                End_Object 
+37451>>>
+37451>>>                Object oCustomerEmail_Address is a cWebForm
+37453>>>                    Entry_Item Customer.Email_Address
+37454>>>                    Set piColumnSpan to 8
+37455>>>                    Set piColumnIndex to 0
+37456>>>                    Set psLabel to "E-Mail Address:"
+37457>>>                    Set peLabelAlign to alignLeft
+37458>>>                End_Object 
+37459>>>
+37459>>>                Object oCustomerStatus is a cWebCheckBox
+37461>>>                    Entry_Item Customer.Status
+37462>>>                    Set piColumnSpan to 4
+37463>>>                    Set piColumnIndex to 0
+37464>>>                    Set psCaption to "Active Status"
+37465>>>                    Set peLabelAlign to alignLeft
+37466>>>                End_Object 
+37467>>>            End_Object 
+37468>>>
+37468>>>            Object oPage2 is a cWebTabPage
+37470>>>                Set piColumnCount to 12
+37471>>>                Set psCaption to "Balances"
+37472>>>
+37472>>>                Object oCustomerCredit_Limit is a cWebForm
+37474>>>                    Entry_Item Customer.Credit_Limit
+37475>>>                    Set piColumnSpan to 5
+37476>>>                    Set piColumnIndex to 0
+37477>>>                    Set psLabel to "Credit Limit:"
+37478>>>                    Set peLabelAlign to alignLeft
+37479>>>                End_Object 
+37480>>>
+37480>>>                Object oCustomerPurchases is a cWebForm
+37482>>>                    Entry_Item Customer.Purchases
+37483>>>                    Set piColumnSpan to 4
+37484>>>                    Set piColumnIndex to 0
+37485>>>                    Set psLabel to "Total Purchases:"
+37486>>>                    Set peLabelAlign to alignLeft
+37487>>>                End_Object 
+37488>>>
+37488>>>                Object oCustomerBalance is a cWebForm
+37490>>>                    Entry_Item Customer.Balance
+37491>>>                    Set piColumnSpan to 4
+37492>>>                    Set piColumnIndex to 0
+37493>>>                    Set psLabel to "Balance Due:"
+37494>>>                    Set peLabelAlign to alignLeft
+37495>>>                End_Object 
+37496>>>            End_Object 
+37497>>>
+37497>>>            Object oPage3 is a cWebTabPage
+37499>>>                Set piColumnCount to 12
+37500>>>                Set psCaption to "Comments"
+37501>>>
+37501>>>                Object oCustomerComments is a cWebEdit
+37503>>>                    Entry_Item Customer.Comments
+37504>>>                    Set piColumnSpan to 8
+37505>>>                    Set piColumnIndex to 0
+37506>>>                    Set psLabel to "Comments:"
+37507>>>                    Set pbFillHeight to True
+37508>>>                    Set peLabelAlign to alignLeft
+37509>>>                End_Object 
+37510>>>            End_Object 
+37511>>>        End_Object 
+37512>>>    End_Object 
+37513>>>
+37513>>>End_Object 
+37514>    Use SalesPerson.wo
 Including file: SalesPerson.wo    (C:\DataFlex Projects\OrderTutorial\AppSrc\SalesPerson.wo)
-37509>>>// C:\DataFlex Projects\OrderTutorial\AppSrc\SalesPerson.wo
-37509>>>// Sales Person Maintenance
-37509>>>//
-37509>>>
-37509>>>Use cWebView.pkg
-37509>>>Use cWebPanel.pkg
-37509>>>Use cWebForm.pkg
-37509>>>
-37509>>>Use cSalesPersonDataDictionary.dd
+37514>>>// C:\DataFlex Projects\OrderTutorial\AppSrc\SalesPerson.wo
+37514>>>// Sales Person Maintenance
+37514>>>//
+37514>>>
+37514>>>Use cWebView.pkg
+37514>>>Use cWebPanel.pkg
+37514>>>Use cWebForm.pkg
+37514>>>
+37514>>>Use cSalesPersonDataDictionary.dd
 Including file: cSalesPersonDataDictionary.dd    (C:\DataFlex Projects\OrderTutorial\DDSrc\cSalesPersonDataDictionary.dd)
-37509>>>>>Use DataDict.pkg
-37509>>>>>
-37509>>>>>Open SalesPerson
+37514>>>>>Use DataDict.pkg
+37514>>>>>
+37514>>>>>Open SalesPerson
 Including file: SalesPerson.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\SalesPerson.fd)
-37511>>>>>Open OrderHeader
-37513>>>>>
-37513>>>>>Register_Object SalesPerson_sl
-37513>>>>>Register_Object oSalesPersonWebLookup
-37513>>>>>
-37513>>>>>Class cSalesPersonDataDictionary is a DataDictionary
-37514>>>>>    
-37514>>>>>    Procedure Construct_Object
-37516>>>>>        Forward Send Construct_Object
-37518>>>>>        
-37518>>>>>        Set Main_File to SalesPerson.File_Number
-37519>>>>>        Set Cascade_Delete_State to False
-37520>>>>>        
-37520>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
-37521>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
-37522>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
-37523>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
-37524>>>>>        
-37524>>>>>        Set Add_Client_File to OrderHeader.File_Number
+37516>>>>>Open OrderHeader
+37518>>>>>
+37518>>>>>Register_Object SalesPerson_sl
+37518>>>>>Register_Object oSalesPersonWebLookup
+37518>>>>>
+37518>>>>>Class cSalesPersonDataDictionary is a DataDictionary
+37519>>>>>    
+37519>>>>>    Procedure Construct_Object
+37521>>>>>        Forward Send Construct_Object
+37523>>>>>        
+37523>>>>>        Set Main_File to SalesPerson.File_Number
+37524>>>>>        Set Cascade_Delete_State to False
 37525>>>>>        
-37525>>>>>        Set Field_Label_Long Field SalesPerson.Id to "Sales Person ID"
-37526>>>>>        Set Field_Label_Short Field SalesPerson.Id to "ID"
-37527>>>>>        Set Field_Option Field SalesPerson.Id DD_AUTOFIND to True
-37528>>>>>        Set Field_Option Field SalesPerson.Id DD_REQUIRED to True
-37529>>>>>        Set Field_Option Field SalesPerson.Id DD_CAPSLOCK to True
-37530>>>>>        Set Field_Prompt_Object Field SalesPerson.Id to SalesPerson_sl
-37531>>>>>        Set Field_WebPrompt_Object Field SalesPerson.ID to oSalesPersonWebLookup
-37532>>>>>        Set Key_Field_State Field SalesPerson.Id to True
-37533>>>>>        Set Status_Help Field SalesPerson.Id to "Sales person ID code - Upper case alpha"
-37534>>>>>        
-37534>>>>>        Set Field_Label_Long Field SalesPerson.Name to "Sales Person Name"
-37535>>>>>        Set Field_Label_Short Field SalesPerson.Name to "Sales Person Name"
-37536>>>>>        Set Field_Prompt_Object Field SalesPerson.Name to SalesPerson_sl
-37537>>>>>        Set Status_Help Field SalesPerson.Name to "Sales person name - first and last"
-37538>>>>>        
-37538>>>>>        Set piPrimaryIndex to 1
-37539>>>>>    End_Procedure
-37540>>>>>    
-37540>>>>>    Procedure Field_Defaults
-37542>>>>>        Forward Send Field_Defaults
+37525>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+37526>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+37527>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+37528>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+37529>>>>>        
+37529>>>>>        Set Add_Client_File to OrderHeader.File_Number
+37530>>>>>        
+37530>>>>>        Set Field_Label_Long Field SalesPerson.Id to "Sales Person ID"
+37531>>>>>        Set Field_Label_Short Field SalesPerson.Id to "ID"
+37532>>>>>        Set Field_Option Field SalesPerson.Id DD_AUTOFIND to True
+37533>>>>>        Set Field_Option Field SalesPerson.Id DD_REQUIRED to True
+37534>>>>>        Set Field_Option Field SalesPerson.Id DD_CAPSLOCK to True
+37535>>>>>        Set Field_Prompt_Object Field SalesPerson.Id to SalesPerson_sl
+37536>>>>>        Set Field_WebPrompt_Object Field SalesPerson.ID to oSalesPersonWebLookup
+37537>>>>>        Set Key_Field_State Field SalesPerson.Id to True
+37538>>>>>        Set Status_Help Field SalesPerson.Id to "Sales person ID code - Upper case alpha"
+37539>>>>>        
+37539>>>>>        Set Field_Label_Long Field SalesPerson.Name to "Sales Person Name"
+37540>>>>>        Set Field_Label_Short Field SalesPerson.Name to "Sales Person Name"
+37541>>>>>        Set Field_Prompt_Object Field SalesPerson.Name to SalesPerson_sl
+37542>>>>>        Set Status_Help Field SalesPerson.Name to "Sales person name - first and last"
+37543>>>>>        
+37543>>>>>        Set piPrimaryIndex to 1
 37544>>>>>    End_Procedure
 37545>>>>>    
-37545>>>>>End_Class
-37546>>>>>
-37546>>>>>
-37546>>>>>//Use SalesPersonWebLookup.wo
-37546>>>>>
-37546>>>
-37546>>>Object oSalesPerson is a cWebView
-37548>>>    Set piColumnCount to 12
-37549>>>    Set psCaption to "Sales Person Maintenance"
-37550>>>    Set piWidth to 700
+37545>>>>>    Procedure Field_Defaults
+37547>>>>>        Forward Send Field_Defaults
+37549>>>>>    End_Procedure
+37550>>>>>    
+37550>>>>>End_Class
+37551>>>>>
+37551>>>>>
+37551>>>>>//Use SalesPersonWebLookup.wo
+37551>>>>>
 37551>>>
-37551>>>    Object oSalesPerson_DD is a cSalesPersonDataDictionary
-37553>>>    End_Object 
-37554>>>
-37554>>>    Set Main_DD To oSalesPerson_DD
-37555>>>    Set Server  To oSalesPerson_DD
+37551>>>Object oSalesPerson is a cWebView
+37553>>>    Set piColumnCount to 12
+37554>>>    Set psCaption to "Sales Person Maintenance"
+37555>>>    Set piWidth to 700
 37556>>>
-37556>>>
-37556>>>    Object oWebMainPanel is a cWebPanel
-37558>>>        Set piColumnCount to 12
+37556>>>    Object oSalesPerson_DD is a cSalesPersonDataDictionary
+37558>>>    End_Object 
 37559>>>
-37559>>>        Object oSalesPersonId is a cWebForm
-37561>>>            Entry_Item SalesPerson.Id
-37562>>>            Set piColumnSpan to 2
-37563>>>            Set piColumnIndex to 0
-37564>>>            Set peLabelPosition to lpTop
-37565>>>            Set psLabel to "Sales Person ID"
-37566>>>        End_Object 
-37567>>>
-37567>>>        Object oSalesPersonName is a cWebForm
-37569>>>            Entry_Item SalesPerson.Name
-37570>>>            Set piColumnSpan to 5
-37571>>>            Set piColumnIndex to 2
-37572>>>            Set peLabelPosition to lpTop
-37573>>>            Set psLabel to "Sales Person Name"
-37574>>>        End_Object 
-37575>>>    End_Object 
-37576>>>
-37576>>>End_Object 
-37577>    Use Vendor.wo
+37559>>>    Set Main_DD To oSalesPerson_DD
+37560>>>    Set Server  To oSalesPerson_DD
+37561>>>
+37561>>>
+37561>>>    Object oWebMainPanel is a cWebPanel
+37563>>>        Set piColumnCount to 12
+37564>>>
+37564>>>        Object oSalesPersonId is a cWebForm
+37566>>>            Entry_Item SalesPerson.Id
+37567>>>            Set piColumnSpan to 2
+37568>>>            Set piColumnIndex to 0
+37569>>>            Set peLabelPosition to lpTop
+37570>>>            Set psLabel to "Sales Person ID"
+37571>>>        End_Object 
+37572>>>
+37572>>>        Object oSalesPersonName is a cWebForm
+37574>>>            Entry_Item SalesPerson.Name
+37575>>>            Set piColumnSpan to 5
+37576>>>            Set piColumnIndex to 2
+37577>>>            Set peLabelPosition to lpTop
+37578>>>            Set psLabel to "Sales Person Name"
+37579>>>        End_Object 
+37580>>>    End_Object 
+37581>>>
+37581>>>End_Object 
+37582>    Use Vendor.wo
 Including file: Vendor.wo    (C:\DataFlex Projects\OrderTutorial\AppSrc\Vendor.wo)
-37577>>>// C:\DataFlex Projects\OrderTutorial\AppSrc\Vendor.wo
-37577>>>// Vendor Maintenance
-37577>>>//
-37577>>>
-37577>>>Use cWebView.pkg
-37577>>>Use cWebPanel.pkg
-37577>>>Use cWebForm.pkg
-37577>>>Use cWebCombo.pkg
-37577>>>
-37577>>>Use cVendorDataDictionary.dd
+37582>>>// C:\DataFlex Projects\OrderTutorial\AppSrc\Vendor.wo
+37582>>>// Vendor Maintenance
+37582>>>//
+37582>>>
+37582>>>Use cWebView.pkg
+37582>>>Use cWebPanel.pkg
+37582>>>Use cWebForm.pkg
+37582>>>Use cWebCombo.pkg
+37582>>>
+37582>>>Use cVendorDataDictionary.dd
 Including file: cVendorDataDictionary.dd    (C:\DataFlex Projects\OrderTutorial\DDSrc\cVendorDataDictionary.dd)
-37577>>>>>Use DataDict.pkg
-37577>>>>>
-37577>>>>>Open Vendor
+37582>>>>>Use DataDict.pkg
+37582>>>>>
+37582>>>>>Open Vendor
 Including file: Vendor.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\Vendor.fd)
-37579>>>>>Open Inventory
+37584>>>>>Open Inventory
 Including file: Inventory.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\Inventory.fd)
-37581>>>>>Open DFLastID
-37583>>>>>
-37583>>>>>Register_Object Vendor_State_VT
-37583>>>>>
-37583>>>>>Object Vendor_State_VT is a CodeValidationTable
-37585>>>>>    Set Type_Value to "STATES"
-37586>>>>>End_Object
-37587>>>>>
-37587>>>>>Register_Object Vendor_sl
-37587>>>>>Register_Object oVendorWebLookup
-37587>>>>>
-37587>>>>>Class cVendorDataDictionary is a DataDictionary
-37588>>>>>    
-37588>>>>>    Procedure Construct_Object
-37590>>>>>        Forward Send Construct_Object
-37592>>>>>        
-37592>>>>>        Set Main_File to Vendor.File_Number
-37593>>>>>        Set Cascade_Delete_State to False
-37594>>>>>        
-37594>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
-37595>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
-37596>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+37586>>>>>Open DFLastID
+37588>>>>>
+37588>>>>>Register_Object Vendor_State_VT
+37588>>>>>
+37588>>>>>Object Vendor_State_VT is a CodeValidationTable
+37590>>>>>    Set Type_Value to "STATES"
+37591>>>>>End_Object
+37592>>>>>
+37592>>>>>Register_Object Vendor_sl
+37592>>>>>Register_Object oVendorWebLookup
+37592>>>>>
+37592>>>>>Class cVendorDataDictionary is a DataDictionary
+37593>>>>>    
+37593>>>>>    Procedure Construct_Object
+37595>>>>>        Forward Send Construct_Object
 37597>>>>>        
-37597>>>>>        Set Add_Client_File to Inventory.File_Number
-37598>>>>>        
-37598>>>>>        Set Add_System_File to DFLastID.File_Number DD_LOCK_ON_NEW_SAVE
+37597>>>>>        Set Main_File to Vendor.File_Number
+37598>>>>>        Set Cascade_Delete_State to False
 37599>>>>>        
-37599>>>>>        Set Field_Auto_Increment Field Vendor.Id to File_Field DFLastID.Vendor_Number
-37600>>>>>        
-37600>>>>>        Set Field_Label_Long Field Vendor.ID to "Vendor ID"
-37601>>>>>        Set Field_Label_Short Field Vendor.ID to "Vndr ID"
-37602>>>>>        Set Field_Option Field Vendor.ID DD_AUTOFIND to True
-37603>>>>>        Set Field_Option Field Vendor.ID DD_NOPUT to True
-37604>>>>>        Set Field_Prompt_Object Field Vendor.ID to Vendor_sl
-37605>>>>>        Set Key_Field_State Field Vendor.ID to True
-37606>>>>>        Set Status_Help Field Vendor.ID to "Vendor Id Number (system assigned)."
-37607>>>>>        Set Field_WebPrompt_Object Field Vendor.ID to oVendorWebLookup
-37608>>>>>        
-37608>>>>>        Set Field_Label_Long Field Vendor.Name to "Vendor Name"
-37609>>>>>        Set Field_Label_Short Field Vendor.Name to "Name"
-37610>>>>>        Set Field_Option Field Vendor.Name DD_REQUIRED to True
-37611>>>>>        Set Field_Prompt_Object Field Vendor.Name to Vendor_sl
-37612>>>>>        Set Status_Help Field Vendor.Name to "Vendor Name."
-37613>>>>>        Set Field_WebPrompt_Object Field Vendor.Name to oVendorWebLookup
-37614>>>>>        
-37614>>>>>        Set Field_Label_Long Field Vendor.Address to "Street Address"
-37615>>>>>        Set Field_Label_Short Field Vendor.Address to "Address"
-37616>>>>>        Set Status_Help Field Vendor.Address to "Street Address."
-37617>>>>>        
-37617>>>>>        Set Status_Help Field Vendor.City to "City Name."
-37618>>>>>        
-37618>>>>>        Set Field_Class_Name Field Vendor.State to "Combo"
-37619>>>>>        Set Field_Label_Long Field Vendor.State to "State"
-37620>>>>>        Set Field_Label_Short Field Vendor.State to "St."
-37621>>>>>        Set Field_Option Field Vendor.State DD_CAPSLOCK to True
-37622>>>>>        Set Field_Value_Table Field Vendor.State to Vendor_State_VT
-37623>>>>>        Set Status_Help Field Vendor.State to "Two letter state ID."
-37624>>>>>        
-37624>>>>>        Set Field_Label_Long Field Vendor.Zip to "Zip/Postal Code"
-37625>>>>>        Set Field_Label_Short Field Vendor.Zip to "Zip"
-37626>>>>>        Set Field_Mask Field Vendor.Zip to "#####-####"
-37627>>>>>        Set Field_Mask_Type Field Vendor.Zip to MASK_WINDOW
-37628>>>>>        Set Status_Help Field Vendor.Zip to "Zip or Postal Code."
+37599>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+37600>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+37601>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+37602>>>>>        
+37602>>>>>        Set Add_Client_File to Inventory.File_Number
+37603>>>>>        
+37603>>>>>        Set Add_System_File to DFLastID.File_Number DD_LOCK_ON_NEW_SAVE
+37604>>>>>        
+37604>>>>>        Set Field_Auto_Increment Field Vendor.Id to File_Field DFLastID.Vendor_Number
+37605>>>>>        
+37605>>>>>        Set Field_Label_Long Field Vendor.ID to "Vendor ID"
+37606>>>>>        Set Field_Label_Short Field Vendor.ID to "Vndr ID"
+37607>>>>>        Set Field_Option Field Vendor.ID DD_AUTOFIND to True
+37608>>>>>        Set Field_Option Field Vendor.ID DD_NOPUT to True
+37609>>>>>        Set Field_Prompt_Object Field Vendor.ID to Vendor_sl
+37610>>>>>        Set Key_Field_State Field Vendor.ID to True
+37611>>>>>        Set Status_Help Field Vendor.ID to "Vendor Id Number (system assigned)."
+37612>>>>>        Set Field_WebPrompt_Object Field Vendor.ID to oVendorWebLookup
+37613>>>>>        
+37613>>>>>        Set Field_Label_Long Field Vendor.Name to "Vendor Name"
+37614>>>>>        Set Field_Label_Short Field Vendor.Name to "Name"
+37615>>>>>        Set Field_Option Field Vendor.Name DD_REQUIRED to True
+37616>>>>>        Set Field_Prompt_Object Field Vendor.Name to Vendor_sl
+37617>>>>>        Set Status_Help Field Vendor.Name to "Vendor Name."
+37618>>>>>        Set Field_WebPrompt_Object Field Vendor.Name to oVendorWebLookup
+37619>>>>>        
+37619>>>>>        Set Field_Label_Long Field Vendor.Address to "Street Address"
+37620>>>>>        Set Field_Label_Short Field Vendor.Address to "Address"
+37621>>>>>        Set Status_Help Field Vendor.Address to "Street Address."
+37622>>>>>        
+37622>>>>>        Set Status_Help Field Vendor.City to "City Name."
+37623>>>>>        
+37623>>>>>        Set Field_Class_Name Field Vendor.State to "Combo"
+37624>>>>>        Set Field_Label_Long Field Vendor.State to "State"
+37625>>>>>        Set Field_Label_Short Field Vendor.State to "St."
+37626>>>>>        Set Field_Option Field Vendor.State DD_CAPSLOCK to True
+37627>>>>>        Set Field_Value_Table Field Vendor.State to Vendor_State_VT
+37628>>>>>        Set Status_Help Field Vendor.State to "Two letter state ID."
 37629>>>>>        
-37629>>>>>        Set Field_Label_Long Field Vendor.Phone_Number to "Phone Number"
-37630>>>>>        Set Field_Label_Short Field Vendor.Phone_Number to "Phone"
-37631>>>>>        Set Status_Help Field Vendor.Phone_Number to "Phone Number."
-37632>>>>>        
-37632>>>>>        Set Field_Label_Long Field Vendor.Fax_Number to "Fax Number"
-37633>>>>>        Set Field_Label_Short Field Vendor.Fax_Number to "Fax"
-37634>>>>>        Set Status_Help Field Vendor.Fax_Number to "Fax Phone Number."
-37635>>>>>        
-37635>>>>>        Set piPrimaryIndex to 1
-37636>>>>>    End_Procedure
-37637>>>>>    
-37637>>>>>    Procedure Field_Defaults
-37639>>>>>        Forward Send Field_Defaults
+37629>>>>>        Set Field_Label_Long Field Vendor.Zip to "Zip/Postal Code"
+37630>>>>>        Set Field_Label_Short Field Vendor.Zip to "Zip"
+37631>>>>>        Set Field_Mask Field Vendor.Zip to "#####-####"
+37632>>>>>        Set Field_Mask_Type Field Vendor.Zip to MASK_WINDOW
+37633>>>>>        Set Status_Help Field Vendor.Zip to "Zip or Postal Code."
+37634>>>>>        
+37634>>>>>        Set Field_Label_Long Field Vendor.Phone_Number to "Phone Number"
+37635>>>>>        Set Field_Label_Short Field Vendor.Phone_Number to "Phone"
+37636>>>>>        Set Status_Help Field Vendor.Phone_Number to "Phone Number."
+37637>>>>>        
+37637>>>>>        Set Field_Label_Long Field Vendor.Fax_Number to "Fax Number"
+37638>>>>>        Set Field_Label_Short Field Vendor.Fax_Number to "Fax"
+37639>>>>>        Set Status_Help Field Vendor.Fax_Number to "Fax Phone Number."
+37640>>>>>        
+37640>>>>>        Set piPrimaryIndex to 1
 37641>>>>>    End_Procedure
 37642>>>>>    
-37642>>>>>End_Class
-37643>>>>>
-37643>>>>>
-37643>>>>>//Use VendorWebLookup.wo
-37643>>>>>
-37643>>>
-37643>>>Object oVendor is a cWebView
-37645>>>    Set piColumnCount to 12
-37646>>>    Set psCaption to "Vendor Maintenance"
-37647>>>    Set piWidth to 700
+37642>>>>>    Procedure Field_Defaults
+37644>>>>>        Forward Send Field_Defaults
+37646>>>>>    End_Procedure
+37647>>>>>    
+37647>>>>>End_Class
+37648>>>>>
+37648>>>>>
+37648>>>>>//Use VendorWebLookup.wo
+37648>>>>>
 37648>>>
-37648>>>    Object oVendor_DD is a cVendorDataDictionary
-37650>>>    End_Object 
-37651>>>
-37651>>>    Set Main_DD To oVendor_DD
-37652>>>    Set Server  To oVendor_DD
+37648>>>Object oVendor is a cWebView
+37650>>>    Set piColumnCount to 12
+37651>>>    Set psCaption to "Vendor Maintenance"
+37652>>>    Set piWidth to 700
 37653>>>
-37653>>>
-37653>>>    Object oWebMainPanel is a cWebPanel
-37655>>>        Set piColumnCount to 12
+37653>>>    Object oVendor_DD is a cVendorDataDictionary
+37655>>>    End_Object 
 37656>>>
-37656>>>        Object oVendorId is a cWebForm
-37658>>>            Entry_Item Vendor.Id
-37659>>>            Set piColumnSpan to 2
-37660>>>            Set piColumnIndex to 0
-37661>>>            Set peLabelPosition to lpTop
-37662>>>            Set psLabel to "Vendor ID"
-37663>>>        End_Object 
-37664>>>
-37664>>>        Object oVendorName is a cWebForm
-37666>>>            Entry_Item Vendor.Name
-37667>>>            Set piColumnSpan to 6
-37668>>>            Set piColumnIndex to 2
-37669>>>            Set peLabelPosition to lpTop
-37670>>>            Set psLabel to "Vendor Name"
-37671>>>        End_Object 
-37672>>>
-37672>>>        Object oVendorAddress is a cWebForm
-37674>>>            Entry_Item Vendor.Address
-37675>>>            Set piColumnSpan to 6
-37676>>>            Set piColumnIndex to 0
-37677>>>            Set peLabelPosition to lpTop
-37678>>>            Set psLabel to "Street Address"
-37679>>>        End_Object 
-37680>>>
-37680>>>        Object oVendorCity is a cWebForm
-37682>>>            Entry_Item Vendor.City
-37683>>>            Set piColumnSpan to 3
-37684>>>            Set piColumnIndex to 0
-37685>>>            Set peLabelPosition to lpTop
-37686>>>            Set psLabel to "City"
-37687>>>        End_Object 
-37688>>>
-37688>>>        Object oVendorState is a cWebCombo
-37690>>>            Entry_Item Vendor.State
-37691>>>            Set piColumnSpan to 2
-37692>>>            Set piColumnIndex to 3
-37693>>>            Set peLabelPosition to lpTop
-37694>>>            Set psLabel to "State"
-37695>>>        End_Object 
-37696>>>
-37696>>>        Object oVendorZip is a cWebForm
-37698>>>            Entry_Item Vendor.Zip
-37699>>>            Set piColumnSpan to 2
-37700>>>            Set piColumnIndex to 5
-37701>>>            Set peLabelPosition to lpTop
-37702>>>            Set psLabel to "Zip/Postal Code"
-37703>>>        End_Object 
-37704>>>
-37704>>>        Object oVendorPhone_Number is a cWebForm
-37706>>>            Entry_Item Vendor.Phone_Number
-37707>>>            Set piColumnSpan to 4
-37708>>>            Set piColumnIndex to 0
-37709>>>            Set peLabelPosition to lpTop
-37710>>>            Set psLabel to "Phone Number"
-37711>>>        End_Object 
-37712>>>
-37712>>>        Object oVendorFax_Number is a cWebForm
-37714>>>            Entry_Item Vendor.Fax_Number
-37715>>>            Set piColumnSpan to 4
-37716>>>            Set piColumnIndex to 4
-37717>>>            Set peLabelPosition to lpTop
-37718>>>            Set psLabel to "Fax Number"
-37719>>>        End_Object 
-37720>>>    End_Object 
-37721>>>
-37721>>>End_Object 
-37722>    
-37722>End_Object
-37723>
-37723>Send StartWebApp of oWebApp
-37724>
+37656>>>    Set Main_DD To oVendor_DD
+37657>>>    Set Server  To oVendor_DD
+37658>>>
+37658>>>
+37658>>>    Object oWebMainPanel is a cWebPanel
+37660>>>        Set piColumnCount to 12
+37661>>>
+37661>>>        Object oVendorId is a cWebForm
+37663>>>            Entry_Item Vendor.Id
+37664>>>            Set piColumnSpan to 2
+37665>>>            Set piColumnIndex to 0
+37666>>>            Set peLabelPosition to lpTop
+37667>>>            Set psLabel to "Vendor ID"
+37668>>>        End_Object 
+37669>>>
+37669>>>        Object oVendorName is a cWebForm
+37671>>>            Entry_Item Vendor.Name
+37672>>>            Set piColumnSpan to 6
+37673>>>            Set piColumnIndex to 2
+37674>>>            Set peLabelPosition to lpTop
+37675>>>            Set psLabel to "Vendor Name"
+37676>>>        End_Object 
+37677>>>
+37677>>>        Object oVendorAddress is a cWebForm
+37679>>>            Entry_Item Vendor.Address
+37680>>>            Set piColumnSpan to 6
+37681>>>            Set piColumnIndex to 0
+37682>>>            Set peLabelPosition to lpTop
+37683>>>            Set psLabel to "Street Address"
+37684>>>        End_Object 
+37685>>>
+37685>>>        Object oVendorCity is a cWebForm
+37687>>>            Entry_Item Vendor.City
+37688>>>            Set piColumnSpan to 3
+37689>>>            Set piColumnIndex to 0
+37690>>>            Set peLabelPosition to lpTop
+37691>>>            Set psLabel to "City"
+37692>>>        End_Object 
+37693>>>
+37693>>>        Object oVendorState is a cWebCombo
+37695>>>            Entry_Item Vendor.State
+37696>>>            Set piColumnSpan to 2
+37697>>>            Set piColumnIndex to 3
+37698>>>            Set peLabelPosition to lpTop
+37699>>>            Set psLabel to "State"
+37700>>>        End_Object 
+37701>>>
+37701>>>        Object oVendorZip is a cWebForm
+37703>>>            Entry_Item Vendor.Zip
+37704>>>            Set piColumnSpan to 2
+37705>>>            Set piColumnIndex to 5
+37706>>>            Set peLabelPosition to lpTop
+37707>>>            Set psLabel to "Zip/Postal Code"
+37708>>>        End_Object 
+37709>>>
+37709>>>        Object oVendorPhone_Number is a cWebForm
+37711>>>            Entry_Item Vendor.Phone_Number
+37712>>>            Set piColumnSpan to 4
+37713>>>            Set piColumnIndex to 0
+37714>>>            Set peLabelPosition to lpTop
+37715>>>            Set psLabel to "Phone Number"
+37716>>>        End_Object 
+37717>>>
+37717>>>        Object oVendorFax_Number is a cWebForm
+37719>>>            Entry_Item Vendor.Fax_Number
+37720>>>            Set piColumnSpan to 4
+37721>>>            Set piColumnIndex to 4
+37722>>>            Set peLabelPosition to lpTop
+37723>>>            Set psLabel to "Fax Number"
+37724>>>        End_Object 
+37725>>>    End_Object 
+37726>>>
+37726>>>End_Object 
+37727>    Use Inventory.wo
+Including file: Inventory.wo    (C:\DataFlex Projects\OrderTutorial\AppSrc\Inventory.wo)
+37727>>>// C:\DataFlex Projects\OrderTutorial\AppSrc\Inventory.wo
+37727>>>// Inventory Maintenance
+37727>>>//
+37727>>>
+37727>>>Use cWebView.pkg
+37727>>>Use cWebPanel.pkg
+37727>>>Use cWebForm.pkg
+37727>>>
+37727>>>Use cVendorDataDictionary.dd
+37727>>>Use cInventoryDataDictionary.dd
+Including file: cInventoryDataDictionary.dd    (C:\DataFlex Projects\OrderTutorial\DDSrc\cInventoryDataDictionary.dd)
+37727>>>>>Use DataDict.pkg
+37727>>>>>
+37727>>>>>Open Inventory
+37729>>>>>Open OrderDetail
+Including file: OrderDetail.fd    (C:\DataFlex Projects\OrderTutorial\DDSrc\OrderDetail.fd)
+37731>>>>>Open Vendor
+37733>>>>>
+37733>>>>>Register_Object Inventory_sl
+37733>>>>>Register_Object oInventoryWebLookup
+37733>>>>>Class cInventoryDataDictionary is a DataDictionary
+37734>>>>>    
+37734>>>>>    Procedure Construct_Object
+37736>>>>>        Forward Send Construct_Object
+37738>>>>>        
+37738>>>>>        Set Main_File to Inventory.File_Number
+37739>>>>>        Set Cascade_Delete_State to False
+37740>>>>>        
+37740>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+37741>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+37742>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+37743>>>>>        
+37743>>>>>        Set Add_Client_File to OrderDetail.File_Number
+37744>>>>>        
+37744>>>>>        Set Add_Server_File to Vendor.File_Number
+37745>>>>>        
+37745>>>>>        Set Field_Label_Long Field Inventory.Item_ID to "Inventory Item ID"
+37746>>>>>        Set Field_Label_Short Field Inventory.Item_ID to "Item ID"
+37747>>>>>        Set Field_Option Field Inventory.Item_ID DD_AUTOFIND to True
+37748>>>>>        Set Field_Option Field Inventory.Item_ID DD_REQUIRED to True
+37749>>>>>        Set Field_Option Field Inventory.Item_ID DD_CAPSLOCK to True
+37750>>>>>        Set Field_Prompt_Object Field Inventory.Item_ID to Inventory_sl
+37751>>>>>        Set Field_WebPrompt_Object Field Inventory.Item_ID to oInventoryWebLookup
+37752>>>>>        Set Key_Field_State Field Inventory.Item_ID to True
+37753>>>>>        Set Status_Help Field Inventory.Item_ID to "Inventory Item Id - user defined identification"
+37754>>>>>        
+37754>>>>>        Set Field_Label_Long Field Inventory.Description to "Inventory. Description"
+37755>>>>>        Set Field_Label_Short Field Inventory.Description to "Description"
+37756>>>>>        Set Field_Option Field Inventory.Description DD_REQUIRED to True
+37757>>>>>        Set Status_Help Field Inventory.Description to "Inventory Part Description"
+37758>>>>>        Set Field_Prompt_Object Field Inventory.Description to Inventory_sl
+37759>>>>>        
+37759>>>>>        Set Field_Option Field Inventory.Vendor_ID DD_CAPSLOCK to True
+37760>>>>>        Set Status_Help Field Inventory.Vendor_ID to "Vendor Number"
+37761>>>>>        
+37761>>>>>        Set Field_Option Field Inventory.Vendor_Part_ID DD_REQUIRED to True
+37762>>>>>        Set Status_Help Field Inventory.Vendor_Part_ID to "Vendor ID name for this item"
+37763>>>>>        
+37763>>>>>        Set Field_Mask_Type Field Inventory.Unit_Price to MASK_CURRENCY_WINDOW
+37764>>>>>        Set Field_Value_Range Field Inventory.Unit_Price to 0 999999.99
+37765>>>>>        Set Status_Help Field Inventory.Unit_Price to "Retail unit price"
+37766>>>>>        
+37766>>>>>        Set Field_Value_Range Field Inventory.On_Hand to -999999 999999
+37767>>>>>        Set Status_Help Field Inventory.On_Hand to "Units currently available"
+37768>>>>>        
+37768>>>>>        Set piPrimaryIndex to 1
+37769>>>>>    End_Procedure
+37770>>>>>    
+37770>>>>>    Function Validate_Save Returns Integer
+37772>>>>>        Integer iRetVal
+37772>>>>>        
+37772>>>>>        Forward Get Validate_Save to iRetVal
+37774>>>>>        
+37774>>>>>        If iRetVal;            Function_Return iRetVal
+37777>>>>>        
+37777>>>>>        If (Inventory.On_Hand < 0) Begin
+37779>>>>>            Send UserError "Insufficient Inventory Stock" ""
+37780>>>>>            Function_Return 1
+37781>>>>>        End
+37781>>>>>>
+37781>>>>>    End_Function
+37782>>>>>    
+37782>>>>>    Procedure Field_Defaults
+37784>>>>>        Forward Send Field_Defaults
+37786>>>>>    End_Procedure
+37787>>>>>    
+37787>>>>>End_Class
+37788>>>>>
+37788>>>>>
+37788>>>>>//Use InventoryWebLookup.wo
+37788>>>>>
+37788>>>
+37788>>>Object Inventory is a cWebView
+37790>>>    Set piColumnCount to 12
+37791>>>    Set psCaption to "Inventory Maintenance"
+37792>>>    Set piWidth to 700
+37793>>>
+37793>>>    Object oVendor_DD is a cVendorDataDictionary
+37795>>>    End_Object 
+37796>>>
+37796>>>    Object oInventory_DD is a cInventoryDataDictionary
+37798>>>        Set DDO_Server To oVendor_DD
+37799>>>    End_Object 
+37800>>>
+37800>>>    Set Main_DD To oInventory_DD
+37801>>>    Set Server  To oInventory_DD
+37802>>>
+37802>>>
+37802>>>    Object oWebMainPanel is a cWebPanel
+37804>>>        Set piColumnCount to 12
+37805>>>
+37805>>>        Object oInventoryItem_Id is a cWebForm
+37807>>>            Entry_Item Inventory.Item_Id
+37808>>>            Set piColumnSpan to 3
+37809>>>            Set piColumnIndex to 0
+37810>>>            Set peLabelPosition to lpTop
+37811>>>            Set psLabel to "Inventory Item ID"
+37812>>>        End_Object 
+37813>>>
+37813>>>        Object oInventoryDescription is a cWebForm
+37815>>>            Entry_Item Inventory.Description
+37816>>>            Set piColumnSpan to 7
+37817>>>            Set piColumnIndex to 3
+37818>>>            Set peLabelPosition to lpTop
+37819>>>            Set psLabel to "Inventory. Description"
+37820>>>        End_Object 
+37821>>>
+37821>>>        Object oVendorId is a cWebForm
+37823>>>            Entry_Item Vendor.Id
+37824>>>            Set piColumnSpan to 2
+37825>>>            Set piColumnIndex to 0
+37826>>>            Set peLabelPosition to lpTop
+37827>>>            Set psLabel to "Vendor ID"
+37828>>>        End_Object 
+37829>>>
+37829>>>        Object oVendorName is a cWebForm
+37831>>>            Entry_Item Vendor.Name
+37832>>>            Set piColumnSpan to 6
+37833>>>            Set piColumnIndex to 2
+37834>>>            Set peLabelPosition to lpTop
+37835>>>            Set psLabel to "Vendor Name"
+37836>>>        End_Object 
+37837>>>
+37837>>>        Object oInventoryVendor_Part_Id is a cWebForm
+37839>>>            Entry_Item Inventory.Vendor_Part_Id
+37840>>>            Set piColumnSpan to 2
+37841>>>            Set piColumnIndex to 0
+37842>>>            Set peLabelPosition to lpTop
+37843>>>            Set psLabel to "Vendor Part Id"
+37844>>>        End_Object 
+37845>>>
+37845>>>        Object oInventoryUnit_Price is a cWebForm
+37847>>>            Entry_Item Inventory.Unit_Price
+37848>>>            Set piColumnSpan to 2
+37849>>>            Set piColumnIndex to 0
+37850>>>            Set peLabelPosition to lpTop
+37851>>>            Set psLabel to "Unit Price"
+37852>>>        End_Object 
+37853>>>
+37853>>>        Object oInventoryOn_Hand is a cWebForm
+37855>>>            Entry_Item Inventory.On_Hand
+37856>>>            Set piColumnSpan to 2
+37857>>>            Set piColumnIndex to 2
+37858>>>            Set peLabelPosition to lpTop
+37859>>>            Set psLabel to "On Hand"
+37860>>>        End_Object 
+37861>>>    End_Object 
+37862>>>
+37862>>>End_Object 
+37863>    
+37863>End_Object
+37864>
+37864>Send StartWebApp of oWebApp
+37865>
 Summary
-Memory Available: 11207999488
+Memory Available: 8676683776
 Total Warnings : 0
 Total Errors   : 0
-Total Symbols  : 25247
+Total Symbols  : 25278
 Total Resources: 0
-Total Commands : 37723
+Total Commands : 37864
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 470007
-Message area   : 250903
-Total Blocks   : 16867
+Static Data    : 471179
+Message area   : 252780
+Total Blocks   : 16918

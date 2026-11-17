@@ -157,10 +157,21 @@ Object oMain is a Panel
             End_Object
             
             Object oReportMenu is a cCJMenuItem
-                Set peControlType to xtpControlPopup          
+                Set peControlType to xtpControlPopup
                 Set psCaption to "&Report"
                 Set psToolTip to "Report"
                 Set psDescription to "Available Reports"
+
+                Object oCustomerListingWinPrint2MenuItem is a cCJMenuItem
+                    Set psCaption to "Customer Listing (WinPrint 2)"
+                    Set psTooltip to "Customer Listing (WinPrint 2)"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_CustomerReport of hoClient
+                    End_Procedure
+                End_Object
             End_Object
 
             Object oNavigateMenu is a cCJMenuItem
@@ -370,6 +381,7 @@ Object oMain is a Panel
         Use VendorView.vw
         Use InventoryView.vw
         Use OrderEntryView.vw
+        Use CustomerReport.rv
         
     
         Procedure Activate_About
