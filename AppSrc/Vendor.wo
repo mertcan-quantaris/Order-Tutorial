@@ -1,0 +1,92 @@
+﻿// C:\DataFlex Projects\OrderTutorial\AppSrc\Vendor.wo
+// Vendor Maintenance
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+Use cWebCombo.pkg
+
+Use cVendorDataDictionary.dd
+
+Object oVendor is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Vendor Maintenance"
+    Set piWidth to 700
+
+    Object oVendor_DD is a cVendorDataDictionary
+    End_Object 
+
+    Set Main_DD To oVendor_DD
+    Set Server  To oVendor_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oVendorId is a cWebForm
+            Entry_Item Vendor.Id
+            Set piColumnSpan to 2
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Vendor ID"
+        End_Object 
+
+        Object oVendorName is a cWebForm
+            Entry_Item Vendor.Name
+            Set piColumnSpan to 6
+            Set piColumnIndex to 2
+            Set peLabelPosition to lpTop
+            Set psLabel to "Vendor Name"
+        End_Object 
+
+        Object oVendorAddress is a cWebForm
+            Entry_Item Vendor.Address
+            Set piColumnSpan to 6
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Street Address"
+        End_Object 
+
+        Object oVendorCity is a cWebForm
+            Entry_Item Vendor.City
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "City"
+        End_Object 
+
+        Object oVendorState is a cWebCombo
+            Entry_Item Vendor.State
+            Set piColumnSpan to 2
+            Set piColumnIndex to 3
+            Set peLabelPosition to lpTop
+            Set psLabel to "State"
+        End_Object 
+
+        Object oVendorZip is a cWebForm
+            Entry_Item Vendor.Zip
+            Set piColumnSpan to 2
+            Set piColumnIndex to 5
+            Set peLabelPosition to lpTop
+            Set psLabel to "Zip/Postal Code"
+        End_Object 
+
+        Object oVendorPhone_Number is a cWebForm
+            Entry_Item Vendor.Phone_Number
+            Set piColumnSpan to 4
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Phone Number"
+        End_Object 
+
+        Object oVendorFax_Number is a cWebForm
+            Entry_Item Vendor.Fax_Number
+            Set piColumnSpan to 4
+            Set piColumnIndex to 4
+            Set peLabelPosition to lpTop
+            Set psLabel to "Fax Number"
+        End_Object 
+    End_Object 
+
+End_Object 

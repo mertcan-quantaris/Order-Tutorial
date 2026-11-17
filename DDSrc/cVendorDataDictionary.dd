@@ -85,7 +85,7 @@ End_Class
 
 #IFDEF Is$WebApp
 
-Use VendorWebLookup.wo
+//Use VendorWebLookup.wo
 
 #ELSE
 
