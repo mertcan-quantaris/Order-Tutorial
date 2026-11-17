@@ -99,6 +99,11 @@ Object oWebApp is a cWebApp
                     Set psCaption to "Sales Person Maintenance"
                     Set psLoadViewOnClick to "oSalesPerson"
                 End_Object
+
+                Object oVendorMaintenanceItem1 is a cWebMenuItemLoadView
+                    Set psCaption to "Vendor Maintenance"
+                    Set psLoadViewOnClick to "oVendor"
+                End_Object
             End_Object  
         End_Object  
         
@@ -144,6 +149,7 @@ Object oWebApp is a cWebApp
     Use WebResourceManager.wo
     Use CustomerEntry.wo
     Use SalesPerson.wo
+    Use Vendor.wo
     
 End_Object
 

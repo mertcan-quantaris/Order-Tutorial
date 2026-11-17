@@ -35,6 +35,18 @@
            "bHidden": false
          },
          {
+           "Name": "oVendor",
+           "Position": {
+             "sX": "130,00003051",
+             "sY": "401,3333435"
+           },
+           "TabColor": {
+             "sColorDM": "#00429B",
+             "sColorLM": "#63A9FF"
+           },
+           "bHidden": false
+         },
+         {
            "Name": "oWebApp",
            "Position": {
              "sX": "0",
